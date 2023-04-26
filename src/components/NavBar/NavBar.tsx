@@ -8,8 +8,6 @@ function NavBar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const location = useLocation();
 
-  // The current location.
-  console.log("Prout =", location);
   function handleClick() {
     setIsOpen(!isOpen);
   }

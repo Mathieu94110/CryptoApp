@@ -1,0 +1,33 @@
+.history-chart {
+  margin: 0 20px;
+  &__timeline-buttons {
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  &__timeline-buttons {
+    width: 50px;
+    height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    background: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 5%;
+    margin: 15px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width: 926px) {
+  .history-chart {
+    &__timeline-buttons {
+      justify-content: center;
+    }
+    &__timeline-buttons {
+      margin: 8px;
+    }
+  }
+}

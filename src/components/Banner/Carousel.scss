@@ -1,0 +1,29 @@
+.carousel {
+  padding-top: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 926px) {
+  .carousel {
+    position: fixed;
+    padding-top: 0;
+  }
+  ul {
+    display: flex;
+  }
+
+  .carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: white;
+  }
+  .alice-carousel__stage-item.__target,
+  .alice-carousel__stage-item.__active {
+    width: 150px;
+  }
+}

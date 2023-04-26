@@ -1,0 +1,79 @@
+.bitcoin {
+  border: 2px solid #000;
+  vertical-align: middle;
+  color: #fff;
+  background-color: #191970;
+  background-image: url("../../../public/assets/images/bitcoin_background.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 1em;
+  }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 60px;
+  }
+  &__name {
+    margin-bottom: 7px;
+    font-size: 1.2em;
+  }
+
+  &__image {
+    width: 25px;
+    height: 25px;
+  }
+  &__table {
+    border: 1px solid #fff none;
+    border-style: groove;
+  }
+  &__table-header {
+    color: gold;
+    font-size: 0.5em;
+  }
+  &__table-body {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 469px) {
+  .bitcoin {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 926px) {
+  .bitcoin {
+    min-height: 500px;
+    height: 100%;
+    margin: 0;
+    width: 45%;
+    &__title {
+      height: 100px;
+    }
+    &__name {
+      font-size: 1.7em;
+    }
+    &__image {
+      width: 45px;
+      height: 45px;
+    }
+    &__table-header {
+      font-size: 1em;
+    }
+    &__table-body {
+      font-size: 1rem;
+    }
+  }
+}

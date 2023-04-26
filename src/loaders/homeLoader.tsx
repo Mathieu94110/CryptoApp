@@ -17,7 +17,6 @@ async function getBitcoinData() {
 async function getSevenTrends() {
   try {
     const sevenTrends: any = await baseURL.get(sevenTrendUrl);
-    console.log(sevenTrends);
     return sevenTrends.data.coins;
   } catch (error) {
     console.error(error);

@@ -144,6 +144,14 @@ table {
 .flex-fill {
   flex: 1 1 auto;
 }
+.bg-primary {
+  background-color: rgb(66, 66, 222);
+  background: linear-gradient(
+    90deg,
+    rgba(32, 66, 255, 1) 0%,
+    rgba(32, 32, 255, 1) 94%
+  );
+}
 
 .justify-content-center {
   justify-content: center;

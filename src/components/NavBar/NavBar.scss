@@ -26,12 +26,12 @@
 }
 .nav-menu {
   display: grid;
-  grid-template-columns: repeat(6, auto);
+  grid-template-columns: repeat(4, auto);
   grid-gap: 10px;
   list-style: none;
   align-items: center;
   text-align: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .nav-links {
   display: flex;
@@ -52,16 +52,22 @@
   display: none;
   color: #fff;
 }
-
+@media screen and (max-width: 352px) {
+  .logo {
+    font-size: 1rem;
+  }
+}
 @media screen and (max-width: 926px) {
   .nav-bar-items {
     z-index: 99;
+    padding: 0 16px;
+    height: 60px;
   }
   .nav-menu {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: #222;
     box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
     backdrop-filter: 13px;
     width: 100%;
@@ -77,6 +83,7 @@
     transition: all 0.3s ease-in-out;
     &.active {
       left: 0%;
+      border: 1px solid #fff;
     }
   }
   .nav-links {
@@ -85,12 +92,18 @@
     padding: 2rem 0;
     color: #222;
     font-weight: 600;
+    z-index: 100;
+    color: #fff;
     &:hover {
-      background-color: rgba(255, 255, 255, 0.25);
+      background-color: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(20px);
+      color: #222;
     }
   }
   .menu-icons {
     display: block;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
