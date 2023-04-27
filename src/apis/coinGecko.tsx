@@ -14,10 +14,18 @@ export const loadFirstHundred =
 export const searchCrypto = (inputValue: string) =>
   `coins/markets?vs_currency=eur&ids=${inputValue}&order=market_cap_desc&per_page=100&page=1&sparkline=false`;
 
-export const CoinList = (currency: string) =>
-  `coins/markets?vs_currency=${currency}&order=market_cap_desc&per_page=100&page=1&sparkline=false`;
-
 export const SingleCoin = (id: string) => `coins/${id}`;
+
+export async function CoinList(): Promise<any> {
+  try {
+    const { data } = await baseURL.get(
+      `coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false`
+    );
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
 
 export async function HistoricalChart(
   id: string,

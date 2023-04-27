@@ -4,8 +4,7 @@ import { Await, Outlet, useLoaderData } from "react-router-dom";
 import { Suspense } from "react";
 import "./Home.scss";
 import Carousel from "../../components/Banner/Carousel";
-import { HomeLoader, IItems } from "../../types/coins.interface";
-import { BitcoinInterface } from "../../types/bitcoin.interface";
+import { HomeLoader } from "../../types/coins.interface";
 
 function Home() {
   const { bitcoinData, sevenTrendsData } = useLoaderData() as HomeLoader;

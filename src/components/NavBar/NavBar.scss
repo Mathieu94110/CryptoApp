@@ -40,7 +40,7 @@
   padding: 0.7rem 1rem;
   white-space: nowrap;
   &:hover {
-    background-color: rgb(80, 80, 238);
+    background-color: var(--bg-primary);
     border-radius: 4px;
     transition: all 0.2s ease-in-out;
   }

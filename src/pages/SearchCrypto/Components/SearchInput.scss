@@ -1,0 +1,35 @@
+.search-input {
+  padding: 8px 0;
+  border: 2px solid var(--gray-2);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  position: relative;
+  &__input {
+    padding: 10px 0px 10px 35px;
+    outline: 0;
+    border: 0;
+    flex: 1 1 auto;
+    font-size: 0.7rem;
+    &::placeholder {
+      color: #222;
+    }
+  }
+  &__icon {
+    position: absolute;
+    left: 10px;
+    top: 17px;
+    color: #222;
+  }
+}
+
+@media screen and (min-width: 926px) {
+  .search-input {
+    &__input {
+      font-size: 1rem;
+    }
+  }
+}
