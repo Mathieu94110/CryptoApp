@@ -29,7 +29,6 @@ export interface SearchCryptoLoading {
 export interface SearchCryptoFail {
   type: typeof SEARCH_CRYPTO_FAIL;
 }
-//
 
 export interface SearchCryptoSuccess {
   type: typeof SEARCH_CRYPTO_SUCCESS;

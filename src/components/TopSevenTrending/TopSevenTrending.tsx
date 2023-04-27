@@ -1,14 +1,5 @@
+import { IItems } from "../../types/coins.interface";
 import "./TopSevenTrending.scss";
-
-interface IItems {
-  item: {
-    small: string;
-    large: string;
-    name: string;
-    symbol: string;
-    market_cap_rank: number;
-  };
-}
 
 export default function TopSevenTrending({
   sevenTrends,

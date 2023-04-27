@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 import { TrendingCoins } from "../../apis/coinGecko";
 import { CoinMarket } from "../../types/coins.interface";
 import "./Carousel.scss";
 
 const Carousel = () => {
-  const [trending, setTrending] = useState([]);
+  const [trending, setTrending] = useState<CoinMarket[]>([]);
 
   const fetchTrendingCoins = async () => {
-    const { data }: any = await TrendingCoins();
-    console.log(data);
-    setTrending(data);
+    const response = await TrendingCoins();
+    setTrending(response);
   };
 
   useEffect(() => {
@@ -22,12 +22,12 @@ const Carousel = () => {
     let profit = coin?.price_change_percentage_24h >= 0;
 
     return (
-      <>
-        <Link className="carousel-item" key={index} to={`/coins/${coin.id}`}>
+      <div className="item" key={index}>
+        <Link className="carousel-item" to={`/coins/${coin.id}`}>
           <img
             src={coin?.image}
             alt={coin.name}
-            height="80"
+            className="carousel-item-image"
             style={{ marginBottom: 10 }}
           />
           <span>
@@ -46,11 +46,11 @@ const Carousel = () => {
               {coin?.price_change_percentage_24h?.toFixed(2)}%
             </span>
           </span>
-          <span style={{ fontSize: 22, fontWeight: 500 }}>
+          <span className="carousel-item-price">
             {coin?.current_price && coin?.current_price.toFixed(2) + " €"}
           </span>
         </Link>
-      </>
+      </div>
     );
   });
 

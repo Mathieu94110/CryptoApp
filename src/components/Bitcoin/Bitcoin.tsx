@@ -1,6 +1,8 @@
+import HistoryChart from "./Components/HistoryChart/HistoryChart";
 import type { BitcoinInterface } from "../../types/bitcoin.interface";
 import { convert } from "../../utils/convert";
 import "./Bitcoin.scss";
+
 const Bitcoin = ({ bitcoin }: { bitcoin: BitcoinInterface }) => {
   return (
     <div className="bitcoin">
@@ -29,15 +31,28 @@ const Bitcoin = ({ bitcoin }: { bitcoin: BitcoinInterface }) => {
           </thead>
           <tbody>
             <tr className="bitcoin__table-body">
-              <td>{convert(bitcoin.market_cap.toFixed(2))} $</td>
-              <td>{convert(bitcoin.total_supply.toFixed(2))}</td>
-              <td>{convert(bitcoin.total_volume.toFixed(2))} $</td>
-              <td>{convert(bitcoin.high_24h.toFixed(2))} $</td>
-              <td>{convert(bitcoin.low_24h.toFixed(2))} $</td>
-              <td>{bitcoin.circulating_supply.toLocaleString()}</td>
+              <td className="color-gold">
+                {convert(bitcoin.market_cap.toFixed(2))} €
+              </td>
+              <td className="color-gold">
+                {convert(bitcoin.total_supply.toFixed(2))}
+              </td>
+              <td className="color-gold">
+                {convert(bitcoin.total_volume.toFixed(2))} €
+              </td>
+              <td className="color-gold">
+                {convert(bitcoin.high_24h.toFixed(2))} €
+              </td>
+              <td className="color-gold">
+                {convert(bitcoin.low_24h.toFixed(2))} €
+              </td>
+              <td className="color-gold">
+                {bitcoin.circulating_supply.toLocaleString()}
+              </td>
             </tr>
           </tbody>
         </table>
+        <HistoryChart coin="bitcoin" />
       </div>
     </div>
   );

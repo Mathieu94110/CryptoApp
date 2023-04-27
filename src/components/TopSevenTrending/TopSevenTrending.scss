@@ -1,8 +1,7 @@
 .top-seven-trending {
   font-size: 1rem;
   justify-content: space-evenly;
-  min-height: 500px;
-  padding: 120px 0 60px 0;
+  margin-bottom: 40px;
   table {
     background-color: #222;
     border: 2px solid;
@@ -48,10 +47,12 @@
 
 @media screen and (min-width: 926px) {
   .top-seven-trending {
+    margin-bottom: 0;
     font-size: 1rem;
     justify-content: space-evenly;
     width: 45%;
     padding: 0;
+    min-height: 500px;
     table {
       background-color: #222;
       border: 2px solid;

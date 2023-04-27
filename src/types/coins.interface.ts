@@ -1,3 +1,5 @@
+import { BitcoinInterface } from "./bitcoin.interface";
+
 export interface BasicCoin {
   id?: string;
   name?: string;
@@ -14,7 +16,6 @@ export interface CoinMarket extends BasicCoin {
   high_24h?: number;
   low_24h?: number;
   price_change_24h?: number;
-  //   price_change_percentage_24h?: number;
   price_change_percentage_24h: number;
   market_cap_change_24h?: number;
   market_cap_change_percentage_24h?: number;
@@ -75,4 +76,24 @@ export interface MarketData {
   max_supply?: null;
   circulating_supply?: number;
   last_updated?: Date;
+}
+export type HomeLoader = {
+  bitcoinData: BitcoinInterface;
+  sevenTrendsData: IItems[];
+};
+
+export interface HistoricalChartResponse {
+  market_caps: number[][];
+  prices: number[][];
+  total_volumes: number[][];
+}
+
+export interface IItems {
+  item: {
+    small: string;
+    large: string;
+    name: string;
+    symbol: string;
+    market_cap_rank: number;
+  };
 }

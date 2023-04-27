@@ -1,33 +1,24 @@
-.history-chart {
-  margin: 0 20px;
-  &__timeline-buttons {
-    text-align: center;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  &__timeline-buttons {
-    width: 50px;
-    height: 25px;
-    text-align: center;
-    vertical-align: middle;
-    background: black;
-    color: white;
-    text-decoration: none;
-    border-radius: 5%;
-    margin: 15px;
-    &:hover {
-      cursor: pointer;
-    }
-  }
+.history-chart-container {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25;
+  padding: 40;
 }
 
-@media screen and (max-width: 926px) {
-  .history-chart {
-    &__timeline-buttons {
-      justify-content: center;
-    }
-    &__timeline-buttons {
-      margin: 8px;
-    }
+@media screen and (min-width: 926px) {
+  .history-chart-container {
+    width: 100%;
+    margin-top: 0;
+    padding: 20;
+    padding-top: 0;
   }
+}
+.select-button-container {
+  display: flex;
+  margin: 10px 0;
+  justify-content: space-around;
+  width: 100%;
 }

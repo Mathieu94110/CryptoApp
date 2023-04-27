@@ -1,29 +1,53 @@
 .carousel {
-  padding-top: 200px;
-  height: 200px;
+  margin-top: 140px;
   display: flex;
   align-items: center;
 }
+.carousel-item-image {
+  height: 40px;
+}
+.carousel-item-image {
+  font-weight: 500;
+  font-size: 16;
+}
 
+ul {
+  display: flex;
+}
+
+.carousel-item {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.item {
+  display: inline-block;
+  width: 100;
+  height: 100;
+  padding: 0 20px;
+}
 @media screen and (min-width: 926px) {
   .carousel {
     position: fixed;
-    padding-top: 0;
-  }
-  ul {
-    display: flex;
-  }
+    margin-top: 24px;
 
-  .carousel-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    text-transform: uppercase;
-    color: white;
+    margin-bottom: 0;
   }
-  .alice-carousel__stage-item.__target,
-  .alice-carousel__stage-item.__active {
-    width: 150px;
+  .item {
+    display: inline-block;
+    width: 200;
+    height: 200;
+  }
+  .carousel-item-image {
+    height: 80px;
+  }
+  .carousel-item-image {
+    font-size: 22;
   }
 }
