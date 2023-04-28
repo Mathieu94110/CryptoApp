@@ -1,4 +1,4 @@
-import HistoryChart from "./Components/HistoryChart/HistoryChart";
+import HistoryChart from "../HistoryChart/HistoryChart";
 import type { BitcoinInterface } from "../../types/bitcoin.interface";
 import { convert } from "../../utils/convert";
 import "./Bitcoin.scss";
@@ -52,7 +52,7 @@ const Bitcoin = ({ bitcoin }: { bitcoin: BitcoinInterface }) => {
             </tr>
           </tbody>
         </table>
-        <HistoryChart coin="bitcoin" />
+        <HistoryChart coin={bitcoin.name} />
       </div>
     </div>
   );

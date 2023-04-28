@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import SelectButton from "../SelectButton/SelectButton";
+import SelectButton from "./Components/SelectButton/SelectButton";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,9 +11,9 @@ import {
   Filler,
   Legend,
 } from "chart.js";
-import { HistoricalChart } from "../../../../apis/coinGecko";
+import { HistoricalChart } from "../../apis/coinGecko";
 import { Line } from "react-chartjs-2";
-import { chartDays } from "../../../../static/chartDays";
+import { chartDays } from "../../static/chartDays";
 import "./HistoryChart.scss";
 ChartJS.register(
   CategoryScale,
@@ -27,9 +27,28 @@ ChartJS.register(
 );
 
 const HistoryChart = ({ coin }: { coin: string }) => {
-  const [bitcoinData, setbitcoinData] = useState<number[][]>([]);
+  const [coinData, setCoinData] = useState<number[][]>([]);
   const [days, setDays] = useState(1);
   const [flag, setflag] = useState(false);
+
+  const [screenSize, setScreenSize] = useState(getCurrentScreenWidth());
+  var showTicks = screenSize < 400 ? { display: false } : { color: "#fff" };
+
+  function getCurrentScreenWidth() {
+    return window.innerWidth;
+  }
+
+  useEffect(() => {
+    const updateDimension = () => {
+      setScreenSize(getCurrentScreenWidth());
+    };
+    window.addEventListener("resize", updateDimension);
+
+    return () => {
+      window.removeEventListener("resize", updateDimension);
+    };
+  }, [screenSize]);
+
   useEffect(() => {
     fetchHistoricData();
   }, [days]);
@@ -37,14 +56,14 @@ const HistoryChart = ({ coin }: { coin: string }) => {
   async function fetchHistoricData() {
     const response = await HistoricalChart(coin, days);
     setflag(true);
-    setbitcoinData(response.prices);
+    setCoinData(response.prices);
   }
 
-  if (!bitcoinData || flag === false) {
+  if (!coinData || flag === false) {
     return <div>Chargement en cours</div>;
   } else {
   }
-  const coinChartData = bitcoinData.map((value) => ({
+  const coinChartData = coinData.map((value) => ({
     x: value[0],
     y: value[1].toFixed(2),
   }));
@@ -57,12 +76,12 @@ const HistoryChart = ({ coin }: { coin: string }) => {
       },
     },
     scales: {
-      x: { ticks: { color: "#fff" } },
+      x: { ticks: showTicks },
       y: { ticks: { color: "#fff" } },
     },
   };
   const data = {
-    labels: bitcoinData.map((coin) => {
+    labels: coinData.map((coin) => {
       let date = new Date(coin[0]);
       let time = `${date.getHours()}:${date.getMinutes()}`;
       return days === 1 ? time : date.toLocaleDateString();
@@ -70,7 +89,7 @@ const HistoryChart = ({ coin }: { coin: string }) => {
     datasets: [
       {
         fill: true,
-        label: "bitcoin",
+        label: coin,
         data: coinChartData.map((val) => val.y),
         borderColor: "gold",
         backgroundColor: "rgba(53, 162, 235, 0.5)",

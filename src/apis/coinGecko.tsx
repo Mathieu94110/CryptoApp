@@ -16,6 +16,17 @@ export const searchCrypto = (inputValue: string) =>
 
 export const SingleCoin = (id: string) => `coins/${id}`;
 
+export async function CoinDetails(id: string): Promise<any> {
+  try {
+    const { data } = await baseURL.get(
+      `coins/${id}?localization=true&tickers=false&market_data=false&community_data=false&sparkline=false`
+    );
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
+
 export async function CoinList(): Promise<any> {
   try {
     const { data } = await baseURL.get(
@@ -33,7 +44,7 @@ export async function HistoricalChart(
 ): Promise<HistoricalChartResponse> {
   try {
     const { data } = await baseURL.get(
-      `coins/${id}/market_chart?vs_currency=eur&days=${days}`
+      `coins/${id.toLowerCase()}/market_chart?vs_currency=eur&days=${days}`
     );
     return data;
   } catch (error) {

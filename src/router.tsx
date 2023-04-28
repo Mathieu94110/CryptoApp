@@ -5,7 +5,9 @@ import ErrorPage from "./pages/Error/Error";
 import homeLoader from "./loaders/homeLoader";
 
 const Homepage = lazy(() => import("./pages/Home/Home"));
-const DetailsPage = lazy(() => import("./pages/CoinDetails/CoinDetails"));
+const CoinDetailsPage = lazy(
+  () => import("./pages/CryptoDetails/CryptoDetails")
+);
 const FavoritesPage = lazy(() => import("./pages/Favorites/Favorites"));
 const SearchCryptoPage = lazy(
   () => import("./pages/SearchCrypto/SearchCrypto")
@@ -31,8 +33,8 @@ export const router = createBrowserRouter([
         element: <SearchCryptoPage />,
       },
       {
-        path: "Details",
-        element: <DetailsPage />,
+        path: "Details/:id",
+        element: <CoinDetailsPage />,
       },
       {
         path: "Favoris",

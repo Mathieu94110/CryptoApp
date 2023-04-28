@@ -76,7 +76,7 @@ export default function SearchCrypto() {
                       : "";
                   return (
                     <tr
-                      onClick={() => navigate(`/coins/${row.id}`)}
+                      onClick={() => navigate(`/Details/${row.id}`)}
                       className="search-crypto__row"
                       key={index}
                     >
