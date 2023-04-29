@@ -1,10 +1,11 @@
 .crypto-details {
   width: 100%;
-  margin: 120px auto 40px;
-  padding: 10px;
+  margin: 120px 0px 0px;
+  padding-top: 10px;
   &__back-button {
     width: 100%;
     height: 40px;
+
     &-button {
       padding: 6px 7px;
       cursor: pointer;
@@ -35,8 +36,8 @@
 @media screen and (min-width: 926px) {
   .crypto-details {
     width: 100%;
-    margin: 120px auto 40px;
-    padding: 20px;
+    padding: 20px 30px 0 30px;
+    margin: 120px 0px 0px;
     &__back-button {
       &-button {
         padding: 12px 15px;
@@ -60,7 +61,6 @@
     &__back-button {
       position: fixed;
       top: 140px;
-      left: 114px;
     }
   }
 }

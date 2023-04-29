@@ -173,6 +173,9 @@ table {
 .justify-content-center {
   justify-content: center;
 }
+.justify-space-between {
+  justify-content: space-between;
+}
 
 .align-items-center {
   align-items: center;
@@ -193,6 +196,25 @@ table {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.p-20 {
+  padding: 20px;
+}
+.py-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.py-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.px-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.px-20 {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .mb-10 {
   margin-bottom: 10px;

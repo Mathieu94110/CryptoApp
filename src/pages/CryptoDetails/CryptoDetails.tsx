@@ -2,8 +2,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import HistoryChart from "../../components/HistoryChart/HistoryChart";
 import CoinDetail from "./Components/CoinDetail";
 import { CoinParams } from "../../types/coins.interface";
-import "./CryptoDetails.scss";
 import { FaArrowLeft } from "react-icons/fa";
+import "./CryptoDetails.scss";
+
 const CryptoDetail = () => {
   const { id } = useParams<CoinParams>();
   const navigate = useNavigate();

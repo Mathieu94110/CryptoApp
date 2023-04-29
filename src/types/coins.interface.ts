@@ -203,6 +203,8 @@ export interface CoinsFetchData {
   };
   public_interest_stats: { alexa_rank: number; bing_matches: null };
   last_updated: string;
+  watchlist_portfolio_users: number;
+  asset_platform_id: string;
   tickers: CoinsFetchDataTicker[];
 }
 

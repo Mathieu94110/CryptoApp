@@ -6,7 +6,7 @@ import "./App.scss";
 function App() {
   return (
     <div className="app-container">
-      <div className="flex-fill bg-primary">
+      <div className="flex-fill bg-primary py-10 px-20">
         <Suspense>
           <NavBar />
           <Outlet />
