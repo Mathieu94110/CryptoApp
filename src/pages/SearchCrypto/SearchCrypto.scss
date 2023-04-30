@@ -15,31 +15,6 @@
     border-spacing: 0 0.1em;
     font-size: 0.6rem;
   }
-  &__row {
-    background-color: #16171a;
-    padding: 10px;
-    cursor: pointer;
-    &:hover {
-      background-color: #131111;
-    }
-  }
-  &__image {
-    height: 30px;
-    margin: 5px 0;
-  }
-  &__symbol {
-    font-size: 16px;
-  }
-  &__td {
-    padding: 8px;
-    color: #fff;
-    vertical-align: middle;
-  }
-  &__td-24h-changes {
-    font-weight: 500;
-    padding: 8px;
-    vertical-align: middle;
-  }
 }
 
 @media screen and (min-width: 470px) and (max-width: 925px) {
@@ -69,30 +44,6 @@
       height: 100%;
       border-spacing: 0 0.5em;
       font-size: 1rem;
-    }
-    &__row {
-      background-color: #16171a;
-      padding: 10px;
-      cursor: pointer;
-      &:hover {
-        background-color: #131111;
-      }
-    }
-    &__image {
-      height: 50px;
-    }
-    &__symbol {
-      font-size: 22px;
-    }
-    &__td {
-      padding: 8px;
-      color: #fff;
-      vertical-align: middle;
-    }
-    &__td-24h-changes {
-      font-weight: 500;
-      padding: 8px;
-      vertical-align: middle;
     }
   }
 }

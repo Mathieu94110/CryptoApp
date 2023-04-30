@@ -2,16 +2,7 @@ import { useState, useEffect } from "react";
 import { CoinDetails } from "../../../apis/coinGecko";
 import { CoinsFetchData } from "../../../types/coins.interface";
 import "./CoinDetail.scss";
-import {
-  FaChartLine,
-  FaChartPie,
-  FaCheck,
-  FaCloud,
-  FaCoins,
-  FaSmile,
-  FaUser,
-  FaUsers,
-} from "react-icons/fa";
+import { FaCloud, FaCoins, FaSmile, FaUser, FaUsers } from "react-icons/fa";
 const CoinDetail = ({ coin }: { coin: string }) => {
   const [coinDetails, setCoinDetails] = useState<CoinsFetchData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);

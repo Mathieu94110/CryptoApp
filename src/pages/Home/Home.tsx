@@ -1,4 +1,4 @@
-import TopSevenTrending from "../../components/TopSevenTrending/TopSevenTrending";
+import TopSevenTrending from "../../components/TopHeightTrending/TopHeightTrending";
 import Bitcoin from "../../components/Bitcoin/Bitcoin";
 import { Await, Outlet, useLoaderData } from "react-router-dom";
 import { Suspense } from "react";

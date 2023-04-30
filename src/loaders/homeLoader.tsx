@@ -18,6 +18,7 @@ async function getBitcoinData(): Promise<CoinMarket> {
 async function getSevenTrends(): Promise<IItems[]> {
   try {
     const sevenTrends = await baseURL.get(sevenTrendUrl);
+    console.log(sevenTrends);
     return sevenTrends.data.coins;
   } catch (error) {
     throw error;

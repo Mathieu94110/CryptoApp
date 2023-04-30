@@ -1,5 +1,5 @@
 import { IItems } from "../../types/coins.interface";
-import "./TopSevenTrending.scss";
+import "./TopHeightTrending.scss";
 
 export default function TopSevenTrending({
   sevenTrends,
@@ -7,9 +7,12 @@ export default function TopSevenTrending({
   sevenTrends: IItems[];
 }) {
   return (
-    <div className="top-seven-trending">
+    <div className="top-height-trending">
       <table>
         <thead>
+          <tr>
+            <th colSpan={5}>Top 8 des tendances crypto</th>
+          </tr>
           <tr>
             <th>Position</th>
             <th>Logo</th>
@@ -21,19 +24,19 @@ export default function TopSevenTrending({
         {sevenTrends.map((trend: IItems, index) => {
           return (
             <tbody key={index}>
-              <tr className="seven-trend-tr">
-                <td className="top-seven-trending__td"> {(index += 1)}</td>
-                <td className="top-seven-trending__td">
+              <tr className="height-trend-tr">
+                <td className="top-height-trending__td"> {(index += 1)}</td>
+                <td className="top-height-trending__td">
                   {" "}
                   <img
                     src={trend.item.small}
                     alt={trend.item.name}
-                    className="top-seven-trending__grid-item-image"
+                    className="top-height-trending__grid-item-image"
                   />
                 </td>
-                <td className="top-seven-trending__td"> {trend.item.name}</td>
-                <td className="top-seven-trending__td">{trend.item.symbol}</td>
-                <td className="top-seven-trending__td">
+                <td className="top-height-trending__td"> {trend.item.name}</td>
+                <td className="top-height-trending__td">{trend.item.symbol}</td>
+                <td className="top-height-trending__td">
                   {" "}
                   {trend.item.market_cap_rank}
                 </td>

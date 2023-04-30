@@ -1,0 +1,70 @@
+.search-crypto-item {
+  &__row {
+    background-color: #16171a;
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: #131111;
+    }
+  }
+  &__image {
+    height: 20px;
+    margin: 5px 0;
+  }
+  &__symbol {
+    font-size: 12px;
+  }
+  &__td {
+    padding: 2px;
+    color: #fff;
+    vertical-align: middle;
+  }
+  &__td-24h-changes {
+    font-weight: 500;
+    padding: 2px;
+    vertical-align: middle;
+  }
+}
+
+@media screen and (min-width: 470px) and (max-width: 925px) {
+  .search-crypto-item {
+    &__image {
+      height: 30px;
+      margin: 5px 0;
+    }
+    &__symbol {
+      font-size: 16px;
+    }
+    &__td {
+      padding: 8px;
+    }
+    &__td-24h-changes {
+      padding: 8px;
+    }
+  }
+}
+
+@media screen and (min-width: 926px) {
+  .search-crypto-item {
+    &__row {
+      background-color: #16171a;
+      padding: 10px;
+      cursor: pointer;
+      &:hover {
+        background-color: #131111;
+      }
+    }
+    &__image {
+      height: 50px;
+    }
+    &__symbol {
+      font-size: 22px;
+    }
+    &__td {
+      padding: 8px;
+    }
+    &__td-24h-changes {
+      padding: 8px;
+    }
+  }
+}

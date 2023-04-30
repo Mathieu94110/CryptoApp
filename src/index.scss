@@ -138,6 +138,9 @@ q:after {
     rgba(32, 32, 255, 1) 94%
   );
 }
+.color-white {
+  color: #fff;
+}
 .color-gold {
   color: gold;
 }
@@ -190,12 +193,17 @@ table {
   width: 100%;
   height: 100%;
 }
-
+.text-center {
+  text-align: center;
+}
 .content-center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.p-10 {
+  padding: 10px;
 }
 .p-20 {
   padding: 20px;
@@ -240,4 +248,7 @@ table {
 .py-10 {
   padding-bottom: 10px;
   padding-top: 10px;
+}
+.z-index-99 {
+  z-index: 99;
 }
