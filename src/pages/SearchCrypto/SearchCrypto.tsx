@@ -14,6 +14,7 @@ export default function SearchCrypto() {
   const fetchCoins = async () => {
     setLoading(true);
     const response = await CoinList();
+    console.log(response);
     setCoins(response);
     setLoading(false);
   };

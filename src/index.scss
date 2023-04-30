@@ -202,6 +202,9 @@ table {
   justify-content: center;
   align-items: center;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .p-10 {
   padding: 10px;
 }
@@ -251,4 +254,8 @@ table {
 }
 .z-index-99 {
   z-index: 99;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }

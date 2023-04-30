@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDebounce } from "../../../hooks/useDebounce";
-import "./SearchInput.scss";
 import { FaSearch } from "react-icons/fa";
+import "./SearchInput.scss";
 
 export const SearchInput = ({
   setFilter,
@@ -12,7 +12,7 @@ export const SearchInput = ({
   const [debouncedOutput, setDebouncedOutput] = useState<string | null>(null);
 
   const onChangeDebouncedEvent = async (text: string): Promise<void> => {
-    setDebouncedOutput(text.trim());
+    setDebouncedOutput(text.trim().toLowerCase());
   };
   // Here onChangeDebounced is used to authorize api call after 800ms delay between each new entries
   const onChangeDebounced = useDebounce(onChangeDebouncedEvent);

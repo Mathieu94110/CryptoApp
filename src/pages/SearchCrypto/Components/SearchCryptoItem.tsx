@@ -20,7 +20,6 @@ function SearchCryptoItem({ row, index }: { row: CoinMarket; index: number }) {
   ) => {
     e.stopPropagation();
     dispatch(switchFavorite(row));
-    console.log(row.name);
   };
 
   useEffect(() => {

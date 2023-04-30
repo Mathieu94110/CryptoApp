@@ -1,84 +1,92 @@
 .favorites {
-  text-align: center;
-  width: 100%;
-  height: 100%;
   margin-top: 120px;
-  padding: 20px 5px;
-
-  &__recipe {
+  &__title {
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  &__container {
+    text-align: center;
+    min-width: 260px;
+    padding: 20px 0px;
+    margin: 10px;
+  }
+  &__content {
     position: relative;
+    background-color: #fff;
     border-radius: 20px;
     cursor: pointer;
     height: fit-content;
-    > i {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 25px;
-      color: #fff;
-      cursor: pointer;
-      transition: color 0.2s;
-      z-index: 1;
-      &:hover {
-        color: red;
-      }
-    }
     &:hover {
       img {
         transform: scale(1.1);
       }
     }
-    i {
-      font-size: 20px;
+  }
+  &__icon {
+    font-size: 25px;
+    color: #222;
+    cursor: pointer;
+    transition: color 0.2s;
+    z-index: 1;
+    &:first-child {
       &:hover {
         color: blue;
       }
     }
+    &:hover {
+      color: red;
+    }
   }
-  &__imageContainer {
+  &__image-container {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     overflow: hidden;
-    text-align: center;
     img {
       transition: 1s transform;
-      width: 100%;
     }
   }
-  &__recipeContent {
-    height: 80px;
+  &__infos {
+    padding: 8px;
     transition: 0.2s color;
-    border: 1px solid #222;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
-    padding-bottom: 10px;
+    align-items: start;
+    padding-left: 20px;
+    &-item {
+      padding: 4px 0;
+      font-weight: 600;
+      & > :nth-child(odd) {
+        color: blue;
+      }
+    }
+  }
+  &__buttons {
+    padding: 16px 8px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
   }
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (min-width: 769px) {
   .favorites {
-    &__recipe {
-      height: auto;
+    &__container {
+      margin: 20px;
+      width: 300px;
+      padding: 20px 5px;
     }
-    &__recipeContent {
-      height: 60px;
+    &__infos {
+      align-items: start;
+      padding: 10px 0 10px 20%;
     }
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 2000px) {
-  .favorites {
-    &__imageContainer {
-      height: 120px;
-      border: 1px solid #222;
-      text-align: center;
-      img {
-        width: 150px;
-        height: auto;
-      }
+    &__title {
+      font-size: 34px;
     }
   }
 }
