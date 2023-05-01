@@ -266,3 +266,13 @@ export interface IItems {
 export type CoinParams = {
   id: string;
 };
+
+export interface SearchCoin {
+  api_symbol: string;
+  id: string;
+  large: string;
+  market_cap_rank: number;
+  name: string;
+  symbol: string;
+  thumb: string;
+}

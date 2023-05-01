@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import type { RootState } from "../../../store/store";
-import { switchFavorite } from "../../../store/reducers/favoritesSlice";
-import { CoinMarket } from "../../../types/coins.interface";
+import type { RootState } from "../../../../store/store";
+import { switchFavorite } from "../../../../store/reducers/favoritesSlice";
+import { CoinMarket } from "../../../../types/coins.interface";
 import { FaStar } from "react-icons/fa";
 import "./SearchCryptoItem.scss";
 
@@ -70,7 +70,7 @@ function SearchCryptoItem({ row, index }: { row: CoinMarket; index: number }) {
           className="search-crypto-item__td-24h-changes"
         >
           {profit && "+"}
-          {row.price_change_percentage_24h.toFixed(2)}%
+          {row?.price_change_percentage_24h?.toFixed(2)}%
         </td>
         <td className="search-crypto-item__td">
           {numberWithCommas(row?.market_cap?.toString().slice(0, -6))}

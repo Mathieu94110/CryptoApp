@@ -1,29 +1,5 @@
-import { baseURL, sevenTrendUrl } from "../apis/coinGecko";
 import { CoinMarket, IItems } from "../types/coins.interface";
-
-async function getBitcoinData(): Promise<CoinMarket> {
-  try {
-    const bitcoin = await baseURL.get("/coins/markets", {
-      params: {
-        vs_currency: "eur",
-        id: "bitcoin",
-      },
-    });
-    return bitcoin.data[0];
-  } catch (error) {
-    throw error;
-  }
-}
-
-async function getSevenTrends(): Promise<IItems[]> {
-  try {
-    const sevenTrends = await baseURL.get(sevenTrendUrl);
-    console.log(sevenTrends);
-    return sevenTrends.data.coins;
-  } catch (error) {
-    throw error;
-  }
-}
+import { getBitcoinData, getSevenTrends } from "../apis/coinGecko";
 
 async function homeLoader() {
   try {

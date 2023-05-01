@@ -1,34 +1,40 @@
 import { useEffect, useState } from "react";
 import { CoinList } from "../../apis/coinGecko";
-import { SearchInput } from "./Components/SearchInput";
+import { Search } from "./Components/Search/Search";
 import { CoinMarket } from "../../types/coins.interface";
-import SearchCryptoItem from "./Components/SearchCryptoItem";
+import SearchCryptoItem from "./Components/SearchCryptoItem/SearchCryptoItem";
+import Loader from "../../components/Loader/Loader";
 import "./SearchCrypto.scss";
 
 export default function SearchCrypto() {
   const [coins, setCoins] = useState<CoinMarket[]>([]);
   const [loading, setLoading] = useState(false);
-  const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
 
-  const fetchCoins = async () => {
-    setLoading(true);
-    const response = await CoinList();
-    console.log(response);
-    setCoins(response);
-    setLoading(false);
-  };
+  useEffect(() => {
+    setTimeout(async () => {
+      const response = await CoinList(page);
+      setCoins((prev) => {
+        return [...prev, ...response];
+      });
+      setLoading(false);
+    }, 1500);
+  }, [page]);
 
   useEffect(() => {
-    fetchCoins();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleSearch = () => {
-    return coins.filter(
-      (coin: CoinMarket) =>
-        coin?.name?.toLowerCase().includes(search) ||
-        coin?.symbol?.toLowerCase().includes(search)
-    );
+  const handleScroll = async () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop + 1 >=
+      document.documentElement.scrollHeight
+    ) {
+      setLoading(true);
+      setPage((prev) => prev + 1);
+    }
   };
 
   return (
@@ -36,11 +42,11 @@ export default function SearchCrypto() {
       <h1 className="search-crypto__title">
         Valeur des cryptommonaies par capitalisation boursière
       </h1>
-      =
-      <SearchInput setFilter={(value) => setSearch(value)} />
+
+      <Search />
       <div>
         {loading ? (
-          <p>Chargement en cours</p>
+          <Loader />
         ) : (
           <table
             aria-label="tableau des cryptomonnaies"
@@ -59,11 +65,10 @@ export default function SearchCrypto() {
             </thead>
 
             <tbody>
-              {handleSearch()
-                .slice((page - 1) * 10, (page - 1) * 10 + 10)
-                .map((row: CoinMarket, index: number) => {
-                  return <SearchCryptoItem row={row} index={index} />;
-                })}
+              {coins.map((coin: CoinMarket, index: number) => (
+                <SearchCryptoItem row={coin} index={index} />
+              ))}
+              ;
             </tbody>
           </table>
         )}

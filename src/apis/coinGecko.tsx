@@ -1,20 +1,42 @@
 import axios from "axios";
 import { HistoricalChartResponse } from "../types/coins.interface";
-import { CoinMarket } from "../types/coins.interface";
+import { CoinMarket, IItems } from "../types/coins.interface";
 
 export const baseURL = axios.create({
   baseURL: "https://api.coingecko.com/api/v3/",
 });
 
-export const sevenTrendUrl = "search/trending";
+export async function getBitcoinData(): Promise<CoinMarket> {
+  try {
+    const bitcoin = await baseURL.get("/coins/markets", {
+      params: {
+        vs_currency: "eur",
+        id: "bitcoin",
+      },
+    });
+    return bitcoin.data[0];
+  } catch (error) {
+    throw error;
+  }
+}
 
-export const loadFirstHundred =
-  "coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false";
+export async function getSevenTrends(): Promise<IItems[]> {
+  try {
+    const sevenTrends = await baseURL.get("search/trending");
+    return sevenTrends.data.coins;
+  } catch (error) {
+    throw error;
+  }
+}
 
-export const searchCrypto = (inputValue: string) =>
-  `coins/markets?vs_currency=eur&ids=${inputValue}&order=market_cap_desc&per_page=100&page=1&sparkline=false`;
-
-export const SingleCoin = (id: string) => `coins/${id}`;
+export async function SearchCoins(query: string): Promise<any> {
+  try {
+    const { data } = await baseURL.get(`search?query=${query}`);
+    return data.coins;
+  } catch (error) {
+    throw error;
+  }
+}
 
 export async function CoinDetails(id: string): Promise<any> {
   try {
@@ -27,10 +49,10 @@ export async function CoinDetails(id: string): Promise<any> {
   }
 }
 
-export async function CoinList(): Promise<any> {
+export async function CoinList(page: number): Promise<any> {
   try {
     const { data } = await baseURL.get(
-      `coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false`
+      `coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=${page}&sparkline=false`
     );
     return data;
   } catch (error) {
