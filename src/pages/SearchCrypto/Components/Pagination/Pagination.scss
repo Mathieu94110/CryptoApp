@@ -1,0 +1,50 @@
+.pagination {
+  &__list {
+    display: flex;
+    width: 260px;
+    justify-content: space-between;
+  }
+  &__buttons {
+    padding: 6px;
+    font-weight: 600;
+    &:hover {
+      color: gold;
+    }
+    background-color: #222;
+    color: #fff;
+    cursor: pointer;
+    &--active {
+      background-color: #fff;
+      padding: 6px;
+      color: #222;
+      border: 1px solid #222;
+      font-weight: 600;
+    }
+  }
+  li {
+    display: flex;
+    align-items: center;
+    &:hover {
+      color: gold;
+    }
+  }
+}
+
+@media screen and (min-width: 420px) {
+  .pagination {
+    &__list {
+      display: flex;
+      width: 400px;
+      justify-content: space-between;
+    }
+    &__buttons {
+      padding: 10px;
+      &--active {
+        background-color: #fff;
+        padding: 10px;
+        color: #222;
+        border: 1px solid #222;
+      }
+    }
+  }
+}

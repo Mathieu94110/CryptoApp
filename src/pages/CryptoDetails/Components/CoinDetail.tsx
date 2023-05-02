@@ -3,6 +3,7 @@ import { CoinDetails } from "../../../apis/coinGecko";
 import { CoinsFetchData } from "../../../types/coins.interface";
 import "./CoinDetail.scss";
 import { FaCloud, FaCoins, FaSmile, FaUser, FaUsers } from "react-icons/fa";
+import Loader from "../../../components/Loader/Loader";
 const CoinDetail = ({ coin }: { coin: string }) => {
   const [coinDetails, setCoinDetails] = useState<CoinsFetchData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -19,7 +20,7 @@ const CoinDetail = ({ coin }: { coin: string }) => {
   }, []);
 
   if (!coinDetails || isLoading) {
-    return <div className="wrapper-container mt-8">Chargement en cours</div>;
+    return <Loader />;
   }
 
   return (

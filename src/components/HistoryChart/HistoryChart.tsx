@@ -15,6 +15,8 @@ import { HistoricalChart } from "../../apis/coinGecko";
 import { Line } from "react-chartjs-2";
 import { chartDays } from "../../static/chartDays";
 import "./HistoryChart.scss";
+import Loader from "../../components/Loader/Loader";
+
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -60,7 +62,7 @@ const HistoryChart = ({ coin }: { coin: string }) => {
   }
 
   if (!coinData || flag === false) {
-    return <div>Chargement en cours</div>;
+    return <Loader />;
   } else {
   }
   const coinChartData = coinData.map((value) => ({

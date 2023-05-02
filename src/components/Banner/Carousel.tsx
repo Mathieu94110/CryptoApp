@@ -28,7 +28,6 @@ const Carousel = () => {
             src={coin?.image}
             alt={coin.name}
             className="carousel-item__image"
-            style={{ marginBottom: 10 }}
           />
           <span className="carousel-item__texts">
             {coin?.symbol}

@@ -11,24 +11,26 @@ const CryptoDetail = () => {
 
   return (
     <div className="crypto-details">
-      <div className="crypto-details__back-button">
-        <button
-          className="crypto-details__back-button-button"
-          onClick={() => {
-            navigate(-1);
-          }}
-        >
-          <FaArrowLeft />
-        </button>
+      <div className="crypto-details__container">
+        <div className="crypto-details__back-button">
+          <button
+            className="crypto-details__back-button-button"
+            onClick={() => {
+              navigate(-1);
+            }}
+          >
+            <FaArrowLeft />
+          </button>
+        </div>
+        {id && (
+          <>
+            <div className="crypto-details__chart">
+              <HistoryChart coin={id} />
+            </div>
+            <CoinDetail coin={id} />
+          </>
+        )}
       </div>
-      {id && (
-        <>
-          <div className="crypto-details__chart">
-            <HistoryChart coin={id} />
-          </div>
-          <CoinDetail coin={id} />
-        </>
-      )}
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FaBitcoin, FaBars, FaTimes } from "react-icons/fa";
-import "./NavBar.scss";
 import { NavBarData } from "./NavBarData";
 import { useLocation } from "react-router-dom";
+import "./NavBar.scss";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);

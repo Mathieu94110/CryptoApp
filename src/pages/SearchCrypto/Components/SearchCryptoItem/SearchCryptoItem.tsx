@@ -39,50 +39,48 @@ function SearchCryptoItem({ row, index }: { row: CoinMarket; index: number }) {
       ? row?.price_change_percentage_24h
       : "";
   return (
-    <>
-      <tr
-        key={index}
-        onClick={() => navigate(`/Details/${row.id}`)}
-        className="search-crypto-item__row"
-      >
-        <td className="search-crypto-item__td">{(index += 1)}</td>
-        <th className="search-crypto-item__td">
-          <img
-            src={row?.image}
-            alt={row.name}
-            className="search-crypto-item__image"
-          />
-          <div className="d-flex flex-column">
-            <span className="search-crypto-item__symbol">
-              {row?.symbol?.toUpperCase()}
-            </span>
-            <span style={{ color: "darkgrey" }}>{row.name}</span>
-          </div>
-        </th>
-        <td className="search-crypto-item__td">
-          {numberWithCommas(row?.current_price?.toFixed(2))}
-          {"€"}
-        </td>
-        <td
-          style={{
-            color: profit && Number(profit) > 0 ? "rgb(14, 203, 129)" : "red",
-          }}
-          className="search-crypto-item__td-24h-changes"
-        >
-          {profit && "+"}
-          {row?.price_change_percentage_24h?.toFixed(2)}%
-        </td>
-        <td className="search-crypto-item__td">
-          {numberWithCommas(row?.market_cap?.toString().slice(0, -6))}
-          {"€"} M
-        </td>
-        <td className="search-crypto-item__td z-index-99">
-          <span className="p-10" onClick={(e) => handleClick(e, row)}>
-            <FaStar className={`${favorited ? "color-gold" : ""}`} />
+    <tr
+      key={index}
+      onClick={() => navigate(`/Details/${row.id}`)}
+      className="search-crypto-item__row"
+    >
+      <td className="search-crypto-item__td">{(index += 1)}</td>
+      <th className="search-crypto-item__td">
+        <img
+          src={row?.image}
+          alt={row.name}
+          className="search-crypto-item__image"
+        />
+        <div className="d-flex flex-column">
+          <span className="search-crypto-item__symbol">
+            {row?.symbol?.toUpperCase()}
           </span>
-        </td>
-      </tr>
-    </>
+          <span style={{ color: "darkgrey" }}>{row.name}</span>
+        </div>
+      </th>
+      <td className="search-crypto-item__td">
+        {numberWithCommas(row?.current_price?.toFixed(2))}
+        {"€"}
+      </td>
+      <td
+        style={{
+          color: profit && Number(profit) > 0 ? "rgb(14, 203, 129)" : "red",
+        }}
+        className="search-crypto-item__td-24h-changes"
+      >
+        {profit && "+"}
+        {row?.price_change_percentage_24h?.toFixed(2)}%
+      </td>
+      <td className="search-crypto-item__td">
+        {numberWithCommas(row?.market_cap?.toString().slice(0, -6))}
+        {"€"} M
+      </td>
+      <td className="search-crypto-item__td z-index-99">
+        <span className="p-10" onClick={(e) => handleClick(e, row)}>
+          <FaStar className={`${favorited ? "color-gold" : ""}`} />
+        </span>
+      </td>
+    </tr>
   );
 }
 
