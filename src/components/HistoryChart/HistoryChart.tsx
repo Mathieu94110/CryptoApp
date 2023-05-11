@@ -16,6 +16,7 @@ import { Line } from "react-chartjs-2";
 import { chartDays } from "../../static/chartDays";
 import "./HistoryChart.scss";
 import Loader from "../../components/Loader/Loader";
+import { useResize } from "../../hooks/useResize";
 
 ChartJS.register(
   CategoryScale,
@@ -32,28 +33,13 @@ const HistoryChart = ({ coin }: { coin: string }) => {
   const [coinData, setCoinData] = useState<number[][]>([]);
   const [days, setDays] = useState(1);
   const [flag, setflag] = useState(false);
-
-  const [screenSize, setScreenSize] = useState(getCurrentScreenWidth());
-  var showTicks = screenSize < 400 ? { display: false } : { color: "#fff" };
-
-  function getCurrentScreenWidth() {
-    return window.innerWidth;
-  }
-
-  useEffect(() => {
-    const updateDimension = () => {
-      setScreenSize(getCurrentScreenWidth());
-    };
-    window.addEventListener("resize", updateDimension);
-
-    return () => {
-      window.removeEventListener("resize", updateDimension);
-    };
-  }, [screenSize]);
+  const { screenSize } = useResize();
 
   useEffect(() => {
     fetchHistoricData();
   }, [days]);
+
+  let showTicks = screenSize < 400 ? { display: false } : { color: "#fff" };
 
   async function fetchHistoricData() {
     const response = await HistoricalChart(coin, days);
@@ -82,6 +68,7 @@ const HistoryChart = ({ coin }: { coin: string }) => {
       y: { ticks: { color: "#fff" } },
     },
   };
+
   const data = {
     labels: coinData.map((coin) => {
       let date = new Date(coin[0]);

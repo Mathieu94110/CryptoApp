@@ -12,8 +12,6 @@ const Bitcoin = ({ bitcoin }: { bitcoin: BitcoinInterface }) => {
           <img
             src={bitcoin.image}
             className="bitcoin__image"
-            width="46px"
-            height="46px"
             alt={bitcoin.name}
           />
         </div>

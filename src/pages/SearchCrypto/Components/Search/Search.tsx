@@ -6,8 +6,8 @@ import { RootState } from "../../../../store/store";
 import { SearchCoin } from "../../../../types/coins.interface";
 import { getSearchResult } from "../../../../store/reducers/searchSlice";
 import { SearchCoins } from "../../../../apis/coinGecko";
-import "./Search.scss";
 import { useNavigate } from "react-router-dom";
+import "./Search.scss";
 
 const SearchInput = ({ handleSearch }: { handleSearch: any }) => {
   const [searchText, setSearchText] = useState<string>("");

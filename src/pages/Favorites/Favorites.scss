@@ -6,86 +6,25 @@
     font-size: 20px;
     font-weight: 600;
   }
-  &__container {
-    text-align: center;
-    min-width: 260px;
-    padding: 20px 0px;
-    margin: 10px;
-  }
-  &__content {
-    position: relative;
-    background-color: #fff;
-    border-radius: 20px;
-    cursor: pointer;
-    height: fit-content;
-    &:hover {
-      img {
-        transform: scale(1.1);
-      }
-    }
-  }
-  &__icon {
-    font-size: 25px;
-    color: #222;
-    cursor: pointer;
-    transition: color 0.2s;
-    z-index: 1;
-    &:first-child {
-      &:hover {
-        color: blue;
-      }
-    }
-    &:hover {
-      color: red;
-    }
-  }
-  &__image-container {
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    overflow: hidden;
-    img {
-      transition: 1s transform;
-    }
-  }
-  &__infos {
-    padding: 8px;
-    transition: 0.2s color;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
+  &__empty {
+    height: calc(100vh - 200px);
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    padding-left: 20px;
-    &-item {
-      padding: 4px 0;
-      font-weight: 600;
-      & > :nth-child(odd) {
-        color: blue;
-      }
-    }
-  }
-  &__buttons {
-    padding: 16px 8px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
   }
 }
 
 @media screen and (min-width: 769px) {
   .favorites {
-    &__container {
-      margin: 20px;
-      width: 300px;
-      padding: 20px 5px;
-    }
-    &__infos {
-      align-items: start;
-      padding: 10px 0 10px 20%;
-    }
     &__title {
+      font-size: 34px;
+    }
+    &__empty {
       font-size: 34px;
     }
   }

@@ -40,7 +40,7 @@ export const favoritesSlice = createSlice({
         );
       }
     },
-    clearFavorites: (state, action) => {
+    clearFavorites: (state) => {
       state.favoritesItems = [];
       localStorage.setItem(
         "favoriteItems",

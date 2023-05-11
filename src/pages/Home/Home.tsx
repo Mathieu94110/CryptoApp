@@ -1,10 +1,10 @@
+import { Suspense } from "react";
+import { Await, Outlet, useLoaderData } from "react-router-dom";
 import TopSevenTrending from "../../components/TopHeightTrending/TopHeightTrending";
 import Bitcoin from "../../components/Bitcoin/Bitcoin";
-import { Await, Outlet, useLoaderData } from "react-router-dom";
-import { Suspense } from "react";
-import "./Home.scss";
 import Carousel from "../../components/Banner/Carousel";
 import { HomeLoader } from "../../types/coins.interface";
+import "./Home.scss";
 
 function Home() {
   const { bitcoinData, sevenTrendsData } = useLoaderData() as HomeLoader;

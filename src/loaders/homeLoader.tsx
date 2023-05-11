@@ -1,4 +1,3 @@
-import { CoinMarket, IItems } from "../types/coins.interface";
 import { getBitcoinData, getSevenTrends } from "../apis/coinGecko";
 
 async function homeLoader() {

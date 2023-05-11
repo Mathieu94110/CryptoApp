@@ -1,4 +1,4 @@
-import { FaHome, FaStar, FaTrophy, FaAward, FaSearch } from "react-icons/fa";
+import { FaHome, FaStar, FaTrophy, FaSearch } from "react-icons/fa";
 
 export const NavBarData = [
   { title: "Accueil", url: "/", className: "nav-links", icon: FaHome },

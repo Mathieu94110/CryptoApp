@@ -4,10 +4,10 @@ import { Search } from "./Components/Search/Search";
 import { CoinMarket } from "../../types/coins.interface";
 import SearchCryptoItem from "./Components/SearchCryptoItem/SearchCryptoItem";
 import Loader from "../../components/Loader/Loader";
-import "./SearchCrypto.scss";
 import Pagination from "./Components/Pagination/Pagination";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
+import "./SearchCrypto.scss";
 
 export default function SearchCrypto() {
   const [coins, setCoins] = useState<CoinMarket[]>([]);
@@ -33,39 +33,48 @@ export default function SearchCrypto() {
 
       <Search />
       <div>
-        {loading ? (
-          <Loader />
-        ) : (
-          <div className="search-crypto__results">
-            <div className="search-crypto__table-container">
-              <table
-                aria-label="tableau des cryptomonnaies"
-                className="search-crypto__table"
-              >
-                <thead style={{ backgroundColor: "#EEBC1D" }}>
-                  <tr>
-                    {["Position", "Coin", "Prix", "24h", "Cap.", "Favoris"].map(
-                      (head) => (
+        <div className="search-crypto__results">
+          {loading ? (
+            <div className="search-crypto__loader">
+              <Loader />
+            </div>
+          ) : (
+            <>
+              <div className="search-crypto__table-container">
+                <table
+                  aria-label="tableau des cryptomonnaies"
+                  className="search-crypto__table"
+                >
+                  <thead style={{ backgroundColor: "#EEBC1D" }}>
+                    <tr>
+                      {[
+                        "Position",
+                        "Coin",
+                        "Prix",
+                        "24h",
+                        "Cap.",
+                        "Favoris",
+                      ].map((head) => (
                         <td className="color-black font-700 py-5" key={head}>
                           {head}
                         </td>
-                      )
-                    )}
-                  </tr>
-                </thead>
+                      ))}
+                    </tr>
+                  </thead>
 
-                <tbody>
-                  {coins.map((coin: CoinMarket, index: number) => (
-                    <SearchCryptoItem row={coin} index={index} />
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="search-crypto__pagination">
-              <Pagination />
-            </div>
-          </div>
-        )}
+                  <tbody>
+                    {coins.map((coin: CoinMarket, index: number) => (
+                      <SearchCryptoItem row={coin} index={index} />
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="search-crypto__pagination">
+                <Pagination />
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

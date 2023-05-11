@@ -18,7 +18,7 @@ const Carousel = () => {
     fetchTrendingCoins();
   }, []);
 
-  const items = trending.map((coin: CoinMarket, index: number) => {
+  const items = trending?.map((coin: CoinMarket, index: number) => {
     let profit = coin?.price_change_percentage_24h >= 0;
 
     return (

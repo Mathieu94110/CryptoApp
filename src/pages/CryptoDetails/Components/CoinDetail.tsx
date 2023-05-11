@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { CoinDetails } from "../../../apis/coinGecko";
 import { CoinsFetchData } from "../../../types/coins.interface";
-import "./CoinDetail.scss";
 import { FaCloud, FaCoins, FaSmile, FaUser, FaUsers } from "react-icons/fa";
 import Loader from "../../../components/Loader/Loader";
+import "./CoinDetail.scss";
+
 const CoinDetail = ({ coin }: { coin: string }) => {
   const [coinDetails, setCoinDetails] = useState<CoinsFetchData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);

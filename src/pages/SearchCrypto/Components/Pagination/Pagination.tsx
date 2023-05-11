@@ -1,8 +1,8 @@
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import "./Pagination.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../../store/store";
 import { changePage } from "../../../../store/reducers/searchPagesSlice";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import "./Pagination.scss";
 
 function Pagination() {
   const currentPage = useSelector((state: RootState) => state.searchPage.page);
