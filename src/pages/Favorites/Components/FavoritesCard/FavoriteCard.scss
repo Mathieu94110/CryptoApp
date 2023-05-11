@@ -46,7 +46,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     padding-left: 20px;
     &-item {
       padding: 4px 0;
@@ -71,7 +71,7 @@
     width: 300px;
     padding: 20px 5px;
     &__infos {
-      align-items: start;
+      align-items: flex-start;
       padding: 10px 0 10px 20%;
     }
   }

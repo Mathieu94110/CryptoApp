@@ -11,7 +11,6 @@ function NavBar() {
   function handleClick() {
     setIsOpen(!isOpen);
   }
-
   return (
     <nav className="nav-bar-items">
       <h1 className="logo">

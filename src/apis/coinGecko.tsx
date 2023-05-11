@@ -84,3 +84,13 @@ export async function TrendingCoins(): Promise<CoinMarket[]> {
     throw error;
   }
 }
+export async function getFirst250Coins(period: string): Promise<CoinMarket[]> {
+  try {
+    const { data } = await baseURL.get(
+      "coins/markets?vs_currency=eur&order=market_cap_desc&per_page=250&page=1&sparkline=false&price_change_percentage=${period}&locale=en"
+    );
+    return data;
+  } catch (error) {
+    throw error;
+  }
+}
