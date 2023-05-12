@@ -33,7 +33,7 @@ export interface CoinMarket extends BasicCoin {
 }
 
 export interface MarketData {
-  current_price?: { [key: string]: number };
+  current_price?: number;
   total_value_locked?: null;
   mcap_to_tvl_ratio?: null;
   fdv_to_tvl_ratio?: null;
@@ -50,8 +50,11 @@ export interface MarketData {
   total_volume?: { [key: string]: number };
   high_24h?: { [key: string]: number };
   low_24h?: { [key: string]: number };
+  image: string;
+  id: string;
+  name: string;
+  symbol: string;
   price_change_24h?: number;
-  //   price_change_percentage_24h?: number;
   price_change_percentage_24h: number;
   price_change_percentage_7d?: number;
   price_change_percentage_14d?: number;
@@ -64,7 +67,7 @@ export interface MarketData {
   price_change_24h_in_currency?: { [key: string]: number };
   price_change_percentage_1h_in_currency?: { [key: string]: number };
   price_change_percentage_24h_in_currency?: { [key: string]: number };
-  price_change_percentage_7d_in_currency?: { [key: string]: number };
+  price_change_percentage_7d_in_currency: number;
   price_change_percentage_14d_in_currency?: { [key: string]: number };
   price_change_percentage_30d_in_currency?: { [key: string]: number };
   price_change_percentage_60d_in_currency?: { [key: string]: number };

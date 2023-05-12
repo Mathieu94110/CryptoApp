@@ -14,9 +14,18 @@
   &__hr {
     width: calc(100% - 2px);
   }
+  &__body {
+    width: calc(100% - 40px);
+    height: 100%;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 @media screen and (min-width: 769px) {
   .winners-and-loosers {
+    height: calc(100vh - 120px);
     &__title {
       font-size: 34px;
     }

@@ -1,42 +1,30 @@
-import { useState } from "react";
+import { ChangeEvent } from "react";
 import "./DropdownsMenu.scss";
 
 export default function DropdownsMenu({
   selectedCategory,
   top,
   period,
-  changeTop,
-  changeCategory,
-  changePeriod,
+  changeParams,
 }: {
   selectedCategory: string;
   top: string;
   period: string;
-  changeTop: any;
-  changeCategory: any;
-  changePeriod: any;
+  changeParams: ({ name, value }: { name: string; value: string }) => void;
 }) {
-  function handleTopChange(e: any) {
-    const topValue = e.target.value;
-    changeTop(topValue);
-  }
-  function handleCategoryChange(e: any) {
-    const categoryValue = e.target.value;
-    changeCategory(categoryValue);
-  }
-  function handlePeriodChange(e: any) {
-    const periodValue = e.target.value;
-    changePeriod(periodValue);
-  }
-
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>): void => {
+    const { name, value } = e.target;
+    changeParams({ name, value });
+  };
   return (
-    <div className="dropdown">
+    <div className="dropdowns-menu">
       <label>
         Rubrique
         <select
           value={selectedCategory}
-          onChange={handleCategoryChange}
-          className="dropdown__select"
+          name="category"
+          onChange={handleChange}
+          className="dropdowns-menu__select"
         >
           <option value="Gagnants">Gagnants</option>
           <option value="Perdants">Perdants</option>
@@ -46,8 +34,9 @@ export default function DropdownsMenu({
         Top
         <select
           value={top}
-          onChange={handleTopChange}
-          className="dropdown__select"
+          onChange={handleChange}
+          name="top"
+          className="dropdowns-menu__select"
         >
           <option value="50">50</option>
           <option value="100">100</option>
@@ -60,13 +49,12 @@ export default function DropdownsMenu({
         Période
         <select
           value={period}
-          onChange={handlePeriodChange}
-          className="dropdown__select"
+          onChange={handleChange}
+          name="period"
+          className="dropdowns-menu__select"
         >
           <option value="24h">24 heures</option>
-          <option value="7">7 jours</option>
-          <option value="14">14 jours</option>
-          <option value="30">30 jours</option>
+          <option value="7j">7 jours</option>
         </select>
       </label>
     </div>

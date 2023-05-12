@@ -1,11 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../../store/store";
-import { changePage } from "../../../../store/reducers/searchPagesSlice";
+import { RootState } from "../../../store/store";
+import { changePage } from "../../../store/reducers/searchPageSlice";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useLocation } from "react-router-dom";
 import "./Pagination.scss";
 
 function Pagination() {
   const currentPage = useSelector((state: RootState) => state.searchPage.page);
+  const location = useLocation();
   const dispatch = useDispatch();
   const TotalNumber = 250;
   const next = () => {

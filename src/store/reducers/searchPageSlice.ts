@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { SearchCoin } from "../../types/coins.interface";
 
 export interface initialState {
   page: number;
@@ -8,7 +7,7 @@ const initialState: initialState = {
   page: 1,
 };
 
-export const searchPagesSlice = createSlice({
+export const searchPageSlice = createSlice({
   name: "search",
   initialState,
   reducers: {
@@ -18,6 +17,6 @@ export const searchPagesSlice = createSlice({
   },
 });
 
-export const { changePage } = searchPagesSlice.actions;
+export const { changePage } = searchPageSlice.actions;
 
-export default searchPagesSlice.reducer;
+export default searchPageSlice.reducer;

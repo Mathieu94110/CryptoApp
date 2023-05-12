@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import type { RootState } from "../../../../store/store";
 import { switchFavorite } from "../../../../store/reducers/favoritesSlice";
-import { CoinMarket } from "../../../../types/coins.interface";
+import { MarketData } from "../../../../types/coins.interface";
 import { FaStar } from "react-icons/fa";
 import "./SearchCryptoItem.scss";
 
-function SearchCryptoItem({ row, index }: { row: CoinMarket; index: number }) {
+function SearchCryptoItem({ row, index }: { row: MarketData; index: number }) {
   const [favorited, setFavorited] = useState<Boolean>(false);
   const favorites = useSelector(
     (state: RootState) => state.favoritesList.favoritesItems
@@ -16,7 +16,7 @@ function SearchCryptoItem({ row, index }: { row: CoinMarket; index: number }) {
   const navigate = useNavigate();
   const handleClick = (
     e: React.MouseEvent<HTMLSpanElement>,
-    row: CoinMarket
+    row: MarketData
   ) => {
     e.stopPropagation();
     dispatch(switchFavorite(row));
@@ -40,7 +40,6 @@ function SearchCryptoItem({ row, index }: { row: CoinMarket; index: number }) {
       : "";
   return (
     <tr
-      key={index}
       onClick={() => navigate(`/Details/${row.id}`)}
       className="search-crypto-item__row"
     >

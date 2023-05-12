@@ -1,13 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
 import favoritesSlice from "./reducers/favoritesSlice";
 import searchSlice from "./reducers/searchSlice";
-import searchPagesSlice from "./reducers/searchPagesSlice";
+import searchPageSlice from "./reducers/searchPageSlice";
 
 const store = configureStore({
   reducer: {
     searchList: searchSlice,
     favoritesList: favoritesSlice,
-    searchPage: searchPagesSlice,
+    searchPage: searchPageSlice,
   },
 });
 // Infer the `RootState` and `AppDispatch` types from the store itself
