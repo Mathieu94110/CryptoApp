@@ -11,57 +11,58 @@ function WinnersAndLoosers() {
   const [selectedCategory, setSelectedCategory] = useState<string>("Gagnants");
   const [top, setTop] = useState<string>("50");
   const [period, setPeriod] = useState<string>("24h");
-  const [initial250Coins, setInitial250Coins] = useState<MarketData[]>([]);
+  const [initialCoins, setInitialCoins] = useState<MarketData[]>([]);
   const [coinsByPriceChange, setCoinsByPriceChange] = useState<MarketData[]>(
     []
   );
+
   async function filterWithCurrentParams() {
     setLoading(true);
     let filteredCoins;
-    if (period === "7j" && selectedCategory === "Gagnants") {
-      console.log('period === "7j" && selectedCategory === "Gagants"');
-      filteredCoins = initial250Coins
-        .sort(
-          (a: MarketData, b: MarketData) =>
-            a.price_change_percentage_7d_in_currency -
-            b.price_change_percentage_7d_in_currency
-        )
-        .slice(0, parseInt(top!));
-    } else if (period === "7j" && selectedCategory === "Perdants") {
-      console.log('period === "7j" && selectedCategory === "Perdants"');
-      filteredCoins = initial250Coins
-        .sort(
-          (a: MarketData, b: MarketData) =>
-            b.price_change_percentage_7d_in_currency -
-            a.price_change_percentage_7d_in_currency
-        )
-        .slice(0, parseInt(top!));
-    } else if (period === "24h" && selectedCategory === "Gagnants") {
-      console.log('period === "24h" && selectedCategory === "Gagnants"');
-      filteredCoins = initial250Coins
-        .sort(
-          (a: MarketData, b: MarketData) =>
-            a.price_change_percentage_24h - b.price_change_percentage_24h
-        )
-        .slice(0, parseInt(top!));
-    } else if (period === "24h" && selectedCategory === "Perdants") {
-      console.log('period === "24h" && selectedCategory === "Perdants"');
-      filteredCoins = initial250Coins
-        .sort(
-          (a: MarketData, b: MarketData) =>
-            b.price_change_percentage_24h - a.price_change_percentage_24h
-        )
-        .slice(0, parseInt(top!));
+    if (period === "24h") {
+      if (selectedCategory === "Gagnants") {
+        filteredCoins = initialCoins
+          .sort(
+            (a: MarketData, b: MarketData) =>
+              b.price_change_percentage_24h - a.price_change_percentage_24h
+          )
+          .slice(0, parseInt(top!));
+      } else {
+        filteredCoins = initialCoins
+          .sort(
+            (a: MarketData, b: MarketData) =>
+              a.price_change_percentage_24h - b.price_change_percentage_24h
+          )
+          .slice(0, parseInt(top!));
+      }
+    } else if (period === "7j") {
+      if (selectedCategory === "Gagnants") {
+        filteredCoins = initialCoins
+          .sort(
+            (a: MarketData, b: MarketData) =>
+              b.price_change_percentage_7d_in_currency -
+              a.price_change_percentage_7d_in_currency
+          )
+          .slice(0, parseInt(top!));
+      } else {
+        filteredCoins = initialCoins
+          .sort(
+            (a: MarketData, b: MarketData) =>
+              a.price_change_percentage_7d_in_currency -
+              b.price_change_percentage_7d_in_currency
+          )
+          .slice(0, parseInt(top!));
+      }
     } else {
-      filteredCoins = initial250Coins;
+      filteredCoins = initialCoins;
     }
     setCoinsByPriceChange(filteredCoins);
     setLoading(false);
   }
 
-  async function searchInitialTopList() {
-    const response = await getFirst250Coins();
-    setInitial250Coins(response);
+  async function getInitialTopList() {
+    const initialCoins = await getFirst250Coins();
+    setInitialCoins(initialCoins);
   }
 
   function changeParams(query: { name: string; value: string }) {
@@ -72,16 +73,19 @@ function WinnersAndLoosers() {
     } else if (query.name === "category" && query.value !== selectedCategory) {
       setSelectedCategory(query.value);
     }
-    filterWithCurrentParams();
   }
 
   useEffect(() => {
-    searchInitialTopList();
+    getInitialTopList();
   }, []);
 
   useEffect(() => {
     filterWithCurrentParams();
-  }, [initial250Coins]);
+  }, [initialCoins]);
+
+  useEffect(() => {
+    filterWithCurrentParams();
+  }, [selectedCategory, top, period]);
 
   return (
     <div className="winners-and-loosers">

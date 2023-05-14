@@ -7,7 +7,15 @@ import { MarketData } from "../../../../types/coins.interface";
 import { FaStar } from "react-icons/fa";
 import "./SearchCryptoItem.scss";
 
-function SearchCryptoItem({ row, index }: { row: MarketData; index: number }) {
+function SearchCryptoItem({
+  row,
+  period,
+  index,
+}: {
+  row: MarketData;
+  period: string;
+  index: number;
+}) {
   const [favorited, setFavorited] = useState<Boolean>(false);
   const favorites = useSelector(
     (state: RootState) => state.favoritesList.favoritesItems
@@ -34,10 +42,19 @@ function SearchCryptoItem({ row, index }: { row: MarketData; index: number }) {
   function numberWithCommas(x: string | undefined) {
     return x?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-  let profit =
-    row?.price_change_percentage_24h >= 0
-      ? row?.price_change_percentage_24h
-      : "";
+  let profit;
+  if (period === "7j") {
+    profit =
+      row?.price_change_percentage_7d_in_currency >= 0
+        ? row?.price_change_percentage_7d_in_currency
+        : "";
+  } else {
+    profit =
+      row?.price_change_percentage_24h >= 0
+        ? row?.price_change_percentage_24h
+        : "";
+  }
+
   return (
     <tr
       onClick={() => navigate(`/Details/${row.id}`)}
@@ -68,7 +85,10 @@ function SearchCryptoItem({ row, index }: { row: MarketData; index: number }) {
         className="search-crypto-item__td-24h-changes"
       >
         {profit && "+"}
-        {row?.price_change_percentage_24h?.toFixed(2)}%
+        {period === "7j"
+          ? row?.price_change_percentage_7d_in_currency?.toFixed(2)
+          : row?.price_change_percentage_24h?.toFixed(2)}
+        %
       </td>
       <td className="search-crypto-item__td">
         {numberWithCommas(row?.market_cap?.toString().slice(0, -6))}

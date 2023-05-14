@@ -36,7 +36,7 @@ function SearchCryptoTable({
 
             <tbody>
               {coins.map((coin: MarketData, index: number) => (
-                <SearchCryptoItem row={coin} index={index} />
+                <SearchCryptoItem row={coin} period={period} index={index} />
               ))}
             </tbody>
           </table>
