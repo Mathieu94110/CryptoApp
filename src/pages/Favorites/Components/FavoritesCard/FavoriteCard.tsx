@@ -32,17 +32,17 @@ export default function FavoriteCard({
         </div>
         <div className="favorite-card__infos">
           <h3 className="favorite-card__infos-item">
-            <span>Nom:</span> <span>{favorite.name}</span>
+            <span>Nom</span> <span>{favorite.name}</span>
           </h3>
           <h3 className="favorite-card__infos-item">
-            <span>Symbole:</span> <span>{favorite.symbol}</span>
+            <span>Symbole</span> <span>{favorite.symbol}</span>
           </h3>
           <h3 className="favorite-card__infos-item">
-            <span>Prix:</span>{" "}
+            <span>Prix</span>{" "}
             <span>{favorite?.current_price?.toFixed(2)} €</span>
           </h3>
           <h3 className="favorite-card__infos-item">
-            <span>Évolution sur 24h:</span>{" "}
+            <span>Évolution sur 24h</span>{" "}
             <span
               style={{
                 color:

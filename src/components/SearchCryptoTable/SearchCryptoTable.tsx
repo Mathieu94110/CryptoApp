@@ -17,7 +17,9 @@ function SearchCryptoTable({
             aria-label="tableau des cryptomonnaies"
             className="search-crypto-table__table"
           >
-            <thead style={{ backgroundColor: "#EEBC1D" }}>
+            <thead
+              style={{ backgroundColor: "#EEBC1D", position: "sticky", top: 0 }}
+            >
               <tr>
                 {[
                   "Position",
@@ -27,9 +29,9 @@ function SearchCryptoTable({
                   "Cap.",
                   "Favoris",
                 ].map((head) => (
-                  <td className="color-black font-700 py-5" key={head}>
+                  <th className="color-black font-700 py-5" key={head}>
                     {head}
-                  </td>
+                  </th>
                 ))}
               </tr>
             </thead>

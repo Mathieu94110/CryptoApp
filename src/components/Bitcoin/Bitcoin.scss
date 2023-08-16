@@ -17,6 +17,7 @@
     justify-content: space-evenly;
     text-align: center;
     font-size: 1rem;
+    padding: 0 30px;
   }
   &__title {
     display: flex;
@@ -24,7 +25,6 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    height: 60px;
   }
   &__name {
     margin-bottom: 7px;
@@ -48,30 +48,21 @@
   }
 }
 
-@media screen and (min-width: 470px) and (max-width: 925px) {
-  .bitcoin {
-    &__content {
-      min-height: 556px;
-    }
-  }
-}
-
 @media screen and (min-width: 926px) and (max-width: 1064px) {
   .bitcoin {
     &__content {
       font-size: 0.8rem;
+    }
+    &__content {
+      padding: 0 10px;
     }
   }
 }
 
 @media screen and (min-width: 926px) {
   .bitcoin {
-    min-height: 500px;
     margin: 0;
     width: 45%;
-    &__title {
-      height: 100px;
-    }
     &__name {
       font-size: 1.7em;
     }
@@ -84,6 +75,13 @@
     }
     &__table-body {
       font-size: 1rem;
+    }
+  }
+}
+@media screen and (max-width: 469px) {
+  .bitcoin {
+    &__content {
+      padding: 0 6px;
     }
   }
 }

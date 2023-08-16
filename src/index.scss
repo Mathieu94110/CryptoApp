@@ -126,17 +126,20 @@ q:after {
   content: none;
 }
 
-:root {
-  --bg-primary: rgb(66, 66, 222);
-}
-
 .bg-primary {
-  background-color: rgb(66, 66, 222);
+  background: #5433ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #a5fecb,
+    #20bdff,
+    #5433ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    90deg,
-    rgba(32, 66, 255, 1) 0%,
-    rgba(32, 32, 255, 1) 94%
-  );
+    to right,
+    #a5fecb,
+    #20bdff,
+    #5433ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .color-white {
   color: #fff;

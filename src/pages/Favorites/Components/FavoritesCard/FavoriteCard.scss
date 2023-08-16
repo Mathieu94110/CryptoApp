@@ -31,6 +31,7 @@
     }
   }
   &__image-container {
+    height: 250px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     overflow: hidden;
@@ -39,7 +40,7 @@
     }
   }
   &__infos {
-    padding: 8px;
+    padding: 10px;
     transition: 0.2s color;
     border-top: 1px solid #222;
     border-bottom: 1px solid #222;
