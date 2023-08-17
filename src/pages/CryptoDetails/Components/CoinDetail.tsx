@@ -5,11 +5,11 @@ import { FaCloud, FaCoins, FaSmile, FaUser, FaUsers } from "react-icons/fa";
 import Loader from "../../../components/Loader/Loader";
 import "./CoinDetail.scss";
 
-const CoinDetail = ({ coin }: { coin: string }) => {
+const CoinDetail: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
   const [coinDetails, setCoinDetails] = useState<CoinsFetchData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const fetchCoinDetails = async () => {
+  const fetchCoinDetails = async (): Promise<void> => {
     setIsLoading(true);
     const response = await CoinDetails(coin);
     setCoinDetails(response);

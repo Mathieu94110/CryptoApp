@@ -9,7 +9,9 @@ import { SearchCoins } from "../../../../apis/coinGecko";
 import { useNavigate } from "react-router-dom";
 import "./Search.scss";
 
-const SearchInput = ({ handleSearch }: { handleSearch: any }) => {
+const SearchInput: React.FunctionComponent<{
+  handleSearch: (v: string) => void;
+}> = ({ handleSearch }) => {
   const [searchText, setSearchText] = useState<string>("");
   const searchResults = useSelector(
     (state: RootState) => state.searchList.searchResults
@@ -60,18 +62,18 @@ const SearchInput = ({ handleSearch }: { handleSearch: any }) => {
   );
 };
 
-export const Search = () => {
+export const Search: React.FC = () => {
   // DebouncedOutput is initialized to null in order to prevent searchInputValue from parent to be empty after first loading
   const [debouncedOutput, setDebouncedOutput] = useState<string | null>(null);
 
-  const onChangeDebouncedEvent = async (text: string): Promise<void> => {
+  const onChangeDebouncedEvent = (text: string): void => {
     setDebouncedOutput(text.trim().toLowerCase());
   };
   // Here onChangeDebounced is used to authorize api call after 800ms delay between each new entries
   const onChangeDebounced = useDebounce(onChangeDebouncedEvent);
   const dispatch = useDispatch();
 
-  async function searchCoin(query: string) {
+  async function searchCoin(query: string): Promise<void> {
     const response = await SearchCoins(query);
     dispatch(getSearchResult(response));
   }

@@ -5,7 +5,7 @@ import { CoinParams } from "../../types/coins.interface";
 import { FaArrowLeft } from "react-icons/fa";
 import "./CryptoDetails.scss";
 
-const CryptoDetail = () => {
+const CryptoDetail: React.FunctionComponent = () => {
   const { id } = useParams<CoinParams>();
   const navigate = useNavigate();
 

@@ -29,19 +29,19 @@ ChartJS.register(
   Legend
 );
 
-const HistoryChart = ({ coin }: { coin: string }) => {
+const HistoryChart: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
   const [coinData, setCoinData] = useState<number[][]>([]);
-  const [days, setDays] = useState(1);
-  const [flag, setflag] = useState(false);
+  const [days, setDays] = useState<number>(1);
+  const [flag, setflag] = useState<boolean>(false);
   const { screenSize } = useResize();
 
   useEffect(() => {
     fetchHistoricData();
   }, [days]);
-
+  // in order to improved the chart rendering on small devices
   let showTicks = screenSize < 400 ? { display: false } : { color: "#fff" };
 
-  async function fetchHistoricData() {
+  async function fetchHistoricData(): Promise<void> {
     const response = await HistoricalChart(coin, days);
     setflag(true);
     setCoinData(response.prices);

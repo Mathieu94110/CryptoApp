@@ -6,7 +6,7 @@ import Carousel from "../../components/Banner/Carousel";
 import { HomeLoader } from "../../types/coins.interface";
 import "./Home.scss";
 
-function Home() {
+function Home(): JSX.Element {
   const { bitcoinData, sevenTrendsData } = useLoaderData() as HomeLoader;
 
   return (

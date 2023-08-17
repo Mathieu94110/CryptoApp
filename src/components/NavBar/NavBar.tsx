@@ -4,11 +4,11 @@ import { NavBarData } from "./NavBarData";
 import { useLocation } from "react-router-dom";
 import "./NavBar.scss";
 
-function NavBar() {
+const NavBar: React.FunctionComponent = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const location = useLocation();
 
-  function handleClick() {
+  function handleClick(): void {
     setIsOpen(!isOpen);
   }
   return (
@@ -35,6 +35,6 @@ function NavBar() {
       </ul>
     </nav>
   );
-}
+};
 
 export default NavBar;

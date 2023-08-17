@@ -3,7 +3,9 @@ import type { BitcoinInterface } from "../../types/bitcoin.interface";
 import { convert } from "../../utils/convert";
 import "./Bitcoin.scss";
 
-const Bitcoin = ({ bitcoin }: { bitcoin: BitcoinInterface }) => {
+const Bitcoin: React.FunctionComponent<{ bitcoin: BitcoinInterface }> = ({
+  bitcoin,
+}) => {
   return (
     <div className="bitcoin">
       <div className="bitcoin__content">

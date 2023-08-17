@@ -2,16 +2,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../store/store";
 import { changePage } from "../../../store/reducers/searchPageSlice";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
 import "./Pagination.scss";
 
-function Pagination() {
+const Pagination: React.FunctionComponent = () => {
   const currentPage = useSelector((state: RootState) => state.searchPage.page);
-  const location = useLocation();
   const dispatch = useDispatch();
-  const TotalNumber = 250;
-  const next = () => {
-    if (currentPage === TotalNumber) {
+  const max: number = 250;
+  const next = (): null | void => {
+    if (currentPage === max) {
       return null;
     } else {
       dispatch(changePage(currentPage + 1));
@@ -26,8 +24,8 @@ function Pagination() {
     }
   };
   const multiStepNext = () => {
-    if (currentPage + 3 >= TotalNumber) {
-      dispatch(changePage(TotalNumber - 1));
+    if (currentPage + 3 >= max) {
+      dispatch(changePage(max - 1));
     } else {
       dispatch(changePage(currentPage + 3));
     }
@@ -35,7 +33,7 @@ function Pagination() {
 
   const multiStepPrev = () => {
     if (currentPage - 3 <= 1) {
-      dispatch(changePage(TotalNumber + 1));
+      dispatch(changePage(max + 1));
     } else {
       dispatch(changePage(currentPage - 2));
     }
@@ -69,27 +67,27 @@ function Pagination() {
             {currentPage}
           </button>
         </li>
-        {currentPage + 1 !== TotalNumber && currentPage !== TotalNumber ? (
+        {currentPage + 1 !== max && currentPage !== max ? (
           <li>
             <button onClick={next} className="pagination__buttons">
               {currentPage + 1}
             </button>
           </li>
         ) : null}
-        {currentPage + 1 !== TotalNumber && currentPage !== TotalNumber ? (
+        {currentPage + 1 !== max && currentPage !== max ? (
           <li>
             <button onClick={multiStepNext} className="pagination__buttons">
               ...
             </button>
           </li>
         ) : null}
-        {currentPage !== TotalNumber ? (
+        {currentPage !== max ? (
           <li>
             <button
-              onClick={() => dispatch(changePage(TotalNumber))}
+              onClick={() => dispatch(changePage(max))}
               className="pagination__buttons"
             >
-              {TotalNumber}
+              {max}
             </button>
           </li>
         ) : null}
@@ -102,6 +100,6 @@ function Pagination() {
       </ul>
     </div>
   );
-}
+};
 
 export default Pagination;

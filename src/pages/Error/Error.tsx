@@ -5,7 +5,7 @@ type ErrorRoute = {
   statusText: string;
 };
 
-function ErrorPage() {
+const ErrorPage: React.FunctionComponent = () => {
   const error = useRouteError() as ErrorRoute;
   console.log(error);
   return (
@@ -14,6 +14,6 @@ function ErrorPage() {
       <p>{error.message || error.statusText}</p>
     </div>
   );
-}
+};
 
 export default ErrorPage;

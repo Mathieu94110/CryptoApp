@@ -16,7 +16,7 @@ function WinnersAndLoosers() {
     []
   );
 
-  async function filterWithCurrentParams() {
+  function filterWithCurrentParams(): void {
     setLoading(true);
     let filteredCoins;
     if (period === "24h") {
@@ -60,12 +60,12 @@ function WinnersAndLoosers() {
     setLoading(false);
   }
 
-  async function getInitialTopList() {
+  async function getInitialTopList(): Promise<void> {
     const initialCoins = await getFirst250Coins();
     setInitialCoins(initialCoins);
   }
 
-  function changeParams(query: { name: string; value: string }) {
+  function changeParams(query: { name: string; value: string }): void {
     if (query.name === "period" && query.value !== period) {
       setPeriod(query.value);
     } else if (query.name === "top" && query.value !== top) {

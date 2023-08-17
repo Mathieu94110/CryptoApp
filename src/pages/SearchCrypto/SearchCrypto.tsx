@@ -9,12 +9,12 @@ import { RootState } from "../../store/store";
 import SearchCryptoTable from "../../components/SearchCryptoTable/SearchCryptoTable";
 import "./SearchCrypto.scss";
 
-export default function SearchCrypto() {
+export default function SearchCrypto(): JSX.Element {
   const [coins, setCoins] = useState<MarketData[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const page = useSelector((state: RootState) => state.searchPage.page);
 
-  async function fetchCoinsList(page: number) {
+  async function fetchCoinsList(page: number): Promise<void> {
     setLoading(true);
     const response = await CoinList(page);
     setCoins(response);

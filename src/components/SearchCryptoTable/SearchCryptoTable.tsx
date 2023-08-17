@@ -2,13 +2,10 @@ import SearchCryptoItem from "../../pages/SearchCrypto/Components/SearchCryptoIt
 import { MarketData } from "../../types/coins.interface";
 import "./SearchCryptoTable.scss";
 
-function SearchCryptoTable({
-  coins,
-  period,
-}: {
+const SearchCryptoTable: React.FunctionComponent<{
   coins: MarketData[];
   period: string;
-}) {
+}> = ({ coins, period }) => {
   return (
     <div className="search-crypto-table">
       <div className="search-crypto-table__results">
@@ -46,6 +43,6 @@ function SearchCryptoTable({
       </div>
     </div>
   );
-}
+};
 
 export default SearchCryptoTable;

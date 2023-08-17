@@ -6,10 +6,10 @@ import { TrendingCoins } from "../../apis/coinGecko";
 import { CoinMarket } from "../../types/coins.interface";
 import "./Carousel.scss";
 
-const Carousel = () => {
+const Carousel: React.FunctionComponent = () => {
   const [trending, setTrending] = useState<CoinMarket[]>([]);
 
-  const fetchTrendingCoins = async () => {
+  const fetchTrendingCoins = async (): Promise<void> => {
     const response = await TrendingCoins();
     setTrending(response);
   };

@@ -4,7 +4,7 @@ import { CoinMarket } from "../../types/coins.interface";
 import "./Favorites.scss";
 import FavoriteCard from "./Components/FavoritesCard/FavoriteCard";
 
-export default function Favorites() {
+export default function Favorites(): JSX.Element {
   const favorites = useSelector(
     (state: RootState) => state.favoritesList.favoritesItems
   );

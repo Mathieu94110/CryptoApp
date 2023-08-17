@@ -1,11 +1,9 @@
 import { IItems } from "../../types/coins.interface";
 import "./TopHeightTrending.scss";
 
-export default function TopSevenTrending({
+const TopSevenTrending: React.FunctionComponent<{ sevenTrends: IItems[] }> = ({
   sevenTrends,
-}: {
-  sevenTrends: IItems[];
-}) {
+}) => {
   return (
     <div className="top-height-trending">
       <table>
@@ -21,10 +19,10 @@ export default function TopSevenTrending({
             <th>Classement</th>
           </tr>
         </thead>
-        {sevenTrends.map((trend: IItems, index) => {
+        {sevenTrends.map((trend: IItems, index: number) => {
           return (
             <tbody key={index}>
-              <tr className="height-trend-tr">
+              <tr>
                 <td className="top-height-trending__td"> {(index += 1)}</td>
                 <td className="top-height-trending__td">
                   {" "}
@@ -47,4 +45,5 @@ export default function TopSevenTrending({
       </table>
     </div>
   );
-}
+};
+export default TopSevenTrending;
