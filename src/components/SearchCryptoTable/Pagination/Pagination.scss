@@ -8,16 +8,18 @@
     padding: 6px;
     font-weight: 600;
     &:hover {
-      color: gold;
+      color: var(--secondary);
     }
-    background-color: #222;
+    border-radius: 8px;
+    background-color: var(--primary);
     color: #fff;
     cursor: pointer;
     &--active {
       background-color: #fff;
       padding: 6px;
-      color: #222;
-      border: 1px solid #222;
+      color: var(--primary);
+      border-color: var(--primary);
+      border-radius: 8px;
       font-weight: 600;
     }
   }
@@ -25,7 +27,7 @@
     display: flex;
     align-items: center;
     &:hover {
-      color: gold;
+      color: var(--secondary);
     }
   }
 }
@@ -42,8 +44,8 @@
       &--active {
         background-color: #fff;
         padding: 10px;
-        color: #222;
-        border: 1px solid #222;
+        color: var(--primary);
+        border: 1px solid var(--primary);
       }
     }
   }

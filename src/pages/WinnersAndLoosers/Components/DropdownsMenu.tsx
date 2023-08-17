@@ -53,8 +53,8 @@ export default function DropdownsMenu({
           name="period"
           className="dropdowns-menu__select"
         >
-          <option value="24h">24 heures</option>
-          <option value="7j">7 jours</option>
+          <option value="24h">24h</option>
+          <option value="7j">7j</option>
         </select>
       </label>
     </div>

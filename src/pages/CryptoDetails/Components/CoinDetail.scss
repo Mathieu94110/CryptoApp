@@ -25,7 +25,7 @@
   &__description {
     font-size: 15px;
     & > a {
-      color: gold;
+      color: var(--secondary);
       text-decoration: none;
       font-weight: 600;
     }
@@ -42,7 +42,7 @@
       font-weight: 600;
       font-size: 1.6rem;
       margin-bottom: 20px;
-      color: gold;
+      color: var(--secondary);
     }
   }
 }

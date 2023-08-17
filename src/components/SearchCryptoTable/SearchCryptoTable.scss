@@ -1,20 +1,19 @@
+@import "../../assets/styles/mixins";
+
 .search-crypto-table {
   text-align: center;
   width: 100%;
+  height: calc(100vh - 282px);
+  overflow-y: auto;
   &__loader {
     width: 100%;
     height: calc(100vh - 200px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include vertical-center;
   }
   &__title {
     font-size: 1rem;
     font-weight: 600;
-    color: gold;
-  }
-  &__table-container {
-    overflow-y: auto;
+    color: var(--secondary);
   }
   &__table {
     width: 100%;

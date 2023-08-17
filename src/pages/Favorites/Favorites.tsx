@@ -14,7 +14,7 @@ export default function Favorites() {
       <h1 className="favorites__title"> Vos favoris </h1>
       <hr />
       {favorites.length > 0 ? (
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="favorites__list">
           {favorites.map((favorite: CoinMarket, index: number) => {
             let profit =
               favorite?.price_change_percentage_24h >= 0

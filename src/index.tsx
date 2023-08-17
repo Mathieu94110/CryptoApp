@@ -5,7 +5,7 @@ import store from "./store/store";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 import reportWebVitals from "./reportWebVitals";
-import "./index.scss";
+import "./assets/styles/index.scss";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

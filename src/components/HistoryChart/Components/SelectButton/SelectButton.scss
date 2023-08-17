@@ -6,15 +6,15 @@
   cursor: pointer;
   font-weight: 700;
   &:hover {
-    background-color: gold;
-    color: #000;
+    background-color: var(--secondary);
+    color: var(--primary);
     font-weight: 700;
   }
   width: 22%;
 }
 .select-active {
-  background-color: gold;
-  color: #000;
+  background-color: var(--secondary);
+  color: var(--primary);
 }
 
 @media screen and (min-width: 1064px) {
@@ -24,8 +24,8 @@
     margin: 4px;
     cursor: pointer;
     &:hover {
-      background-color: gold;
-      color: #000;
+      background-color: var(--secondary);
+      color: var(--primary);
     }
     width: 22%;
   }

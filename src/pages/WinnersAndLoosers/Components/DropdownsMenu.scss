@@ -1,8 +1,7 @@
 .dropdowns-menu {
-  height: 100px;
+  height: 60px;
   width: 100%;
-  padding: 10px;
-  color: #000;
+  color: var(--primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -26,6 +25,7 @@
   .dropdowns-menu {
     height: auto;
     width: 600px;
+    padding: 10px;
     label {
       color: #fff;
       font-weight: 600;

@@ -1,5 +1,4 @@
 /*reset css for all navigators*/
-
 html,
 body,
 div,
@@ -274,4 +273,7 @@ table {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+.overflow-y-auto {
+  overflow-y: auto;
 }

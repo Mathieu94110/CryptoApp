@@ -1,5 +1,7 @@
+@import "../../assets/styles/mixins";
+
 .bitcoin {
-  border: 2px solid #000;
+  border: 2px solid var(--primary);
   vertical-align: middle;
   color: #fff;
   background-color: #191970;
@@ -20,9 +22,7 @@
     padding: 0 30px;
   }
   &__title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include vertical-center;
     align-items: center;
     margin: 0 auto;
   }

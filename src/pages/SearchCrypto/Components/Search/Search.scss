@@ -15,17 +15,18 @@
     flex: 1 1 auto;
     font-size: 0.7rem;
     &::placeholder {
-      color: #222;
+      color: var(--primary);
     }
   }
   &__icon {
     position: absolute;
     left: 10px;
     top: 17px;
-    color: #222;
+    color: var(--primary);
   }
   &__results {
     position: absolute;
+    z-index: 2;
     top: 2.5rem;
     right: 0;
     width: 100%;
@@ -42,7 +43,7 @@
 
     cursor: pointer;
     &:hover {
-      background-color: #222;
+      background-color: var(--primary);
       color: #fff;
     }
   }

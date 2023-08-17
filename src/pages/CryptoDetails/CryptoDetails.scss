@@ -1,3 +1,5 @@
+@import "../../assets/styles/mixins";
+
 .crypto-details {
   width: 100%;
   margin: 120px 0px 0px;
@@ -5,9 +7,7 @@
   height: auto;
 
   &__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include vertical-center;
     height: 100%;
   }
   &__back-button {
@@ -23,7 +23,7 @@
       border: 0px;
       font-weight: 600;
       &:hover {
-        background-color: #222;
+        background-color: var(--primary);
         color: white;
       }
     }
