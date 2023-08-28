@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+# Crypto React application on web client
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Crypto React application with Typesscript using [Coingecko API](https://api.coingecko.com/api/v3/)
 
-## Available Scripts
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Bitcoin infos with charts for different periods.
+- Search crypto with debounce and pagination.
+- Crypto details page.
+- Winners and loosers depending on the period.
+- Add crypto to favorites and delete crypto from favorites.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Try it out
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+https://crypto-app-omega-ashen.vercel.app/
 
-### `npm test`
+**Warning:** Coingecko public api has a rate limit of 10-30 calls per minute, if you exceed that limit you will be blocked until the next 1 minute window.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How to Run locally
 
-### `npm run build`
+```bash
+$ git clone https://github.com/Mathieu94110/CryptoApp.git
+$ cd CryptoApp
+$ npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+No variables on .env file are required !
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+just visit http://localhost:3000.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots Desktops
 
-### `npm run eject`
+![home](src/assets/images/crypto-home-screen.PNG?raw=true "Home")
+![search](src/assets/images/crypto-search-screen.PNG?raw=true "Search")
+![winners and loosers](src/assets/images/crypto-winners-and-loosers-screen.PNG?raw=true "WinnersAndLoosers")
+![favorites](src/assets/images/crypto-favorites-screen.PNG?raw=true "Favorites")
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Screenshots Mobiles
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![home](src/assets/images/crypto-home-screen-mobiles.PNG?raw=true "Home")
+![search](src/assets/images/crypto-search-screen-mobiles.PNG?raw=true "Search")
+![winners and loosers](src/assets/images/crypto-winners-and-loosers-screen-mobiles.PNG?raw=true "WinnersAndLoosers")
+![favorites](src/assets/images/crypto-favorites-screen-mobiles.PNG?raw=true "Favorites")
