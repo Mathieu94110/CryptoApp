@@ -1,16 +1,17 @@
-import { Suspense } from "react";
-import { Outlet } from "react-router-dom";
-import NavBar from "./components/NavBar/NavBar";
+import { Provider } from "react-redux";
+import store from "./store/store";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { routesConfig } from "./router";
 import "./App.scss";
 
+const router = createBrowserRouter(routesConfig);
 function App() {
   return (
     <div className="app-container">
-      <div className="flex-fill bg-primary">
-        <Suspense>
-          <NavBar />
-          <Outlet />
-        </Suspense>
+      <div role="document" className="flex-fill bg-primary">
+        <Provider store={store}>
+          <RouterProvider router={router}></RouterProvider>
+        </Provider>
       </div>
     </div>
   );

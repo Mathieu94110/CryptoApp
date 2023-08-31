@@ -1,8 +1,9 @@
-import { createBrowserRouter } from "react-router-dom";
 import { lazy } from "react";
-import App from "./App";
 import ErrorPage from "./pages/Error/Error";
 import homeLoader from "./loaders/homeLoader";
+import { Suspense } from "react";
+import { Outlet } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
 
 const Homepage = lazy(() => import("./pages/Home/Home"));
 const CoinDetailsPage = lazy(
@@ -16,11 +17,17 @@ const WinnersAndLoosersPage = lazy(
   () => import("./pages/WinnersAndLoosers/WinnersAndLoosers")
 );
 
-export const router = createBrowserRouter([
+export const routesConfig = [
   {
     path: "/",
-    element: <App />,
-
+    element: (
+      <>
+        <Suspense>
+          <NavBar />
+          <Outlet />
+        </Suspense>
+      </>
+    ),
     children: [
       {
         index: true,
@@ -46,4 +53,4 @@ export const router = createBrowserRouter([
       },
     ],
   },
-]);
+];
