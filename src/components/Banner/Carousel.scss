@@ -2,6 +2,7 @@
   margin-top: 140px;
   display: flex;
   align-items: center;
+  width: 100%;
 }
 ul {
   display: flex;
@@ -30,6 +31,23 @@ ul {
     font-size: 0.7rem;
   }
 }
+//
+.slick-slider {
+  width: 100%;
+}
+.slides .slickPrev,
+.slides .slickNext {
+  top: 50%;
+}
+.secTitle {
+  margin-bottom: 80px;
+  margin-left: 26px;
+}
+.slickNext {
+  margin-right: 5%;
+}
+//
+
 @media screen and (min-width: 926px) {
   .carousel {
     position: fixed;

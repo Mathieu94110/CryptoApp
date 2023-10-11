@@ -1,5 +1,5 @@
 import { lazy } from "react";
-import ErrorPage from "./pages/Error/Error";
+import ErrorPage from "./pages/PageNotFound/PageNotFound";
 import homeLoader from "./loaders/homeLoader";
 import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
@@ -16,6 +16,7 @@ const SearchCryptoPage = lazy(
 const WinnersAndLoosersPage = lazy(
   () => import("./pages/WinnersAndLoosers/WinnersAndLoosers")
 );
+const PageNotFound = lazy(() => import("./pages/PageNotFound/PageNotFound"));
 
 export const routesConfig = [
   {
@@ -50,6 +51,10 @@ export const routesConfig = [
       {
         path: "Gagnants_et_perdants",
         element: <WinnersAndLoosersPage />,
+      },
+      {
+        path: "*",
+        element: <PageNotFound />,
       },
     ],
   },

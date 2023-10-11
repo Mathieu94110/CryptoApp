@@ -78,7 +78,7 @@ export async function HistoricalChart(
   }
 }
 
-export async function TrendingCoins(): Promise<CoinMarket[]> {
+export async function getTrendingCoins(): Promise<CoinMarket[]> {
   try {
     const { data } = await baseURL.get(
       "coins/markets?vs_currency=eur&order=gecko_desc&per_page=10&page=1&sparkline=false&price_change_percentage=24h"

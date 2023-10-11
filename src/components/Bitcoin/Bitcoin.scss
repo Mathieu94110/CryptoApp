@@ -19,7 +19,7 @@
     justify-content: space-evenly;
     text-align: center;
     font-size: 1rem;
-    padding: 0 30px;
+    padding: 10px 30px;
   }
   &__title {
     @include vertical-center;
@@ -80,8 +80,23 @@
 }
 @media screen and (max-width: 469px) {
   .bitcoin {
+    &__table {
+      font-size: 20px;
+    }
     &__content {
       padding: 0 6px;
+    }
+    &__table-header {
+      & > :nth-child(4),
+      & > :nth-child(5) {
+        display: none;
+      }
+    }
+    &__table-body {
+      & > :nth-child(4),
+      & > :nth-child(5) {
+        display: none;
+      }
     }
   }
 }
