@@ -73,12 +73,11 @@ export const Search: React.FC = () => {
   const onChangeDebounced = useDebounce(onChangeDebouncedEvent);
   const dispatch = useDispatch();
 
-  async function searchCoin(query: string): Promise<void> {
-    const response = await SearchCoins(query);
-    dispatch(getSearchResult(response));
-  }
-
   useEffect(() => {
+    async function searchCoin(query: string): Promise<void> {
+      const response = await SearchCoins(query);
+      dispatch(getSearchResult(response));
+    }
     if (debouncedOutput) searchCoin(debouncedOutput);
   }, [debouncedOutput]);
 

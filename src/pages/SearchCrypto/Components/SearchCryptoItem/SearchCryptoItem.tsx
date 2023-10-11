@@ -10,11 +10,9 @@ import "./SearchCryptoItem.scss";
 function SearchCryptoItem({
   row,
   period,
-  index,
 }: {
   row: MarketData;
   period: string;
-  index: number;
 }) {
   const [favorited, setFavorited] = useState<Boolean>(false);
   const favorites = useSelector(
@@ -60,7 +58,7 @@ function SearchCryptoItem({
       onClick={() => navigate(`/Details/${row.id}`)}
       className="search-crypto-item__row"
     >
-      <td className="search-crypto-item__td">{(index += 1)}</td>
+      <td className="search-crypto-item__td">{row.market_cap_rank}</td>
       <th className="search-crypto-item__td">
         <img
           src={row?.image}

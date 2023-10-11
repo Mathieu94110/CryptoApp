@@ -9,14 +9,13 @@ const CoinDetail: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
   const [coinDetails, setCoinDetails] = useState<CoinsFetchData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const fetchCoinDetails = async (): Promise<void> => {
-    setIsLoading(true);
-    const response = await CoinDetails(coin);
-    setCoinDetails(response);
-    setIsLoading(false);
-  };
-
   useEffect(() => {
+    const fetchCoinDetails = async (): Promise<void> => {
+      setIsLoading(true);
+      const response = await CoinDetails(coin);
+      setCoinDetails(response);
+      setIsLoading(false);
+    };
     fetchCoinDetails();
   }, []);
 

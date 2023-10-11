@@ -29,7 +29,7 @@ const Carousel: React.FunctionComponent = () => {
                 <div className="carousel-item" key={index}>
                   <Link
                     className="carousel-item__link"
-                    to={`/coins/${coin.id}`}
+                    to={`/Details/${coin.id}`}
                   >
                     <img
                       src={coin?.image}

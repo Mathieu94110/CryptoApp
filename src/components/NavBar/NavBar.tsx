@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaBitcoin, FaBars, FaTimes } from "react-icons/fa";
-import { NavBarData } from "./NavBarData";
+import { NavBarData } from "@/static/navBarData";
 import { useLocation } from "react-router-dom";
 import "./NavBar.scss";
 

@@ -35,7 +35,7 @@ const SearchCryptoTable: React.FunctionComponent<{
 
             <tbody>
               {coins.map((coin: MarketData, index: number) => (
-                <SearchCryptoItem row={coin} period={period} index={index} />
+                <SearchCryptoItem row={coin} period={period} key={index} />
               ))}
             </tbody>
           </table>

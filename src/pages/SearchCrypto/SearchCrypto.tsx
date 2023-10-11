@@ -15,14 +15,13 @@ export default function SearchCrypto(): JSX.Element {
   const [loading, setLoading] = useState<boolean>(false);
   const page = useSelector((state: RootState) => state.searchPage.page);
 
-  async function fetchCoinsList(page: number): Promise<void> {
-    setLoading(true);
-    const response = await CoinList(page);
-    setCoins(response);
-    setLoading(false);
-  }
-
   useEffect(() => {
+    async function fetchCoinsList(page: number): Promise<void> {
+      setLoading(true);
+      const response = await CoinList(page);
+      setCoins(response);
+      setLoading(false);
+    }
     fetchCoinsList(page);
   }, [page]);
 

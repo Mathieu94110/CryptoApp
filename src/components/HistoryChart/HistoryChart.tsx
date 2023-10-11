@@ -36,16 +36,15 @@ const HistoryChart: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
   const { screenSize } = useResize();
 
   useEffect(() => {
+    async function fetchHistoricData(): Promise<void> {
+      const response = await HistoricalChart(coin, days);
+      setflag(true);
+      setCoinData(response.prices);
+    }
     fetchHistoricData();
-  }, [days]);
+  }, [days, coin]);
   // in order to improved the chart rendering on small devices
   let showTicks = screenSize < 400 ? { display: false } : { color: "#fff" };
-
-  async function fetchHistoricData(): Promise<void> {
-    const response = await HistoricalChart(coin, days);
-    setflag(true);
-    setCoinData(response.prices);
-  }
 
   if (!coinData || flag === false) {
     return <Loader />;

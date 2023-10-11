@@ -60,11 +60,6 @@ function WinnersAndLoosers() {
     setLoading(false);
   }
 
-  async function getInitialTopList(): Promise<void> {
-    const initialCoins = await getFirst250Coins();
-    setInitialCoins(initialCoins);
-  }
-
   function changeParams(query: { name: string; value: string }): void {
     if (query.name === "period" && query.value !== period) {
       setPeriod(query.value);
@@ -76,6 +71,10 @@ function WinnersAndLoosers() {
   }
 
   useEffect(() => {
+    async function getInitialTopList(): Promise<void> {
+      const initialCoins = await getFirst250Coins();
+      setInitialCoins(initialCoins);
+    }
     getInitialTopList();
   }, []);
 
