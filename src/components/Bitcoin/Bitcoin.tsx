@@ -1,6 +1,6 @@
 import HistoryChart from "../HistoryChart/HistoryChart";
-import type { BitcoinInterface } from "../../types/bitcoin.interface";
-import { convert } from "../../utils/convert";
+import type { BitcoinInterface } from "@/types/bitcoin.interface";
+import { convert } from "@/utils/convert";
 import "./Bitcoin.scss";
 
 const Bitcoin: React.FunctionComponent<{ bitcoin: BitcoinInterface }> = ({

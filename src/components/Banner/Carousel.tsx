@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { TrendingCoins } from "../../apis/coinGecko";
-import { CoinMarket } from "../../types/coins.interface";
+import { TrendingCoins } from "@/apis/coinGecko";
+import { CoinMarket } from "@/types/coins.interface";
 import "./Carousel.scss";
 
 const Carousel: React.FunctionComponent = () => {

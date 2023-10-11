@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import SelectButton from "./Components/SelectButton/SelectButton";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,12 +10,13 @@ import {
   Filler,
   Legend,
 } from "chart.js";
-import { HistoricalChart } from "../../apis/coinGecko";
 import { Line } from "react-chartjs-2";
-import { chartDays } from "../../static/chartDays";
+import { HistoricalChart } from "@/apis/coinGecko";
+import Loader from "@/components/Loader/Loader";
+import { useResize } from "@/hooks/useResize";
+import { chartDays } from "@/static/chartDays";
+import SelectButton from "./Components/SelectButton/SelectButton";
 import "./HistoryChart.scss";
-import Loader from "../../components/Loader/Loader";
-import { useResize } from "../../hooks/useResize";
 
 ChartJS.register(
   CategoryScale,

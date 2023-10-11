@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../store/store";
-import { changePage } from "../../../store/reducers/searchPageSlice";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { RootState } from "@/store/store";
+import { changePage } from "@/store/reducers/searchPageSlice";
 import "./Pagination.scss";
 
 const Pagination: React.FunctionComponent = () => {

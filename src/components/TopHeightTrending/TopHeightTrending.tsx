@@ -1,4 +1,4 @@
-import { IItems } from "../../types/coins.interface";
+import { IItems } from "@/types/coins.interface";
 import "./TopHeightTrending.scss";
 
 const TopSevenTrending: React.FunctionComponent<{ sevenTrends: IItems[] }> = ({

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import { useDebounce } from "../../../../hooks/useDebounce";
-import { FaSearch } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../../store/store";
-import { SearchCoin } from "../../../../types/coins.interface";
-import { getSearchResult } from "../../../../store/reducers/searchSlice";
-import { SearchCoins } from "../../../../apis/coinGecko";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useDebounce } from "@/hooks/useDebounce";
+import { FaSearch } from "react-icons/fa";
+import { RootState } from "@/store/store";
+import { SearchCoin } from "@/types/coins.interface";
+import { getSearchResult } from "@/store/reducers/searchSlice";
+import { SearchCoins } from "@/apis/coinGecko";
 import "./Search.scss";
 
 const SearchInput: React.FunctionComponent<{

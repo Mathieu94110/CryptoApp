@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface initialState {
+export interface searchPageSliceProps {
   page: number;
 }
-const initialState: initialState = {
+const initialState: searchPageSliceProps = {
   page: 1,
 };
 

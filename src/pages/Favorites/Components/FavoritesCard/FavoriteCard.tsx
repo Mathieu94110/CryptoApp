@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { FaSearchPlus, FaTrash } from "react-icons/fa";
-import { switchFavorite } from "../../../../store/reducers/favoritesSlice";
-import { CoinMarket } from "../../../../types/coins.interface";
+import { switchFavorite } from "@/store/reducers/favoritesSlice";
+import { CoinMarket } from "@/types/coins.interface";
 import "./FavoriteCard.scss";
 
 export default function FavoriteCard({

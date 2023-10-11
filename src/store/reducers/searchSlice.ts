@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { SearchCoin } from "../../types/coins.interface";
+import { SearchCoin } from "@/types/coins.interface";
 
-export interface initialState {
+export interface searchSliceProps {
   searchResults: SearchCoin[];
 }
-const initialState: initialState = {
+const initialState: searchSliceProps = {
   searchResults: [],
 };
 

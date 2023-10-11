@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import DropdownsMenu from "./Components/DropdownsMenu";
-import { getFirst250Coins } from "../../apis/coinGecko";
-import SearchCryptoTable from "../../components/SearchCryptoTable/SearchCryptoTable";
-import { MarketData } from "../../types/coins.interface";
-import Loader from "../../components/Loader/Loader";
+import { getFirst250Coins } from "@/apis/coinGecko";
+import SearchCryptoTable from "@/components/SearchCryptoTable/SearchCryptoTable";
+import { MarketData } from "@/types/coins.interface";
+import Loader from "@/components/Loader/Loader";
 import "./WinnersAndLoosers.scss";
 
 function WinnersAndLoosers() {

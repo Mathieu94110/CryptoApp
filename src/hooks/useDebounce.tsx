@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Timer, SomeFunction } from "../types/debounce.interface";
+import { Timer, SomeFunction } from "@/types/debounce.interface";
 
 export function useDebounce<Func extends SomeFunction>(
   func: Func,

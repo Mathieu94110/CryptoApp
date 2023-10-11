@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { CoinDetails } from "../../../apis/coinGecko";
-import { CoinsFetchData } from "../../../types/coins.interface";
 import { FaCloud, FaCoins, FaSmile, FaUser, FaUsers } from "react-icons/fa";
-import Loader from "../../../components/Loader/Loader";
+import Loader from "@/components/Loader/Loader";
+import { CoinDetails } from "@/apis/coinGecko";
+import { CoinsFetchData } from "@/types/coins.interface";
 import "./CoinDetail.scss";
 
 const CoinDetail: React.FunctionComponent<{ coin: string }> = ({ coin }) => {

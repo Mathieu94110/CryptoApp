@@ -1,5 +1,5 @@
-import SearchCryptoItem from "../../pages/SearchCrypto/Components/SearchCryptoItem/SearchCryptoItem";
-import { MarketData } from "../../types/coins.interface";
+import SearchCryptoItem from "@/pages/SearchCrypto/Components/SearchCryptoItem/SearchCryptoItem";
+import { MarketData } from "@/types/coins.interface";
 import "./SearchCryptoTable.scss";
 
 const SearchCryptoTable: React.FunctionComponent<{

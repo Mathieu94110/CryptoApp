@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
-import HistoryChart from "../../components/HistoryChart/HistoryChart";
+import HistoryChart from "@/components/HistoryChart/HistoryChart";
 import CoinDetail from "./Components/CoinDetail";
-import { CoinParams } from "../../types/coins.interface";
+import { CoinParams } from "@/types/coins.interface";
 import { FaArrowLeft } from "react-icons/fa";
 import "./CryptoDetails.scss";
 

@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { CoinMarket } from "../../types/coins.interface";
+import { CoinMarket } from "@/types/coins.interface";
 
-export interface initialState {
+export interface favoritesSliceProps {
   favoritesItems: CoinMarket[];
 }
-const initialState: initialState = {
+const initialState: favoritesSliceProps = {
   favoritesItems: localStorage.getItem("favoriteItems")
     ? JSON.parse(localStorage.getItem("favoriteItems")!)
     : [],

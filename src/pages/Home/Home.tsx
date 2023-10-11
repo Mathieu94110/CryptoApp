@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 import { Await, Outlet, useLoaderData } from "react-router-dom";
-import TopSevenTrending from "../../components/TopHeightTrending/TopHeightTrending";
-import Bitcoin from "../../components/Bitcoin/Bitcoin";
-import Carousel from "../../components/Banner/Carousel";
-import { HomeLoader } from "../../types/coins.interface";
+import TopSevenTrending from "@/components/TopHeightTrending/TopHeightTrending";
+import Bitcoin from "@/components/Bitcoin/Bitcoin";
+import Carousel from "@/components/Banner/Carousel";
+import { HomeLoader } from "@/types/coins.interface";
 import "./Home.scss";
 
 function Home(): JSX.Element {

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import type { RootState } from "../../../../store/store";
-import { switchFavorite } from "../../../../store/reducers/favoritesSlice";
-import { MarketData } from "../../../../types/coins.interface";
+import type { RootState } from "@/store/store";
+import { switchFavorite } from "@/store/reducers/favoritesSlice";
+import { MarketData } from "@/types/coins.interface";
 import { FaStar } from "react-icons/fa";
 import "./SearchCryptoItem.scss";
 

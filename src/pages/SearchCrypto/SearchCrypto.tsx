@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { CoinList } from "../../apis/coinGecko";
-import { Search } from "./Components/Search/Search";
-import { MarketData } from "../../types/coins.interface";
-import Loader from "../../components/Loader/Loader";
-import Pagination from "../../components/SearchCryptoTable/Pagination/Pagination";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
-import SearchCryptoTable from "../../components/SearchCryptoTable/SearchCryptoTable";
+import { Search } from "./Components/Search/Search";
+import SearchCryptoTable from "@/components/SearchCryptoTable/SearchCryptoTable";
+import Loader from "@/components/Loader/Loader";
+import Pagination from "@/components/SearchCryptoTable/Pagination/Pagination";
+import { CoinList } from "@/apis/coinGecko";
+import { MarketData } from "@/types/coins.interface";
+import { RootState } from "@/store/store";
+
 import "./SearchCrypto.scss";
 
 export default function SearchCrypto(): JSX.Element {
