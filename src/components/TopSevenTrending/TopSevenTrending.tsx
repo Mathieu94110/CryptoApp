@@ -1,11 +1,11 @@
 import { IItems } from "@/types/coins.interface";
-import "./TopHeightTrending.scss";
+import "./TopSevenTrending.scss";
 
 const TopSevenTrending: React.FunctionComponent<{ sevenTrends: IItems[] }> = ({
   sevenTrends,
 }) => {
   return (
-    <div className="top-height-trending">
+    <div className="top-seven-trending">
       <table>
         <thead>
           <tr>
@@ -21,20 +21,20 @@ const TopSevenTrending: React.FunctionComponent<{ sevenTrends: IItems[] }> = ({
         </thead>
         {sevenTrends.map((trend: IItems, index: number) => {
           return (
-            <tbody key={index}>
+            <tbody className="top-seven-trending__tbody" key={index}>
               <tr>
-                <td className="top-height-trending__td"> {(index += 1)}</td>
-                <td className="top-height-trending__td">
+                <td className="top-seven-trending__td"> {(index += 1)}</td>
+                <td className="top-seven-trending__td">
                   {" "}
                   <img
                     src={trend.item.small}
                     alt={trend.item.name}
-                    className="top-height-trending__grid-item-image"
+                    className="top-seven-trending__grid-item-image"
                   />
                 </td>
-                <td className="top-height-trending__td"> {trend.item.name}</td>
-                <td className="top-height-trending__td">{trend.item.symbol}</td>
-                <td className="top-height-trending__td">
+                <td className="top-seven-trending__td"> {trend.item.name}</td>
+                <td className="top-seven-trending__td">{trend.item.symbol}</td>
+                <td className="top-seven-trending__td">
                   {" "}
                   {trend.item.market_cap_rank}
                 </td>

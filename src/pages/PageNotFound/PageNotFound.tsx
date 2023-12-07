@@ -19,7 +19,7 @@ function PageNotFound() {
 
       <div className="page-not-found__title">
         <h1>404 Page non trouvée</h1>
-        <hr />
+        <hr className="page-not-found__separator" />
       </div>
     </div>
   );

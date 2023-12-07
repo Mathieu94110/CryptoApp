@@ -3,7 +3,6 @@
 .search-crypto-table {
   text-align: center;
   width: 100%;
-  height: calc(100vh - 282px);
   overflow-y: auto;
   &__loader {
     width: 100%;
@@ -27,6 +26,12 @@
     margin-top: 10px;
     text-transform: capitalize;
     height: 2rem;
+  }
+}
+
+@media screen and (min-width: 470px) {
+  .search-crypto-table {
+    height: calc(100vh - 282px);
   }
 }
 

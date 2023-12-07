@@ -19,7 +19,7 @@ const SearchCryptoTable: React.FunctionComponent<{
             >
               <tr>
                 {[
-                  "Position",
+                  "Classement",
                   "Coin",
                   "Prix",
                   `${period}`,

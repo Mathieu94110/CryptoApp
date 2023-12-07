@@ -8,7 +8,10 @@ const router = createBrowserRouter(routesConfig);
 function App() {
   return (
     <div className="app-container">
-      <div role="document" className="flex-fill bg-primary">
+      <div
+        role="document"
+        className=" bg-primary flex-fill d-flex  flex-column"
+      >
         <Provider store={store}>
           <RouterProvider router={router}></RouterProvider>
         </Provider>

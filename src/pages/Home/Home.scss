@@ -10,7 +10,6 @@
   &__tables {
     display: block;
     justify-content: space-between;
-    top: 242px;
     margin: 0 5%;
   }
 }
@@ -27,23 +26,18 @@
 @media screen and (min-width: 926px) {
   .home {
     width: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
     padding-bottom: 0;
-    background-color: rgb(66, 66, 222);
-    background: linear-gradient(
-      90deg,
-      rgba(32, 66, 255, 1) 0%,
-      rgba(32, 32, 255, 1) 94%
-    );
 
     &__wrapper {
-      top: 120px;
-      position: fixed;
+      flex: 1 1 auto;
     }
     &__tables {
       display: flex;
-      margin: 0 2%;
-      width: 96%;
-      position: fixed;
+      margin: 30px 20px 10px;
+      flex: 1 1 auto;
     }
   }
 }

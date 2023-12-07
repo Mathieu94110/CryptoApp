@@ -6,8 +6,11 @@ async function homeLoader(): Promise<{
   sevenTrendsData: IItems[];
 }> {
   try {
-    const bitcoinData = await getBitcoinData();
-    const sevenTrendsData = await getSevenTrends();
+    const [bitcoinData, trendsData] = await Promise.all([
+      getBitcoinData(),
+      getSevenTrends(),
+    ]);
+    const sevenTrendsData = trendsData.slice(0, 7);
     return { bitcoinData, sevenTrendsData };
   } catch (error) {
     throw error;

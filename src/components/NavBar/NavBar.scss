@@ -1,18 +1,14 @@
 .nav-bar-items {
+  padding: 20px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1.2rem;
-  padding: 0 30px;
   background-color: var(--primary);
   box-shadow: 0 5px 15px (0, 0, 0, 0.25);
-  width: 95%;
-  height: 80px;
+  width: calc(100% - 40px);
+  height: auto;
   border-radius: 13px;
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translate(-50%);
 }
 
 .logo {
@@ -57,11 +53,22 @@
     font-size: 1rem;
   }
 }
+
+@media screen and (min-width: 926px) {
+  .nav-bar-items {
+    margin: 20px;
+  }
+}
+
 @media screen and (max-width: 926px) {
   .nav-bar-items {
     z-index: 99;
     padding: 0 16px;
     height: 60px;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    position: fixed;
   }
   .nav-menu {
     display: flex;
@@ -89,7 +96,7 @@
   .nav-links {
     display: block;
     width: 100%;
-    padding: 2rem 0;
+    padding: 1rem 0;
     color: var(--primary);
     font-weight: 600;
     z-index: 100;

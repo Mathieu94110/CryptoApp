@@ -19,14 +19,15 @@
   }
   &__body {
     width: calc(100% - 40px);
-    margin: 0 20px;
+    margin: 0 20px 20px;
     @include vertical-center;
   }
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 960px) {
   .winners-and-loosers {
+    margin-top: 0px;
     &__title {
-      font-size: 34px;
+      font-size: 28px;
     }
   }
 }

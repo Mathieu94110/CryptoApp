@@ -1,7 +1,6 @@
 .page-not-found {
   width: 100%;
-  margin-top: 120px;
-
+  flex: 1 1 auto;
   &__back-button {
     height: 40px;
     margin-left: 30px;
@@ -29,9 +28,21 @@
       font-weight: 600;
     }
   }
+  &__separator {
+    margin: 30px;
+  }
 }
+@media screen and (max-width: 926px) {
+  .page-not-found {
+    margin-top: 120px;
+  }
+}
+
 @media screen and (min-width: 926px) {
   .page-not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     &__back-button {
       &-button {
         padding: 15px;
