@@ -9,7 +9,7 @@ const TopSevenTrending: React.FunctionComponent<{ sevenTrends: IItems[] }> = ({
       <table>
         <thead>
           <tr>
-            <th colSpan={5}>Top 8 des tendances crypto</th>
+            <th colSpan={5}>Top 7 des tendances crypto</th>
           </tr>
           <tr>
             <th>Position</th>

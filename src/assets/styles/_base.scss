@@ -277,3 +277,10 @@ table {
 .overflow-y-auto {
   overflow-y: auto;
 }
+ul.slick-dots {
+  display: none !important;
+}
+.slick-arrow,
+.slick-next {
+  display: none !important;
+}

@@ -5,10 +5,13 @@
   margin: 120px 0px 0px;
   padding-top: 10px;
   height: auto;
-
+  display: flex;
+  flex-direction: column;
+flex:  1 1 auto;
   &__container {
     @include vertical-center;
     height: 100%;
+    flex: 1 1 auto;
   }
   &__back-button {
     height: 40px;
@@ -52,7 +55,7 @@
       }
     }
     &__chart {
-      width: 600px;
+      width: 360px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -68,6 +71,17 @@
     &__back-button {
       position: fixed;
       top: 140px;
+    }
+    &__chart {
+      width: 500px;
+    }
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .crypto-details {
+    &__chart {
+      width: 700px;
     }
   }
 }

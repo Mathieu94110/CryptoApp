@@ -30,23 +30,21 @@ export default function SearchCrypto(): JSX.Element {
       <h1 className="search-crypto__title">
         Valeur des cryptommonaies par capitalisation boursière
       </h1>
-      <div className="search-crypto__body">
+      <div className="flex-fill d-flex flex-column">
         <Search />
-        <div>
-          <div className="search-crypto__results">
-            {loading ? (
-              <div className="search-crypto__loader">
-                <Loader />
+        <div className="search-crypto__results">
+          {loading ? (
+            <div className="search-crypto__loader">
+              <Loader />
+            </div>
+          ) : (
+            <>
+              <SearchCryptoTable coins={coins} period="24h" />
+              <div className="search-crypto__pagination">
+                <Pagination />
               </div>
-            ) : (
-              <>
-                <SearchCryptoTable coins={coins} period="24h" />
-                <div className="search-crypto__pagination">
-                  <Pagination />
-                </div>
-              </>
-            )}
-          </div>
+            </>
+          )}
         </div>
       </div>
     </div>

@@ -6,8 +6,7 @@
   &__content {
     position: relative;
     background-color: #fff;
-    border-radius: 20px;
-    cursor: pointer;
+    border-radius: 15px;
     height: fit-content;
     &:hover {
       img {
@@ -23,10 +22,12 @@
     z-index: 1;
     &:first-child {
       &:hover {
-        color: blue;
+        transform: scale(1.1);
+        color: #5433ff;
       }
     }
     &:hover {
+      transform: scale(1.1);
       color: red;
     }
   }
@@ -37,9 +38,13 @@
     border-top-right-radius: 20px;
     overflow: hidden;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     img {
       transition: 1s transform;
-      width: 100%;
+      width: 60%;
     }
   }
   &__infos {
@@ -53,14 +58,16 @@
     align-items: flex-start;
     &-item {
       padding: 4px 0;
-      font-weight: 600;
-      & > :nth-child(odd) {
-        color: blue;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      & > :nth-child(even) {
+        font-weight: 600;
       }
     }
   }
   &__buttons {
-    padding: 8px 4px;
+    padding: 10px 4px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     display: flex;
@@ -81,6 +88,7 @@
       border-top-right-radius: 20px;
       overflow: hidden;
       img {
+        width: 100%;
         transition: 1s transform;
       }
     }
@@ -90,7 +98,7 @@
     &__infos {
       padding: 10px;
       align-items: flex-start;
-      padding: 10px 0 10px 20px;
+      padding: 10px;
     }
     &__buttons {
       padding: 16px 8px;

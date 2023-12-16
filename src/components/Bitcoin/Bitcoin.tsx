@@ -21,12 +21,12 @@ const Bitcoin: React.FunctionComponent<{ bitcoin: BitcoinInterface }> = ({
         <table className="bitcoin__table">
           <thead>
             <tr className="bitcoin__table-header">
-              <th>Capitalisation :</th>
-              <th> Jeton :</th>
+              <th>Capitalisation</th>
+              <th> Jeton</th>
               <th>Volume(24H)</th>
-              <th> Max 24h :</th>
-              <th> Min 24h :</th>
-              <th>En circulation :</th>
+              <th> Max 24h</th>
+              <th> Min 24h</th>
+              <th>En circulation</th>
             </tr>
           </thead>
           <tbody>

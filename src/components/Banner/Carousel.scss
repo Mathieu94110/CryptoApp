@@ -33,7 +33,7 @@ ul {
 }
 //
 .slick-slider {
-  width: 94%;
+  width: 100%;
 }
 .slides .slickPrev,
 .slides .slickNext {
@@ -54,13 +54,9 @@ ul {
   }
   .carousel-item {
     display: inline-block;
-    width: 200;
-    height: 200;
+    width: 200px;
     &__link {
       margin: 0;
-    }
-    &__image {
-      height: 60px;
     }
     &__texts,
     &__price {
