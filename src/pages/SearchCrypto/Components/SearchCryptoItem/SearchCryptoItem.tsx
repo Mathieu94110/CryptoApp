@@ -63,7 +63,7 @@ function SearchCryptoItem({
         <img
           src={row?.image}
           alt={row.name}
-          className="search-crypto-item__image"
+          className="search-crypto-item__img"
         />
         <div className="d-flex flex-column">
           <span className="search-crypto-item__symbol">

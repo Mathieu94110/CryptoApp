@@ -1,3 +1,8 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center
+}
+
 @mixin vertical-center {
   display: flex;
   flex-direction: column;

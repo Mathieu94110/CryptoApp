@@ -10,7 +10,7 @@ function App() {
     <div className="app-container">
       <div
         role="document"
-        className=" bg-primary flex-fill d-flex  flex-column"
+        className="flex-fill d-flex  flex-column"
       >
         <Provider store={store}>
           <RouterProvider router={router}></RouterProvider>

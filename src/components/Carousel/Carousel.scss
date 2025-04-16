@@ -1,0 +1,153 @@
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  padding: 16px 20px;
+  margin-top: 80px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel__item {
+  display: inline-block;
+  height: 100px;
+  padding: 0 20px;
+}
+
+.carousel__slide {
+  display: flex !important;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.carousel__link {
+  text-decoration: none;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 40px;
+  overflow: visible;
+  background-color: var(--primary-opacity-60);
+}
+
+.carousel__box {
+  position: relative;
+  padding: 16px 6px 6px;
+  width: 100%;
+  color: white;
+}
+
+.carousel__label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary);
+  padding: 0 6px;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.carousel__img {
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.carousel__texts {
+  font-size: 0.7rem;
+}
+
+.carousel__price {
+  font-size: 0.7rem;
+}
+
+.carousel__price-growth {
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.carousel__price-up {
+  color: #00a83e;
+}
+
+.carousel__price-down {
+  color: #ff3a33;
+}
+
+.carousel__growth-icon {
+  margin-right: 4px;
+}
+
+.slick-slider {
+  width: 100%;
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+}
+
+.slick-prev {
+  left: -21px !important;
+}
+
+.slick-next {
+  right: -21px !important;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  font-family: 'slick'; // required
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.75;
+  color: white;
+}
+
+.slickNext {
+  margin-right: 5%;
+}
+
+.carousel__title {
+  margin-bottom: 80px;
+  margin-left: 26px;
+}
+
+.carousel__item {
+  width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.slick-track {
+  display: flex !important;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+// MEDIA QUERIES
+@media screen and (min-width: 926px) {
+  .carousel {
+    margin: 0;
+  }
+
+  .carousel__link {
+    margin: 0;
+  }
+
+  .carousel__img {
+    height: 50px;
+  }
+
+  .carousel__texts,
+  .carousel__price {
+    font-size: 1rem;
+  }
+}

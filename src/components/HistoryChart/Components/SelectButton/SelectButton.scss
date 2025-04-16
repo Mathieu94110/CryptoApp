@@ -3,30 +3,27 @@
   border-radius: 5px;
   padding: 4px;
   margin: 0 4px;
+  font-weight: 600;
+  font-size: 12px;
+  width: 40px;
+  transition: background-color 0.2s ease;
   cursor: pointer;
-  font-weight: 700;
+
   &:hover {
     background-color: var(--secondary);
-    color: var(--primary);
-    font-weight: 700;
   }
-  width: 22%;
-}
-.select-active {
-  background-color: var(--secondary);
-  color: var(--primary);
-}
 
-@media screen and (min-width: 1064px) {
-  .select-button {
-    border: 1px solid #fff;
-    border-radius: 5px;
+  @media screen and (min-width: 1064px) {
     margin: 4px;
-    cursor: pointer;
+    width: 22%;
+
     &:hover {
-      background-color: var(--secondary);
       color: var(--primary);
     }
-    width: 22%;
+  }
+
+  &--active {
+    background-color: var(--secondary);
+    color: var(--primary);
   }
 }

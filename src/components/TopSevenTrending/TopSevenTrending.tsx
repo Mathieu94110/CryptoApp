@@ -1,49 +1,43 @@
 import { IItems } from "@/types/coins.interface";
 import "./TopSevenTrending.scss";
+import { topSevenTrendsColumnsKeys } from "src/constants/topSevenTrends";
+import { formatToUpperCase } from "@/utils/convert";
 
-const TopSevenTrending: React.FunctionComponent<{ sevenTrends: IItems[] }> = ({
-  sevenTrends,
-}) => {
+const TopSevenTrending: React.FC<{ sevenTrends: IItems[] }> = ({ sevenTrends }) => {
   return (
     <div className="top-seven-trending">
       <table>
         <thead>
           <tr>
-            <th colSpan={5}>Top 8 des tendances crypto</th>
+            <th colSpan={5}>Top 7 des tendances</th>
           </tr>
           <tr>
-            <th>Position</th>
-            <th>Logo</th>
-            <th>Nom</th>
-            <th>Symbole</th>
-            <th>Classement</th>
+            {topSevenTrendsColumnsKeys.map((col, index) => (
+              <th key={index}>{formatToUpperCase(col)}</th>
+            ))}
           </tr>
         </thead>
-        {sevenTrends.map((trend: IItems, index: number) => {
-          return (
-            <tbody className="top-seven-trending__tbody" key={index}>
-              <tr>
-                <td className="top-seven-trending__td"> {(index += 1)}</td>
-                <td className="top-seven-trending__td">
-                  {" "}
-                  <img
-                    src={trend.item.small}
-                    alt={trend.item.name}
-                    className="top-seven-trending__grid-item-image"
-                  />
-                </td>
-                <td className="top-seven-trending__td"> {trend.item.name}</td>
-                <td className="top-seven-trending__td">{trend.item.symbol}</td>
-                <td className="top-seven-trending__td">
-                  {" "}
-                  {trend.item.market_cap_rank}
-                </td>
-              </tr>
-            </tbody>
-          );
-        })}
+
+        <tbody className="top-seven-trending__tbody">
+          {sevenTrends.map((trend, index) => (
+            <tr key={index}>
+              <td className="top-seven-trending__td">{index + 1}</td>
+              <td className="top-seven-trending__td">
+                <img
+                  src={trend.item.small}
+                  alt={trend.item.name}
+                  className="top-seven-trending__grid-item-image"
+                />
+              </td>
+              <td className="top-seven-trending__td">{trend.item.name}</td>
+              <td className="top-seven-trending__td">{trend.item.symbol}</td>
+              <td className="top-seven-trending__td">{trend.item.market_cap_rank}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );
 };
+
 export default TopSevenTrending;

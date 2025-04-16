@@ -1,8 +1,7 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
+import { Outlet } from "react-router-dom";
 import ErrorPage from "./pages/PageNotFound/PageNotFound";
 import homeLoader from "./loaders/homeLoader";
-import { Suspense } from "react";
-import { Outlet } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 
 const Homepage = lazy(() => import("./pages/Home/Home"));

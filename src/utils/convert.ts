@@ -15,3 +15,14 @@ export const convert = (value: string) => {
   }
   return value;
 };
+
+export const formatedNumber = (value: number): string => {
+  return new Intl.NumberFormat('fr-FR', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(value).replace(/\u00A0/g, ' ');
+}
+
+export const toNumericValue = (value: string | number) => typeof value === "string" ? parseFloat(value) : value;
+
+export const formatToUpperCase = (value: string): string => value.charAt(0).toUpperCase() + value.slice(1)

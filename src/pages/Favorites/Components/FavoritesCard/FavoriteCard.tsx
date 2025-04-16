@@ -23,7 +23,7 @@ export default function FavoriteCard({
   return (
     <div className="favorite-card" key={key}>
       <div className="favorite-card__content">
-        <div className="favorite-card__image-container">
+        <div className="favorite-card__img-container">
           <img
             src={favorite.image}
             alt={favorite.name}

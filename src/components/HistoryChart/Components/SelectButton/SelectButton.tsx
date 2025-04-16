@@ -10,7 +10,7 @@ const SelectButton: React.FunctionComponent<{
     <span
       onClick={onClick}
       className={`select-button 
-    ${selected ? "select-active " : ""}`}
+    ${selected ? "select-button--active " : ""}`}
     >
       {children}
     </span>
