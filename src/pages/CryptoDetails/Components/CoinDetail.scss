@@ -1,14 +1,14 @@
 .coin-details {
-  width: calc(100% - 40px);
+  width: calc(100% - 20px);
   color: #fff;
-  margin: 10px 20px;
+  margin: 10px;
   &__header {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    font-size: 15px;
+    font-size: 12px;
     > img {
       width: 30px;
     }
@@ -49,8 +49,10 @@
 
 @media screen and (min-width: 960px) {
   .coin-details {
+    margin: 10px 20px;
     &__header {
       width: 60%;
+      font-size: 15px;
       > img {
         width: auto;
       }

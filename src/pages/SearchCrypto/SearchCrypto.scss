@@ -4,6 +4,14 @@
   text-align: center;
   width: 100%;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  &__results {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   &__loader {
     width: 100%;
     height: calc(100vh - 200px);
@@ -20,10 +28,10 @@
     font-size: 0.6rem;
   }
   &__pagination {
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10px;
     text-transform: capitalize;
     height: 2rem;
   }
@@ -44,5 +52,8 @@
 @media screen and (max-width: 926px) {
   .search-crypto {
     margin-top: 80px;
+    &__results {
+      flex: 1 1 auto;
+    }
   }
 }

@@ -7,8 +7,7 @@
   &__content {
     position: relative;
     background-color: #fff;
-    border-radius: 20px;
-    cursor: pointer;
+    border-radius: 15px;
     height: fit-content;
 
     &:hover {
@@ -27,11 +26,13 @@
 
     &:first-child {
       &:hover {
-        color: blue;
+        transform: scale(1.1);
+        color: #5433ff;
       }
     }
 
     &:hover {
+      transform: scale(1.1);
       color: red;
     }
   }
@@ -46,7 +47,7 @@
 
     img {
       transition: 1s transform;
-      width: 100%;
+      width: 60%;
     }
   }
 
@@ -71,7 +72,7 @@
   }
 
   &__buttons {
-    padding: 8px 4px;
+    padding: 10px 4px;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     display: flex;
@@ -94,6 +95,7 @@
       overflow: hidden;
 
       img {
+        width: 100%;
         transition: 1s transform;
       }
     }
@@ -105,7 +107,7 @@
     &__infos {
       padding: 10px;
       align-items: flex-start;
-      padding: 10px 0 10px 20px;
+      padding: 10px;
     }
 
     &__buttons {

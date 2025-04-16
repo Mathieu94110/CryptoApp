@@ -26,15 +26,17 @@
     height: auto;
     width: 600px;
     padding: 10px;
-    label {
-      color: #fff;
-      font-weight: 600;
-      font-size: 20px;
-    }
     &__select {
       margin: 0 0 0 20px;
       padding: 6px;
       font-size: 18px;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .dropdowns-menu {
+    label {
+      font-size: 20px;
     }
   }
 }
