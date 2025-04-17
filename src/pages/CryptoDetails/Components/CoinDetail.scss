@@ -2,6 +2,7 @@
   width: calc(100% - 20px);
   color: #fff;
   margin: 10px;
+
   &__header {
     width: 100%;
     display: flex;
@@ -9,32 +10,39 @@
     align-items: center;
     margin-bottom: 20px;
     font-size: 12px;
-    > img {
+
+    >img {
       width: 30px;
     }
   }
+
   &__title {
     text-transform: capitalize;
     font-weight: 500;
     max-width: 90px;
   }
+
   &__subtitles {
     text-transform: capitalize;
     font-weight: 500;
   }
+
   &__description {
     font-size: 15px;
-    & > a {
+
+    &>a {
       color: var(--secondary);
       text-decoration: none;
       font-weight: 600;
     }
   }
+
   &__details {
     display: flex;
     width: 100%;
     flex-direction: column;
   }
+
   &__statistics {
     margin-bottom: 20px;
 
@@ -44,42 +52,54 @@
       margin-bottom: 20px;
       color: var(--secondary);
     }
+
+    :last-child {
+      margin: 0px;
+    }
   }
 }
 
 @media screen and (min-width: 960px) {
   .coin-details {
     margin: 10px 20px;
+
     &__header {
       width: 60%;
       font-size: 15px;
-      > img {
+
+      >img {
         width: auto;
       }
     }
+
     &__details {
       display: flex;
       width: 100%;
       flex-direction: row;
       justify-content: space-between;
     }
+
     &__title {
       font-size: 24px;
       max-width: none;
       font-weight: 600;
     }
+
     &__subtitles {
       font-size: 20px;
       font-weight: 600;
     }
+
     &__description {
       max-width: 800px;
       max-height: 120px;
       overflow-y: auto;
     }
+
     &__statistics {
       margin: 0px;
       padding-right: 20px;
+
       &-title {
         font-weight: 600;
         font-size: 24px;

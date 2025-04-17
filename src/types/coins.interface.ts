@@ -209,6 +209,8 @@ export interface CoinsFetchData {
   watchlist_portfolio_users: number;
   asset_platform_id: string;
   tickers: CoinsFetchDataTicker[];
+  // dynamic index accessor
+  [key: string]: string | number | object | undefined;
 }
 
 type TrustScore = "green" | "yellow" | "red";
@@ -278,4 +280,11 @@ export interface SearchCoin {
   name: string;
   symbol: string;
   thumb: string;
+}
+
+export interface CoinStatistic {
+  icon: JSX.Element;
+  label: string;
+  key: string;
+  suffix?: string;
 }

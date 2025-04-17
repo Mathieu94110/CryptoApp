@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -30,30 +30,58 @@ ChartJS.register(
 );
 
 const HistoryChart: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
-  const [coinData, setCoinData] = useState<number[][]>([]);
+  const [coinData, setCoinData] = useState<number[][] | null>(null);
   const [days, setDays] = useState<number>(1);
-  const [flag, setflag] = useState<boolean>(false);
   const { screenSize } = useResize();
 
   useEffect(() => {
-    async function fetchHistoricData(): Promise<void> {
-      const response = await HistoricalChart(coin, days);
-      setflag(true);
-      setCoinData(response.prices);
-    }
+    const fetchHistoricData = async () => {
+      try {
+        const response = await HistoricalChart(coin, days);
+        setCoinData(response.prices);
+      } catch (error) {
+        console.error("Failed to fetch historical data", error);
+      }
+    };
     fetchHistoricData();
-  }, [days, coin]);
-  // in order to improved the chart rendering on small devices
-  let showTicks = screenSize < 400 ? { display: false } : { color: "#fff" };
+  }, [coin, days]);
 
-  if (!coinData || flag === false) {
+  const coinChartData = useMemo(
+    () =>
+      coinData?.map((value) => ({
+        x: value[0],
+        y: value[1].toFixed(2),
+      })),
+    [coinData]
+  );
+
+
+  const data = useMemo(() => {
+    return {
+      labels: coinData?.map((coin) => {
+        let date = new Date(coin[0]);
+        let time = `${date.getHours()}:${date.getMinutes()}`;
+        return days === 1 ? time : date.toLocaleDateString();
+      }),
+      datasets: [
+        {
+          fill: true,
+          label: coin,
+          data: coinChartData?.map((val) => val.y),
+          borderColor: "gold",
+          backgroundColor: "rgba(53, 162, 235, 0.5)",
+        },
+      ],
+    };
+  }, [coinData, days, coinChartData]);
+
+
+  if (!coinData) {
     return <Loader />;
-  } else {
   }
-  const coinChartData = coinData.map((value) => ({
-    x: value[0],
-    y: value[1].toFixed(2),
-  }));
+
+
+  const showTicks = screenSize < 400 ? { display: false } : { color: "#fff" };
 
   const options = {
     responsive: true,
@@ -68,23 +96,6 @@ const HistoryChart: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
     },
   };
 
-  const data = {
-    labels: coinData.map((coin) => {
-      let date = new Date(coin[0]);
-      let time = `${date.getHours()}:${date.getMinutes()}`;
-      return days === 1 ? time : date.toLocaleDateString();
-    }),
-    datasets: [
-      {
-        fill: true,
-        label: coin,
-        data: coinChartData.map((val) => val.y),
-        borderColor: "gold",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
-      },
-    ],
-  };
-
   return (
     <div>
       <Line options={options} data={data} />
@@ -94,7 +105,6 @@ const HistoryChart: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
             key={day.value}
             onClick={() => {
               setDays(day.value);
-              setflag(false);
             }}
             selected={day.value === days}
           >

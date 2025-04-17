@@ -1,35 +1,15 @@
-import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import SearchInput from "./Components/SearchInput/SearchInput";
 import SearchCryptoTable from "@/components/SearchCryptoTable/SearchCryptoTable";
 import Loader from "@/components/Loader/Loader";
 import Pagination from "@/components/SearchCryptoTable/Pagination/Pagination";
-import { getCoinsList } from "@/apis/coinGecko";
-import { MarketData } from "@/types/coins.interface";
 import { RootState } from "@/store/store";
-
 import "./SearchCrypto.scss";
+import { useCoinList } from "@/hooks/useCoinList";
 
 export default function SearchCrypto(): JSX.Element {
-  const [coinsList, setCoinsList] = useState<MarketData[]>([]);
-  const [loading, setLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string | null>(null);
   const page = useSelector((state: RootState) => state.searchPage.page);
-
-  useEffect(() => {
-    async function fetchCoinsList(page: number): Promise<void> {
-      try {
-        setLoading(true);
-        const response = await getCoinsList(page);
-        setCoinsList(response);
-      } catch (e) {
-        setError("Impossible de charger les données.");
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchCoinsList(page);
-  }, [page]);
+  const { coinsList, isLoading, error } = useCoinList(page);
 
   return (
     <div className="search-crypto">
@@ -39,13 +19,13 @@ export default function SearchCrypto(): JSX.Element {
       <div className="flex-fill d-flex flex-column">
         <SearchInput />
         <div className="search-crypto__results">
-          {loading ? (
+          {isLoading ? (
             <div className="search-crypto__loader">
               <Loader />
             </div>
           ) : error ?
             <h2 className="search-crypto__title">
-              Une erreur est survenue durant le chargement des crypto-monnaies
+              {error}
             </h2> :
             (
               <>

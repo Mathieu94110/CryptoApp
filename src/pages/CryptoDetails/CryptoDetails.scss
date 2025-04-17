@@ -2,20 +2,23 @@
 
 .crypto-details {
   width: 100%;
-  margin: 120px 0px 0px;
+  margin: 60px 0px 0px;
   padding-top: 10px;
   height: auto;
   display: flex;
   flex-direction: column;
-flex:  1 1 auto;
+  flex: 1 1 auto;
+
   &__container {
-    @include vertical-center;
-    height: 100%;
-    flex: 1 1 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
+
   &__back-button {
     height: 40px;
-    margin-left: 20px;
+
     &-button {
       display: flex;
       padding: 10px;
@@ -26,12 +29,14 @@ flex:  1 1 auto;
       background-color: white;
       border: 0px;
       font-weight: 600;
+
       &:hover {
         background-color: var(--primary);
         color: white;
       }
     }
   }
+
   &__chart {
     width: 94%;
     margin: 0 3%;
@@ -47,13 +52,16 @@ flex:  1 1 auto;
 @media screen and (min-width: 926px) {
   .crypto-details {
     width: 100%;
-    padding: 0px 30px 0 30px;
+    padding: 0px;
     margin: 0;
+
     &__back-button {
       &-button {
+        margin-top: 30px;
         padding: 15px;
       }
     }
+
     &__chart {
       width: 360px;
       margin: 0 auto;
@@ -72,6 +80,7 @@ flex:  1 1 auto;
       position: fixed;
       top: 140px;
     }
+
     &__chart {
       width: 500px;
     }

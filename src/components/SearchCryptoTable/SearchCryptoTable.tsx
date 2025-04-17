@@ -26,7 +26,7 @@ const SearchCryptoTable: React.FunctionComponent<{
                   "Cap.",
                   "Favoris",
                 ].map((head) => (
-                  <th className="color-black font-700 py-5" key={head}>
+                  <th className="color-primary font-700 py-5" key={head}>
                     {head}
                   </th>
                 ))}

@@ -1,23 +1,11 @@
-import { useState, useEffect } from "react";
-import { FaCloud, FaCoins, FaSmile, FaUser, FaUsers } from "react-icons/fa";
+import { coinStatistics } from "src/constants/cryptoDetails";
+import { CoinStatistic } from "@/types/coins.interface";
 import Loader from "@/components/Loader/Loader";
-import { CoinDetails } from "@/apis/coinGecko";
-import { CoinsFetchData } from "@/types/coins.interface";
 import "./CoinDetail.scss";
+import { useCoinDetails } from "@/hooks/useCoinDetails";
 
 const CoinDetail: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
-  const [coinDetails, setCoinDetails] = useState<CoinsFetchData | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-
-  useEffect(() => {
-    const fetchCoinDetails = async (): Promise<void> => {
-      setIsLoading(true);
-      const response = await CoinDetails(coin);
-      setCoinDetails(response);
-      setIsLoading(false);
-    };
-    fetchCoinDetails();
-  }, []);
+  const { data: coinDetails, loading: isLoading } = useCoinDetails(coin);
 
   if (!coinDetails || isLoading) {
     return <Loader />;
@@ -30,30 +18,29 @@ const CoinDetail: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
         <h1 className="coin-details__title">{coinDetails.name}</h1>
         <h2 className="coin-details__subtitles">{coinDetails.symbol}</h2>
         <h2 className="coin-details__subtitles">
-          classsement: {coinDetails.market_cap_rank}
+          classement: {coinDetails.market_cap_rank}
         </h2>
       </div>
       <div className="coin-details__details">
         <ul className="coin-details__statistics">
           <h2 className="coin-details__statistics-title">Statistiques</h2>
-          <li className="mb-10">
-            <FaUser /> Nombre de possesseurs:{" "}
-            {coinDetails.watchlist_portfolio_users}
-          </li>
-          <li className="mb-10">
-            {" "}
-            <FaCoins /> Score de liquidité: {coinDetails.liquidity_score}
-          </li>
-          <li className="mb-10">
-            <FaCloud /> Plateforme:{coinDetails.asset_platform_id}
-          </li>{" "}
-          <li className="mb-10">
-            <FaSmile /> Avis positifs:{" "}
-            {coinDetails.sentiment_votes_up_percentage}%
-          </li>
-          <li>
-            <FaUsers /> Score de la communauté: {coinDetails.community_score}
-          </li>
+          {coinStatistics.map((stat: CoinStatistic) => {
+            const value = coinDetails[stat.key];
+            let displayValue;
+
+            if (value === undefined || value === null || typeof value === "object") {
+              displayValue = "Données non disponibles";
+            } else {
+              displayValue = value;
+            }
+
+            return (
+              <li key={stat.key} className="mb-10">
+                <span className="color-primary">{stat.icon} {stat.label}:</span>{displayValue}
+                {stat.suffix && ` ${stat.suffix}`}
+              </li>
+            );
+          })}
         </ul>
         <div className="d-flex flex-column">
           <h2 className="coin-details__statistics-title">Description</h2>
