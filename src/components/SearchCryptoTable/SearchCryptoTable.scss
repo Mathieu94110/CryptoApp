@@ -4,21 +4,25 @@
   text-align: center;
   width: 100%;
   overflow-y: auto;
+
   &__loader {
     width: 100%;
     height: calc(100vh - 200px);
     @include vertical-center;
   }
+
   &__title {
     font-size: 1rem;
     font-weight: 600;
     color: var(--secondary);
   }
+
   &__table {
     width: 100%;
     border-spacing: 0 0.1em;
     font-size: 0.6rem;
   }
+
   &__pagination {
     display: flex;
     align-items: center;
@@ -34,6 +38,7 @@
     &__title {
       font-size: 1.2rem;
     }
+
     &__table {
       font-size: 0.8rem;
     }
@@ -42,30 +47,36 @@
 
 @media screen and (min-width: 926px) {
   .search-crypto-table {
-    height: calc(100vh - 290px);
+    height: calc(100vh - 260px);
     padding: 0;
     text-align: center;
+
     &__loader {
       height: calc(100vh - 230px);
     }
+
     &__title {
       font-size: 2rem;
       font-weight: 700;
     }
+
     &__results {
       height: 100%;
     }
+
     &__table-container {
       width: 100%;
       height: 100%;
       border-spacing: 0 0.5em;
       font-size: 1rem;
     }
+
     &__table {
       width: 100%;
       border-spacing: 0 0.5em;
       font-size: 1rem;
     }
+
     &__pagination {
       margin: 20px 0;
     }

@@ -1,0 +1,21 @@
+.coin-price {
+  font-size: 1rem;
+}
+
+.coin-price-growth {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.coin-growth__icon {
+  margin-right: 4px;
+}
+
+.coin-price-up {
+  color: var(--green);
+}
+
+.coin-price-down {
+  color: var(--red);
+}

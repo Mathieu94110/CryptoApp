@@ -6,7 +6,7 @@
 
   &__content {
     position: relative;
-    background-color: #fff;
+    background-color: var(--white);
     border-radius: 15px;
     height: fit-content;
 
@@ -68,7 +68,16 @@
       &> :nth-child(odd) {
         color: blue;
       }
+
+      &:last-child {
+        width: 100%;
+      }
     }
+  }
+
+  &__price-and-evolution {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__buttons {
@@ -101,7 +110,7 @@
     }
 
     &__icon {
-      font-size: 25px;
+      font-size: 20px;
     }
 
     &__infos {

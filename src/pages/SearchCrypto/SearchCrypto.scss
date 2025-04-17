@@ -23,13 +23,13 @@
   &__title {
     font-size: 1rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--white);
   }
 
   &__subTitle {
     font-size: 0.8rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--white);
   }
 
   &__table {
@@ -64,7 +64,7 @@
 
 @media screen and (max-width: 926px) {
   .search-crypto {
-    margin-top: 80px;
+    margin-top: 30px;
 
     &__results {
       flex: 1 1 auto;

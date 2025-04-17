@@ -1,13 +1,13 @@
 @import "@/assets/styles/mixins";
 
 .favorites {
-  margin-top: 120px;
   &__title {
-    color: #fff;
+    color: var(--white);
     text-align: center;
     font-size: 20px;
     font-weight: 600;
   }
+
   &__list {
     display: flex;
     justify-content: center;
@@ -16,12 +16,13 @@
     overflow-y: auto;
     margin: auto;
   }
+
   &__empty {
     height: calc(100vh - 200px);
     width: 100%;
     @include vertical-center;
     align-items: center;
-    color: #fff;
+    color: var(--white);
     font-weight: 600;
     font-size: 20px;
   }
@@ -30,13 +31,21 @@
 @media screen and (min-width: 769px) {
   .favorites {
     margin: 0;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+
     &__title {
       font-size: 34px;
+      flex: 1;
+      @include vertical-center;
     }
+
     &__list {
       justify-content: flex-start;
       margin: 0;
     }
+
     &__empty {
       font-size: 28px;
     }

@@ -9,11 +9,11 @@ const TopSevenTrending: React.FC<{ sevenTrends: IItems[] }> = ({ sevenTrends }) 
       <table>
         <thead>
           <tr>
-            <th colSpan={5}>Top 7 des tendances</th>
+            <th colSpan={5} className="color-white">Top 7 des tendances</th>
           </tr>
           <tr>
             {topSevenTrendsColumnsKeys.map((col, index) => (
-              <th key={index}>{formatToUpperCase(col)}</th>
+              <th key={index} className="color-secondary">{formatToUpperCase(col)}</th>
             ))}
           </tr>
         </thead>

@@ -1,26 +1,27 @@
 import { FaCaretUp, FaCaretDown } from "react-icons/fa";
 import { formatedNumber } from "@/utils/convert";
+import './CoinPrice.scss';
 
 interface Props {
   price: number;
   change: number;
 }
 
-const CarouselPrice: React.FC<Props> = ({ price, change }) => {
+const CoinPrice: React.FC<Props> = ({ price, change }) => {
   const isPositive = change >= 0;
   const formattedChange = Math.abs(change ?? 0).toFixed(2);
 
   return (
     <div className="d-flex align-items-center justify-space-between">
-      <span className="carousel__price">{formatedNumber(price)} €</span>
+      <span className="coin-price">{formatedNumber(price)} €</span>
       <span
-        className={`carousel__price-growth ${isPositive ? "carousel__price-up" : "carousel__price-down"
+        className={`coin-price-growth ${isPositive ? "coin-price-up" : "coin-price-down"
           }`}
       >
         {isPositive ? (
-          <FaCaretUp className="carousel__growth-icon" />
+          <FaCaretUp className="coin-growth__icon" />
         ) : (
-          <FaCaretDown className="carousel__growth-icon" />
+          <FaCaretDown className="coin-growth__icon" />
         )}
         {formattedChange}%
       </span>
@@ -28,4 +29,4 @@ const CarouselPrice: React.FC<Props> = ({ price, change }) => {
   );
 };
 
-export default CarouselPrice;
+export default CoinPrice;

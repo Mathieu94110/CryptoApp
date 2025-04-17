@@ -5,38 +5,47 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 20px 0;
+
   label {
-    color: #fff;
+    color: var(--white);
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
   }
+
   &__select {
     margin: 6px 0 0 6px;
     padding: 2px;
     font-size: 14px;
     font-weight: 600;
+
     option {
       font-weight: 600;
     }
   }
 }
+
 @media screen and (min-width: 769px) {
   .dropdowns-menu {
     height: auto;
     width: 600px;
     padding: 10px;
+
     &__select {
       margin: 0 0 0 20px;
       padding: 6px;
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 }
+
 @media screen and (min-width: 1200px) {
   .dropdowns-menu {
+    margin: 0;
+
     label {
-      font-size: 20px;
+      font-size: 16px;
     }
   }
 }

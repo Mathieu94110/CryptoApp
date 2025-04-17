@@ -91,7 +91,7 @@ function WinnersAndLoosers() {
       <h1 className="winners-and-loosers__title">
         Gagnants et perdants ( dans le top 250 )
       </h1>
-      <hr className="winners-and-loosers__hr" />
+      <hr />
       <div className="winners-and-loosers__body">
         {loading && !coinsByPriceChange.length ? (
           <Loader />

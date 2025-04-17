@@ -4,6 +4,7 @@ import { FaSearchPlus, FaTrash } from "react-icons/fa";
 import { switchFavorite } from "@/store/reducers/favoritesSlice";
 import { CoinMarket } from "@/types/coins.interface";
 import "./FavoriteCard.scss";
+import CoinPrice from "src/common/CoinPrice/CoinPrice";
 
 export default function FavoriteCard({
   favorite,
@@ -38,19 +39,11 @@ export default function FavoriteCard({
             <span>Symbole</span> <span>{favorite.symbol}</span>
           </h3>
           <h3 className="favorite-card__infos-item">
-            <span>Prix</span>{" "}
-            <span>{favorite?.current_price?.toFixed(2)} €</span>
-          </h3>
-          <h3 className="favorite-card__infos-item">
-            <span>Évolution sur 24h</span>{" "}
-            <span
-              style={{
-                color:
-                  profit && Number(profit) > 0 ? "var(--green)" : "var(--red)",
-              }}
-            >
-              {favorite.price_change_percentage_24h.toFixed(2)}%
-            </span>
+            <span className="favorite-card__price-and-evolution"><span>Prix</span><span>Évolution sur 24h</span></span>
+            <CoinPrice
+              price={favorite.current_price ?? 0}
+              change={favorite.price_change_percentage_24h}
+            />
           </h3>
         </div>
         <div className="favorite-card__buttons">

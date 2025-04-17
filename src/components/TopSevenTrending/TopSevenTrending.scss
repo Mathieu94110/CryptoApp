@@ -14,21 +14,13 @@
   }
 
   th {
-    color: var(--secondary);
     font-size: 1.2rem;
-
-    &:first-child {
-      color: #fff;
-      text-align: center;
-      align-self: center;
-      padding: 4px 0;
-    }
   }
 
   &__td {
     text-align: center;
     vertical-align: middle;
-    color: #fff;
+    color: var(--white);
     height: 32px;
   }
 
@@ -84,7 +76,7 @@
     &__td {
       text-align: center;
       vertical-align: middle;
-      color: #fff;
+      color: var(--white);
     }
   }
 }

@@ -94,7 +94,7 @@ function SearchCryptoItem({
       </td>
       <td className="search-crypto-item__td z-index-99">
         <span className="p-10" onClick={(e) => handleClick(e, row)}>
-          <FaStar className={`${favorited ? "color-gold" : ""}`} />
+          <FaStar className={`${favorited ? "color-secondary" : ""}`} />
         </span>
       </td>
     </tr >

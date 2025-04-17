@@ -1,7 +1,6 @@
 @import "@/assets/styles/mixins";
 
 .winners-and-loosers {
-  margin-top: 120px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -9,29 +8,27 @@
   flex: 1 1 auto;
 
   &__title {
-    color: #fff;
+    color: var(--white);
     text-align: center;
     font-size: 16px;
     font-weight: 600;
+    flex: 1;
+    @include vertical-center
   }
-  &__hr {
-    width: calc(100% - 2px);
-    margin-block-end: 0;
-  }
+
   &__body {
-    width: calc(100% - 10px);
-    flex: 1 1 auto;
+    width: 100%;
+    height: calc(100vh - 200px);
     @include vertical-center;
   }
 }
+
 @media screen and (min-width: 960px) {
   .winners-and-loosers {
     margin-top: 0px;
+
     &__title {
       font-size: 28px;
-    }
-    &__body {
-      width: calc(100% - 40px);
     }
   }
 }

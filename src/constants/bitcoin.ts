@@ -1,1 +1,2 @@
-export const bitcoinColumnsKeys = ["capitalisation", "jeton", "volume(24H)", "max 24h", "min 24h", "en circulation "]
+export const bitcoinColumnsKeys = ["capitalisation", "jeton", "volume(24H)", "max 24h", "min 24h", "en circulation "];
+export const smallScreenBitcoinColumnsKeys = ["cap(24h)", "jeton", "vol", "max", "min", "dispo"];

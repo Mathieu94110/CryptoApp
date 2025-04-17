@@ -8,22 +8,26 @@
   align-items: center;
   margin: 10px 0;
   position: relative;
+
   &__input {
     padding: 10px 0px 10px 35px;
     outline: 0;
     border: 0;
     flex: 1 1 auto;
     font-size: 0.7rem;
+
     &::placeholder {
       color: var(--primary);
     }
   }
+
   &__icon {
     position: absolute;
     left: 10px;
     top: 17px;
     color: var(--primary);
   }
+
   &__results {
     position: absolute;
     z-index: 2;
@@ -38,13 +42,15 @@
     background-color: rgba(128, 128, 128, 0.6);
     backdrop-filter: blur(12px);
   }
+
   &__results-items {
     padding: 10px 0;
 
     cursor: pointer;
+
     &:hover {
       background-color: var(--primary);
-      color: #fff;
+      color: var(--white);
     }
   }
 }

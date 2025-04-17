@@ -13,7 +13,7 @@
 
 .logo {
   font-size: 1.4rem;
-  color: #fff;
+  color: var(--white);
   justify-self: start;
   display: flex;
 
@@ -35,7 +35,7 @@
 .nav-links {
   display: flex;
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
   padding: 0.7rem 1rem;
   white-space: nowrap;
 
@@ -52,7 +52,7 @@
 
 .menu-icons {
   display: none;
-  color: #fff;
+  color: var(--white);
 }
 
 @media screen and (max-width: 352px) {
@@ -72,10 +72,9 @@
     z-index: 99;
     padding: 0 16px;
     height: 60px;
-    top: 20px;
+    top: 0px;
     left: 50%;
-    transform: translate(-50%);
-    position: fixed;
+    position: sticky;
   }
 
   .nav-menu {
@@ -99,7 +98,7 @@
 
     &.active {
       left: 0%;
-      border: 1px solid #fff;
+      border: 1px solid var(--white);
     }
   }
 
@@ -110,7 +109,7 @@
     color: var(--primary);
     font-weight: 600;
     z-index: 100;
-    color: #fff;
+    color: var(--white);
 
     &:hover {
       background-color: rgba(255, 255, 255, 0.85);

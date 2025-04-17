@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CoinMarket } from "@/types/coins.interface";
 import CarouselLabel from "./CarouselLabel";
-import CarouselPrice from "./CarouselPrice";
+import CoinPrice from "src/common/CoinPrice/CoinPrice";
 
 interface Props {
   coin: CoinMarket;
@@ -24,7 +24,7 @@ const CarouselItem: React.FC<Props> = ({ coin }) => {
               <span className="carousel__texts">{coin.symbol}</span>
             </div>
 
-            <CarouselPrice
+            <CoinPrice
               price={coin.current_price ?? 0}
               change={coin.price_change_percentage_24h}
             />

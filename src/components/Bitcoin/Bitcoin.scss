@@ -3,7 +3,7 @@
 .bitcoin {
   border: 2px solid var(--primary);
   vertical-align: middle;
-  color: #fff;
+  color: var(--white);
   background-color: #191970;
   background-image: url("../../assets/images/bitcoin_background.jpg");
   background-size: cover;
@@ -12,14 +12,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  min-height: 324px;
+  min-height: 260px;
   text-align: center;
   font-size: 1rem;
   padding: 10px;
   @include flex-center;
   @include vertical-center;
 
-  &__title {
+  &__logo {
     margin: 0 auto;
   }
 
@@ -29,19 +29,22 @@
   }
 
   &__table {
-    border: 1px solid #fff none;
+    border: 1px solid var(--white) none;
     border-style: groove;
   }
 
   &__table-header {
-    color: #fff;
-    font-size: 0.5em;
+    color: var(--white);
   }
 
+  &__table-header,
+  &__table-columns,
   &__table-body {
-    font-size: 0.7em;
+    font-size: 8px;
   }
 }
+
+
 
 // Media Queries
 
@@ -67,12 +70,9 @@
       height: 45px;
     }
 
-    &__table-header {
-      font-size: 1em;
-    }
-
+    &__table-header,
     &__table-body {
-      font-size: 1rem;
+      font-size: 1em;
     }
   }
 }
@@ -82,16 +82,21 @@
     padding: 0 6px;
 
     &__table {
-      font-size: 20px;
+      font-size: 10px;
     }
+  }
 
+}
+
+
+@media screen and (min-width: 470px) and (max-width: 925px) {
+  .bitcoin {
+
+    &__table,
+    &__table-columns,
     &__table-header,
     &__table-body {
-
-      &> :nth-child(4),
-      &> :nth-child(5) {
-        display: none;
-      }
+      font-size: 1rem;
     }
   }
 }
