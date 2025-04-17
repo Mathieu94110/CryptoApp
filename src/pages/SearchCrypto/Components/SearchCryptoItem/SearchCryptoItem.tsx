@@ -78,7 +78,7 @@ function SearchCryptoItem({
       </td>
       <td
         style={{
-          color: profit && Number(profit) > 0 ? "rgb(14, 203, 129)" : "red",
+          color: profit && Number(profit) > 0 ? "var(--green)" : "var(--red)",
         }}
         className="search-crypto-item__td-24h-changes"
       >
@@ -97,7 +97,7 @@ function SearchCryptoItem({
           <FaStar className={`${favorited ? "color-gold" : ""}`} />
         </span>
       </td>
-    </tr>
+    </tr >
   );
 }
 

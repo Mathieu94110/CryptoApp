@@ -1,19 +1,21 @@
-import { useState } from "react";
-import { Timer, SomeFunction } from "@/types/debounce.interface";
+import { useRef } from "react";
+import { SomeFunction } from "@/types/debounce.interface";
 
-export function useDebounce<Func extends SomeFunction>(
-  func: Func,
+export function useDebounce<T extends SomeFunction>(
+  func: T,
   delay = 800
-) {
-  const [timer, setTimer] = useState<Timer>();
+): T {
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const debouncedFunction = ((...args) => {
-    const newTimer = setTimeout(() => {
+  const debouncedFunction = ((...args: Parameters<T>) => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
+    timerRef.current = setTimeout(() => {
       func(...args);
     }, delay);
-    clearTimeout(timer);
-    setTimer(newTimer);
-  }) as Func;
+  }) as T;
 
   return debouncedFunction;
 }

@@ -53,7 +53,7 @@ export async function CoinDetails(id: string): Promise<any> {
   }
 }
 
-export async function CoinList(page: number): Promise<any> {
+export async function getCoinsList(page: number): Promise<any> {
   try {
     const { data } = await baseURL.get(
       `coins/markets?vs_currency=eur&order=market_cap_desc&per_page=10&page=${page}&sparkline=false`

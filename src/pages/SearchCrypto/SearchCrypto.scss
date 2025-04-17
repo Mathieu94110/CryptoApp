@@ -7,26 +7,37 @@
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
+
   &__results {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
+
   &__loader {
     width: 100%;
     height: calc(100vh - 200px);
     @include vertical-center;
   }
+
   &__title {
     font-size: 1rem;
     font-weight: 600;
     color: #fff;
   }
+
+  &__subTitle {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+  }
+
   &__table {
     width: 100%;
     border-spacing: 0 0.1em;
     font-size: 0.6rem;
   }
+
   &__pagination {
     margin-top: 20px;
     display: flex;
@@ -40,9 +51,11 @@
 @media screen and (min-width: 470px) and (max-width: 925px) {
   .search-crypto {
     padding: 20px;
+
     &__title {
       font-size: 1.2rem;
     }
+
     &__table {
       font-size: 0.8rem;
     }
@@ -52,6 +65,7 @@
 @media screen and (max-width: 926px) {
   .search-crypto {
     margin-top: 80px;
+
     &__results {
       flex: 1 1 auto;
     }
