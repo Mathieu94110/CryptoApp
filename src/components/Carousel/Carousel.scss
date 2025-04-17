@@ -72,11 +72,11 @@
 }
 
 .carousel__price-up {
-  color: #00a83e;
+  color: var(--green);
 }
 
 .carousel__price-down {
-  color: #ff3a33;
+  color: var(--red);
 }
 
 .carousel__growth-icon {
@@ -130,6 +130,10 @@
   display: flex !important;
   overflow: hidden;
   box-sizing: border-box;
+}
+
+.slick-dots {
+  display: none !important;
 }
 
 // MEDIA QUERIES

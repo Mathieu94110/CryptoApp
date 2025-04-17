@@ -31,8 +31,7 @@ export const favoritesSlice = createSlice({
           JSON.stringify(state.favoritesItems)
         );
       } else {
-        let assembledItem;
-        assembledItem = { ...action.payload };
+        let assembledItem = { ...action.payload };
         state.favoritesItems.push(assembledItem);
         localStorage.setItem(
           "favoriteItems",

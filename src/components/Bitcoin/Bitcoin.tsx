@@ -3,7 +3,6 @@ import type { BitcoinInterface } from "@/types/bitcoin.interface";
 import { convert, formatToUpperCase, toNumericValue } from "@/utils/convert";
 import "./Bitcoin.scss";
 import { bitcoinColumnsKeys } from "src/constants/bitcoin";
-import { valueOrDefault } from "chart.js/dist/helpers/helpers.core";
 
 const TableRow: React.FC<{ label: string; value: string | number }> = ({ label, value }) => (
   <td className="color-gold">

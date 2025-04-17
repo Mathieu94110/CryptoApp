@@ -46,7 +46,7 @@ export default function FavoriteCard({
             <span
               style={{
                 color:
-                  profit && Number(profit) > 0 ? "rgb(14, 203, 129)" : "red",
+                  profit && Number(profit) > 0 ? "var(--green)" : "var(--red)",
               }}
             >
               {favorite.price_change_percentage_24h.toFixed(2)}%
