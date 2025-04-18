@@ -10,7 +10,7 @@ interface Props {
 const CarouselItem: React.FC<Props> = ({ coin }) => {
   return (
     <div className="carousel__item">
-      <Link className="carousel__link" to={`/Details/${coin.id}`}>
+      <Link className="carousel__link" to={`/Details/${coin.id}`} aria-label={`Go to ${coin.name} details`}>
         <div className="carousel__box">
           <CarouselLabel name={coin.name || "Unknown"} />
 

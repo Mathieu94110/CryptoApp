@@ -16,7 +16,7 @@ const NavBar: React.FunctionComponent = () => {
       <h1 className="logo">
         <span>CryptoApplication</span> <FaBitcoin />
       </h1>
-      <div onClick={handleClick} className="menu-icons">
+      <div onClick={handleClick} className="menu-icons" aria-label="menu toggle" data-testid="menu-icon">
         {isOpen ? <FaTimes /> : <FaBars />}
       </div>
       <ul className={isOpen ? "nav-menu active" : "nav-menu"}>

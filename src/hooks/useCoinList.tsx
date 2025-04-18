@@ -17,10 +17,9 @@ export function useCoinList(page: number) {
         setCoinsList(response);
       } catch (err: unknown) {
         if (axios.isAxiosError(err)) {
-          console.error({ err })
-          const status = err.response?.status;
-          const statusText = err.response?.statusText;
-          setError(`Erreur ${status} - ${statusText}`);
+          if (err.name && err.message) {
+            setError(`Erreur ${err.name} - ${err.message}`);
+          }
         } else {
           setError("Une erreur inconnue est survenue durant le chargement des crypto-monnaies");
         }
