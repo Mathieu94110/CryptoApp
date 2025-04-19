@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { SomeFunction } from "@/types/debounce.interface";
+import { SomeFunction } from "src/models/debounce";
 
 export function useDebounce<T extends SomeFunction>(
   func: T,

@@ -42,13 +42,13 @@ describe('Pagination Component', () => {
     expect(nextButton).toBeNull();
   });
   test('should dispatch changePage with 1 as the argument when clicking the prev button from page 1', () => {
-    const { store, dispatchSpy } = renderWithStore(<Pagination />);
+    const { store } = renderWithStore(<Pagination />);
     const prevButton = screen.getByText('1');
     fireEvent.click(prevButton);
     expect(store.getState().searchPage.page).toBe(1);
   });
   test('should dispatch changePage with 1 as the argument when clicking the prev button from page 2', () => {
-    const { store, dispatchSpy } = renderWithStore(<Pagination />, 2);
+    const { store } = renderWithStore(<Pagination />, 2);
     const prevButton = screen.getByText('1');
     fireEvent.click(prevButton);
     expect(store.getState().searchPage.page).toBe(1);

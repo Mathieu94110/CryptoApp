@@ -1,10 +1,9 @@
 import axios from "axios";
 import {
-  HistoricalChartResponse,
-  MarketData,
+  HistoricalChartResponse, MarketData,
   CoinMarket,
   IItems,
-} from "@/types/coins.interface";
+} from "src/models/coins";
 
 export const baseURL = axios.create({
   baseURL: "https://api.coingecko.com/api/v3/",

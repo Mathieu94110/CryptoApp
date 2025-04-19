@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { CoinMarket } from "@/types/coins.interface";
+import { CoinMarket } from "src/models/coins";
 
 export interface favoritesSliceProps {
   favoritesItems: CoinMarket[];

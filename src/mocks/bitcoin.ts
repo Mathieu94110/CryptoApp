@@ -1,6 +1,6 @@
-import { BitcoinInterface } from "@/types/bitcoin.interface";
+import { Bitcoin } from "src/models/bitcoin";
 
-export const fakeBitcoin: BitcoinInterface = {
+export const fakeBitcoin: Bitcoin = {
   name: 'Bitcoin',
   image: 'https://fakeurl.com/bitcoin.png',
   market_cap: 123456789,

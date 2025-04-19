@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { FaSearchPlus, FaTrash } from "react-icons/fa";
 import { switchFavorite } from "@/store/reducers/favoritesSlice";
-import { CoinMarket } from "@/types/coins.interface";
+import { CoinMarket } from "src/models/coins";
 import "./FavoriteCard.scss";
 import CoinPrice from "src/common/CoinPrice/CoinPrice";
 

@@ -29,7 +29,7 @@ export default function SearchCrypto(): JSX.Element {
             </h2> :
             (
               <>
-                <SearchCryptoTable coins={coinsList} period="24h" />
+                <SearchCryptoTable coins={coinsList} />
                 <div className="search-crypto__pagination">
                   <Pagination />
                 </div>

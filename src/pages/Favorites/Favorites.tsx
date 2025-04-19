@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { CoinMarket } from "@/types/coins.interface";
+import { CoinMarket } from "src/models/coins";
 import "./Favorites.scss";
 import FavoriteCard from "./Components/FavoritesCard/FavoriteCard";
 

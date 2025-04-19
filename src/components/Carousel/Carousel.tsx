@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
 import { getTrendingCoins } from "../../apis/coinGecko";
-import { CoinMarket } from "../../types/coins.interface";
+import { CoinMarket } from "src/models/coins";
 import { settings } from "@/static/carouselInfo";
 import CarouselItem from "./CarouselItem";
 import "./Carousel.scss";

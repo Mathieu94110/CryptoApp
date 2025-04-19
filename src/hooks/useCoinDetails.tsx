@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CoinDetails } from "@/apis/coinGecko";
-import { CoinsFetchData } from "@/types/coins.interface";
+import { CoinsFetchData } from "src/models/coins";
 
 export function useCoinDetails(coin: string) {
   const [data, setData] = useState<CoinsFetchData | null>(null);

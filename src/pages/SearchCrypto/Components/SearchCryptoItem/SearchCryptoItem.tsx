@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import type { RootState } from "@/store/store";
 import { switchFavorite } from "@/store/reducers/favoritesSlice";
-import { MarketData } from "@/types/coins.interface";
+import { MarketData } from "src/models/coins";
 import { FaStar } from "react-icons/fa";
 import "./SearchCryptoItem.scss";
 

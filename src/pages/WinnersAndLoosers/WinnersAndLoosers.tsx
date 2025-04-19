@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import DropdownsMenu from "./Components/DropdownsMenu";
 import { getFirst250Coins } from "@/apis/coinGecko";
 import SearchCryptoTable from "@/components/SearchCryptoTable/SearchCryptoTable";
-import { MarketData } from "@/types/coins.interface";
+import { MarketData } from "src/models/coins";
 import Loader from "@/components/Loader/Loader";
 import "./WinnersAndLoosers.scss";
 
@@ -103,7 +103,7 @@ function WinnersAndLoosers() {
               selectedCategory={selectedCategory}
               changeParams={changeParams}
             />
-            <SearchCryptoTable coins={coinsByPriceChange} period={period} />
+            <SearchCryptoTable coins={coinsByPriceChange} />
           </>
         )}
       </div>

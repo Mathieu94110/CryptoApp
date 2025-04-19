@@ -1,4 +1,14 @@
-import { BitcoinInterface } from "./bitcoin.interface";
+import { Bitcoin } from "./bitcoin";
+import { FaCloud, FaCoins, FaSmile, FaUser, FaUsers } from "react-icons/fa";
+
+
+export const CoinStats: CoinStat[] = [
+  { icon: <FaUser />, label: "Nombre de possesseurs", key: "watchlist_portfolio_users" },
+  { icon: <FaCoins />, label: "Score de liquidité", key: "liquidity_score" },
+  { icon: <FaCloud />, label: "Plateforme", key: "asset_platform_id" },
+  { icon: <FaSmile />, label: "Avis positifs", key: "sentiment_votes_up_percentage", suffix: "%" },
+  { icon: <FaUsers />, label: "Score de la communauté", key: "community_score" }
+];
 
 export interface BasicCoin {
   id: string;
@@ -249,7 +259,7 @@ interface CoinsFetchDataTicker {
 }
 
 export type HomeLoader = {
-  bitcoinData: BitcoinInterface;
+  bitcoinData: Bitcoin;
   sevenTrendsData: IItems[];
 };
 
@@ -282,7 +292,7 @@ export interface SearchCoin {
   thumb: string;
 }
 
-export interface CoinStatistic {
+export interface CoinStat {
   icon: JSX.Element;
   label: string;
   key: string;

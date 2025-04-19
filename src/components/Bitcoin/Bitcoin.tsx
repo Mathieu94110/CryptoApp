@@ -1,9 +1,8 @@
 import HistoryChart from "../HistoryChart/HistoryChart";
-import type { BitcoinInterface } from "@/types/bitcoin.interface";
 import { convert, formatToUpperCase, toNumericValue } from "@/utils/convert";
-import "./Bitcoin.scss";
-import { bitcoinColumnsKeys, smallScreenBitcoinColumnsKeys } from "src/constants/bitcoin";
+import { Bitcoin as BitCoinProps, bitcoinColumnsKey, smallScreenBitcoinColumnsKeys, largeScreenBitcoinColumnsKeys, smallScreenBitcoinColumns, largeScreenBitcoinColumns } from "src/models/bitcoin";
 import { useResize } from "@/hooks/useResize";
+import "./Bitcoin.scss";
 
 const TableRow: React.FC<{ label: string; value: string | number }> = ({ label, value }) => {
   const priceLabels = ["market_cap", "high_24h", "low_24h"];
@@ -19,9 +18,11 @@ const TableRow: React.FC<{ label: string; value: string | number }> = ({ label, 
 };
 
 
-const Bitcoin: React.FunctionComponent<{ bitcoin: BitcoinInterface }> = ({ bitcoin }) => {
+const Bitcoin: React.FunctionComponent<{ bitcoin: BitCoinProps }> = ({ bitcoin }) => {
   const { screenSize } = useResize();
-  const columnsKeys = screenSize >= 600 ? bitcoinColumnsKeys : smallScreenBitcoinColumnsKeys;
+  const columnsKeys = screenSize >= 600 ? largeScreenBitcoinColumnsKeys : smallScreenBitcoinColumnsKeys;
+  const getBitcoinColumn = (col: bitcoinColumnsKey) => screenSize >= 600 ? largeScreenBitcoinColumns[col] : smallScreenBitcoinColumns[col];
+
   return (
     <div className="bitcoin">
       <div className="bitcoin__title">
@@ -36,7 +37,7 @@ const Bitcoin: React.FunctionComponent<{ bitcoin: BitcoinInterface }> = ({ bitco
         <thead>
           <tr>
             {columnsKeys.map((col, index) => (
-              <th key={index}>{formatToUpperCase(col)}</th>
+              <th key={index}>{formatToUpperCase(getBitcoinColumn(col))}</th>
             ))}
           </tr>
         </thead>

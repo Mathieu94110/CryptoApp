@@ -3,7 +3,7 @@ import { Await, Outlet, useLoaderData } from "react-router-dom";
 import TopSevenTrending from "@/components/TopSevenTrending/TopSevenTrending";
 import Bitcoin from "@/components/Bitcoin/Bitcoin";
 import Carousel from "@/components/Carousel/Carousel";
-import { HomeLoader } from "@/types/coins.interface";
+import { HomeLoader } from "src/models/coins";
 import "./Home.scss";
 
 function Home(): JSX.Element {

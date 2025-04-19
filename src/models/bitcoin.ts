@@ -1,4 +1,25 @@
-export interface BitcoinInterface {
+export enum largeScreenBitcoinColumns {
+  market_cap = 'Capitalisation',
+  coin = 'Jeton',
+  dayVolume = "volume(24H)",
+  dayMax = "max 24h",
+  dayMin = "min 24h",
+  circulatingSupply = "en circulation"
+}
+export enum smallScreenBitcoinColumns {
+  market_cap = 'cap(24h)',
+  coin = 'jeton',
+  dayVolume = "vol",
+  dayMax = "max",
+  dayMin = "min",
+  circulatingSupply = "dispo"
+}
+
+export type bitcoinColumnsKey = keyof typeof smallScreenBitcoinColumns;
+export const smallScreenBitcoinColumnsKeys = Object.keys(smallScreenBitcoinColumns) as Array<keyof typeof smallScreenBitcoinColumns>;
+export const largeScreenBitcoinColumnsKeys = Object.keys(largeScreenBitcoinColumns) as Array<keyof typeof largeScreenBitcoinColumns>;
+
+export interface Bitcoin {
   readonly name: string;
   readonly image: string;
   readonly circulating_supply: number;

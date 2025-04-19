@@ -1,9 +1,11 @@
-import { IItems } from "@/types/coins.interface";
+import { IItems } from "src/models/coins";
 import "./TopSevenTrending.scss";
-import { topSevenTrendsColumnsKeys } from "src/constants/topSevenTrends";
-import { formatToUpperCase } from "@/utils/convert";
+import { topSevenTrendsColumns, topSevenTrendsColumnsKey, topSevenTrendsColumnsKeys } from "src/models/topSevenTrends";
 
 const TopSevenTrending: React.FC<{ sevenTrends: IItems[] }> = ({ sevenTrends }) => {
+
+  const getTrendsColumnLabel = (col: topSevenTrendsColumnsKey) => topSevenTrendsColumns[col];
+
   return (
     <div className="top-seven-trending">
       <table>
@@ -13,7 +15,7 @@ const TopSevenTrending: React.FC<{ sevenTrends: IItems[] }> = ({ sevenTrends }) 
           </tr>
           <tr>
             {topSevenTrendsColumnsKeys.map((col, index) => (
-              <th key={index} className="color-secondary">{formatToUpperCase(col)}</th>
+              <th key={index} className="color-secondary">{getTrendsColumnLabel(col)}</th>
             ))}
           </tr>
         </thead>

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { SearchCoin } from "@/types/coins.interface";
+import { SearchCoin } from "src/models/coins";
 
 export interface searchSliceProps {
   searchResults: SearchCoin[];

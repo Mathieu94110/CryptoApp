@@ -1,5 +1,4 @@
-import { coinStatistics } from "src/constants/cryptoDetails";
-import { CoinStatistic } from "@/types/coins.interface";
+import { CoinStats, CoinStat } from "src/models/coins";
 import Loader from "@/components/Loader/Loader";
 import "./CoinDetail.scss";
 import { useCoinDetails } from "@/hooks/useCoinDetails";
@@ -24,7 +23,7 @@ const CoinDetail: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
       <div className="coin-details__details">
         <ul className="coin-details__statistics">
           <h2 className="coin-details__statistics-title">Statistiques</h2>
-          {coinStatistics.map((stat: CoinStatistic) => {
+          {CoinStats.map((stat: CoinStat) => {
             const value = coinDetails[stat.key];
             let displayValue;
 

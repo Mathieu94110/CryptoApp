@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { CoinMarket } from "@/types/coins.interface";
 import CarouselLabel from "./CarouselLabel";
 import CoinPrice from "src/common/CoinPrice/CoinPrice";
+import { CoinMarket } from "src/models/coins";
 
 interface Props {
   coin: CoinMarket;

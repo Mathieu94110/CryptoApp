@@ -1,4 +1,4 @@
-import { FavoritesData } from "./favorites.interface";
+import { FavoritesData } from "./favorites";
 
 export const SEARCH_CRYPTO_LOADING = "SEARCH_CRYPTO_LOADING";
 export const SEARCH_CRYPTO_FAIL = "SEARCH_CRYPTO_FAIL";

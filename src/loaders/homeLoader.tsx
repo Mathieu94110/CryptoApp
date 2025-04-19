@@ -1,5 +1,5 @@
 import { getBitcoinData, getSevenTrends } from "@/apis/coinGecko";
-import { CoinMarket, IItems } from "@/types/coins.interface";
+import { CoinMarket, IItems } from "src/models/coins";
 
 async function homeLoader(): Promise<{
   bitcoinData: CoinMarket;

@@ -2,7 +2,7 @@ import { SearchCoins } from "@/apis/coinGecko";
 import { useDebounce } from "@/hooks/useDebounce";
 import { getSearchResult } from "@/store/reducers/searchSlice";
 import { RootState } from "@/store/store";
-import { SearchCoin } from "@/types/coins.interface";
+import { SearchCoin } from "src/models/coins";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
