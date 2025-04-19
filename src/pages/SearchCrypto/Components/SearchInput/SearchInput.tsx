@@ -16,8 +16,10 @@ const SearchInput: React.FC = () => {
   const searchResults = useSelector(
     (state: RootState) => state.searchList.searchResults
   );
-  const shouldDisplayResults = searchText && searchResults.length > 0;
-  const noResultsFound = searchText && searchResults.length === 0 && !isSearching && !isWaiting;
+
+  const shouldDisplayResults = searchText && Array.isArray(searchResults) && searchResults.length > 0;
+  const noResultsFound = searchText && Array.isArray(searchResults) && searchResults.length === 0 && !isSearching && !isWaiting;
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

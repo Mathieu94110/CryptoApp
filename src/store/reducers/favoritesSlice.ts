@@ -1,8 +1,8 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { CoinMarket } from "src/models/coins";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { MarketData } from "src/models/coins";
 
 export interface favoritesSliceProps {
-  favoritesItems: CoinMarket[];
+  favoritesItems: MarketData[];
 }
 const initialState: favoritesSliceProps = {
   favoritesItems: localStorage.getItem("favoriteItems")
@@ -14,14 +14,14 @@ export const favoritesSlice = createSlice({
   name: "favorites",
   initialState,
   reducers: {
-    switchFavorite: (state, action) => {
+    switchFavorite: (state, action: PayloadAction<MarketData>) => {
       let favoritesIndex = state.favoritesItems.findIndex(
-        (item: CoinMarket) => item?.id === action.payload?.id
+        (item: MarketData) => item?.id === action.payload?.id
       );
 
       if (favoritesIndex >= 0) {
         const updatedFavorites = state.favoritesItems?.filter(
-          (item: CoinMarket) => item?.id !== action.payload?.id
+          (item: MarketData) => item?.id !== action.payload?.id
         );
 
         state.favoritesItems = updatedFavorites;

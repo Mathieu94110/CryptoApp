@@ -20,7 +20,7 @@ const SearchCryptoTable: React.FunctionComponent<{
             className="search-crypto-table__table"
           >
             <thead
-              style={{ backgroundColor: "#EEBC1D", position: "sticky", top: 0 }}
+              className="search-crypto-table__header"
             >
               <tr>
                 {SearchCryptoColumnsKeys.map((column: SearchCryptoColumnsKey, index) => (

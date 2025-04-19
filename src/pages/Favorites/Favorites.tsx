@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { RootState } from "@/store/store";
-import { CoinMarket } from "src/models/coins";
+import { MarketData } from "src/models/coins";
 import "./Favorites.scss";
 import FavoriteCard from "./Components/FavoritesCard/FavoriteCard";
 
@@ -15,13 +15,9 @@ export default function Favorites(): JSX.Element {
       <hr />
       {favorites.length > 0 ? (
         <div className="favorites__list">
-          {favorites.map((favorite: CoinMarket, index: number) => {
-            let profit =
-              favorite?.price_change_percentage_24h >= 0
-                ? favorite?.price_change_percentage_24h
-                : "";
+          {favorites.map((favorite: MarketData, index: number) => {
             return (
-              <FavoriteCard favorite={favorite} key={index} profit={profit} />
+              <FavoriteCard favorite={favorite} key={index} />
             );
           })}
         </div>

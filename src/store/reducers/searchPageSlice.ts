@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface searchPageSliceProps {
   page: number;
@@ -11,7 +11,7 @@ export const searchPageSlice = createSlice({
   name: "search",
   initialState,
   reducers: {
-    changePage: (state, action) => {
+    changePage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
     },
   },

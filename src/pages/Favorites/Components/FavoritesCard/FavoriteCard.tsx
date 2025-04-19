@@ -2,22 +2,20 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { FaSearchPlus, FaTrash } from "react-icons/fa";
 import { switchFavorite } from "@/store/reducers/favoritesSlice";
-import { CoinMarket } from "src/models/coins";
+import { MarketData } from "src/models/coins";
 import "./FavoriteCard.scss";
 import CoinPrice from "src/common/CoinPrice/CoinPrice";
 
 export default function FavoriteCard({
   favorite,
   key,
-  profit,
 }: {
-  favorite: CoinMarket;
+  favorite: MarketData;
   key: number;
-  profit: string | number;
 }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleClick = (favorite: CoinMarket) => {
+  const handleClick = (favorite: MarketData) => {
     dispatch(switchFavorite(favorite));
   };
 

@@ -23,6 +23,12 @@
     font-size: 0.6rem;
   }
 
+  &__header {
+    background-color: "#EEBC1D";
+    position: "sticky";
+    top: 0
+  }
+
   &__pagination {
     display: flex;
     align-items: center;

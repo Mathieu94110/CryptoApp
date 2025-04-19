@@ -69,7 +69,7 @@ function SearchCryptoItem({
           <span className="search-crypto-item__symbol">
             {row?.symbol?.toUpperCase()}
           </span>
-          <span style={{ color: "darkgrey" }}>{row.name}</span>
+          <span className="color-dark-grey">{row.name}</span>
         </div>
       </th>
       <td className="search-crypto-item__td">
