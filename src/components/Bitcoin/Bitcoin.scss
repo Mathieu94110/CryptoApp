@@ -1,102 +1,90 @@
 @import "@/assets/styles/mixins";
 
-.bitcoin {
-  border: 2px solid var(--primary);
-  vertical-align: middle;
-  color: var(--white);
-  background-color: #191970;
-  background-image: url("../../assets/images/bitcoin_background.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+.bitcoin-wrapper {
+  background-color: #141b23;
+  border-radius: 16px;
+  color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-  min-height: 260px;
-  text-align: center;
-  font-size: 1rem;
-  padding: 10px;
-  @include flex-center;
-  @include vertical-center;
+  gap: 20px;
+  width: 100%;
+}
 
-  &__logo {
-    margin: 0 auto;
+.bitcoin-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .bitcoin__img {
+    width: 30px;
+    height: 30px;
   }
 
-  &__img {
-    width: 35px;
-    height: 35px;
-  }
-
-  &__table {
-    border: 1px solid var(--white) none;
-    border-style: groove;
-  }
-
-  &__table-header {
-    color: var(--white);
-  }
-
-  &__table-header,
-  &__table-columns,
-  &__table-body {
-    font-size: 8px;
+  .bitcoin__name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
   }
 }
 
+.bitcoin__header {
+  background-color: #1f2a35;
+  border-radius: 12px;
+  border: 1px solid #2e3746;
+  width: 100%;
+  overflow-x: auto;
+  font-size: 0.9rem;
 
-
-// Media Queries
-
-@media screen and (min-width: 926px) and (max-width: 1064px) {
-  .bitcoin {
-    font-size: 0.8rem;
-    padding: 0 10px;
+  th {
+    color: var(--secondary);
+    padding: 8px 0;
   }
+
+  td {
+    padding: 8px 0;
+    text-align: center;
+  }
+
+  .bitcoin__data span {
+    color: #ffffff;
+  }
+}
+
+.bitcoin-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bitcoin__header-keys {
+  font-size: 11px;
+}
+
+.bitcoin__header-values {
+  font-size: 11px;
 }
 
 @media screen and (min-width: 926px) {
-  .bitcoin {
-    margin: 0;
+  .bitcoin-wrapper {
     width: 45%;
-    justify-content: space-between;
-
-    &__name {
-      font-size: 1.7em;
-    }
-
-    &__img {
-      width: 45px;
-      height: 45px;
-    }
-
-    &__table-header,
-    &__table-body {
-      font-size: 1em;
-    }
+    padding: 20px;
   }
-}
 
-@media screen and (max-width: 469px) {
-  .bitcoin {
-    padding: 0 6px;
+  .bitcoin__header {
+    .bitcoin__img {
+      width: 60px;
+      height: 60px;
+    }
 
-    &__table {
-      font-size: 10px;
+    th {
+      font-size: 16px;
     }
   }
 
-}
-
-
-@media screen and (min-width: 470px) and (max-width: 925px) {
-  .bitcoin {
-
-    &__table,
-    &__table-columns,
-    &__table-header,
-    &__table-body {
-      font-size: 1rem;
+  .bitcoin-info {
+    .bitcoin__name {
+      font-size: 2rem;
     }
   }
 }
