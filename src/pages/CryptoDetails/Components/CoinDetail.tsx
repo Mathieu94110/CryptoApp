@@ -35,7 +35,7 @@ const CoinDetail: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
 
             return (
               <li key={stat.key} className="mb-10">
-                <span className="color-primary">{stat.icon} {stat.label}:</span>{displayValue}
+                <span className="white">{stat.icon} {stat.label}: </span>{displayValue}
                 {stat.suffix && ` ${stat.suffix}`}
               </li>
             );

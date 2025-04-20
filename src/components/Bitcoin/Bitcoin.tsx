@@ -28,9 +28,9 @@ const TableRow: React.FC<{ label: string; value: string | number }> = ({ label, 
 const Bitcoin: React.FunctionComponent<{ bitcoin: BitCoinProps }> = ({ bitcoin }) => {
   const { screenSize } = useResize();
   const columnsKeys =
-    screenSize >= 600 ? largeScreenBitcoinColumnsKeys : smallScreenBitcoinColumnsKeys;
+    screenSize >= 1134 ? largeScreenBitcoinColumnsKeys : smallScreenBitcoinColumnsKeys;
   const getBitcoinColumn = (col: bitcoinColumnsKey) =>
-    screenSize >= 600 ? largeScreenBitcoinColumns[col] : smallScreenBitcoinColumns[col];
+    screenSize >= 1134 ? largeScreenBitcoinColumns[col] : smallScreenBitcoinColumns[col];
 
   return (
     <div className="bitcoin-wrapper">

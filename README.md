@@ -35,6 +35,7 @@ just visit http://localhost:3000.
 ![home](src/assets/images/crypto-home-screen.PNG?raw=true "Home")
 ![search](src/assets/images/crypto-search-screen.PNG?raw=true "Search")
 ![winners and loosers](src/assets/images/crypto-winners-and-loosers-screen.PNG?raw=true "WinnersAndLoosers")
+![coins details](src/assets/images/crypto-details-screen.png?raw=true "CoinDetails")
 ![favorites](src/assets/images/crypto-favorites-screen.PNG?raw=true "Favorites")
 
 ## Screenshots Mobiles
@@ -42,4 +43,5 @@ just visit http://localhost:3000.
 ![home](src/assets/images/crypto-home-screen-mobiles.PNG?raw=true "Home")
 ![search](src/assets/images/crypto-search-screen-mobiles.PNG?raw=true "Search")
 ![winners and loosers](src/assets/images/crypto-winners-and-loosers-screen-mobiles.PNG?raw=true "WinnersAndLoosers")
+![coins details](src/assets/images/crypto-details-screen-mobiles.png?raw=true "CoinDetails")
 ![favorites](src/assets/images/crypto-favorites-screen-mobiles.PNG?raw=true "Favorites")

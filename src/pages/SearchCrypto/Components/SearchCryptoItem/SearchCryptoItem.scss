@@ -1,11 +1,11 @@
 .search-crypto-item {
   &__row {
-    background-color: #16171a;
+    background-color: var(--primary-opacity-60);
     padding: 10px;
     cursor: pointer;
 
     &:hover {
-      background-color: #131111;
+      background-color: var(--bg-dark);
     }
   }
 

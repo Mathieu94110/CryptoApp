@@ -14,7 +14,6 @@ const CryptoDetail: React.FunctionComponent = () => {
       <div className="crypto-details__container">
         <div className="crypto-details__back-button">
           <button
-            className="crypto-details__back-button-button"
             onClick={() => {
               navigate(-1);
             }}

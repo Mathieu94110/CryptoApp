@@ -5,21 +5,11 @@
   margin: 0 4px;
   font-weight: 600;
   font-size: 12px;
-  width: 40px;
   transition: background-color 0.2s ease;
   cursor: pointer;
 
   &:hover {
     background-color: var(--secondary);
-  }
-
-  @media screen and (min-width: 1064px) {
-    margin: 4px;
-    width: 60px;
-
-    &:hover {
-      color: var(--primary);
-    }
   }
 
   &--active {

@@ -3,7 +3,6 @@
   flex: 1 1 auto;
 
   &__back-button {
-    height: 40px;
     margin-left: 30px;
 
     &-button {
@@ -18,8 +17,8 @@
       font-weight: 600;
 
       &:hover {
-        background-color: var(--primary);
-        color: white;
+        background-color: var(--white);
+        color: var(--primary);
       }
     }
   }
@@ -50,12 +49,6 @@
     flex-direction: column;
     justify-content: center;
 
-    &__back-button {
-      &-button {
-        padding: 15px;
-      }
-    }
-
     &__title {
       &>h1 {
         color: var(--white);
@@ -64,5 +57,9 @@
         font-weight: 600;
       }
     }
+  }
+
+  button {
+    padding: 15px;
   }
 }

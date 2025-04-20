@@ -6,7 +6,7 @@
 
   &__content {
     position: relative;
-    background-color: var(--white);
+    background-color: var(--bg-dark);
     border-radius: 15px;
     height: fit-content;
 
@@ -27,7 +27,7 @@
     &:first-child {
       &:hover {
         transform: scale(1.1);
-        color: #5433ff;
+        color: var(--secondary);
       }
     }
 
@@ -64,10 +64,7 @@
     &-item {
       padding: 4px 0;
       font-weight: 600;
-
-      &> :nth-child(odd) {
-        color: blue;
-      }
+      color: var(--white);
 
       &:last-child {
         width: 100%;

@@ -14,10 +14,10 @@ import {
 import { Line } from "react-chartjs-2";
 import { HistoricalChart } from "@/apis/coinGecko";
 import Loader from "@/components/Loader/Loader";
-import { useResize } from "@/hooks/useResize";
 import { chartDays } from "@/static/chartDays";
 import SelectButton from "./Components/SelectButton/SelectButton";
 import "./HistoryChart.scss";
+
 const verticalLinePlugin = {
   id: "verticalLine",
   afterDraw: (chart: any) => {
@@ -53,7 +53,6 @@ ChartJS.register(
 const HistoryChart: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
   const [coinData, setCoinData] = useState<number[][] | null>(null);
   const [days, setDays] = useState<number>(1);
-  const { screenSize } = useResize();
 
   useEffect(() => {
     const fetchHistoricData = async () => {
@@ -97,8 +96,6 @@ const HistoryChart: React.FunctionComponent<{ coin: string }> = ({ coin }) => {
   if (!coinData) {
     return <Loader />;
   }
-
-  const showTicks = screenSize < 400 ? { display: false } : { color: "#fff" };
 
   const options: ChartOptions<'line'> = {
     responsive: true,

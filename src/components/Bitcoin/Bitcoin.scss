@@ -1,14 +1,15 @@
 @import "@/assets/styles/mixins";
 
 .bitcoin-wrapper {
-  background-color: #141b23;
+  background-color: var(--primary-opacity-60);
   border-radius: 16px;
-  color: #ffffff;
+  color: var(--white);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 100%;
+  padding: 10px;
 }
 
 .bitcoin-info {
@@ -39,6 +40,7 @@
   th {
     color: var(--secondary);
     padding: 8px 0;
+    font-size: 1.2rem;
   }
 
   td {
@@ -47,7 +49,7 @@
   }
 
   .bitcoin__data span {
-    color: #ffffff;
+    color: var(--white);
   }
 }
 
@@ -57,18 +59,25 @@
   gap: 20px;
 }
 
-.bitcoin__header-keys {
-  font-size: 11px;
-}
-
 .bitcoin__header-values {
   font-size: 11px;
 }
 
+@media screen and (max-width: 469px) {
+  .bitcoin__header {
+    th {
+      font-size: 0.6rem;
+    }
+  }
+
+  .bitcoin__header-keys {
+    font-size: 0.6rem;
+  }
+}
+
 @media screen and (min-width: 926px) {
   .bitcoin-wrapper {
-    width: 45%;
-    padding: 20px;
+    width: 35%;
   }
 
   .bitcoin__header {
@@ -76,15 +85,27 @@
       width: 60px;
       height: 60px;
     }
-
-    th {
-      font-size: 16px;
-    }
   }
 
   .bitcoin-info {
     .bitcoin__name {
       font-size: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 926px) and (max-width: 1300px) {
+  .bitcoin__header {
+    font-size: 1.2rem;
+  }
+
+  .bitcoin-wrapper {
+    width: 45%;
+  }
+
+  .bitcoin__header-keys {
+    th {
+      font-size: 16px;
     }
   }
 }

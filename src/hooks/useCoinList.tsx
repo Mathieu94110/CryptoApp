@@ -18,7 +18,7 @@ export function useCoinList(page: number) {
       } catch (err: unknown) {
         if (axios.isAxiosError(err)) {
           if (err.name && err.message) {
-            setError(`Erreur ${err.name} - ${err.message}`);
+            setError(`Erreur ${err.name} - ${err.message}, vous avez effectué trop de requètes à l'api coinGecko, vous pourrez réessayer dans quelques instants`);
           }
         } else {
           setError("Une erreur inconnue est survenue durant le chargement des crypto-monnaies");

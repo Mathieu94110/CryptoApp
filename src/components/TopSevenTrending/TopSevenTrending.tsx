@@ -1,6 +1,7 @@
 import { IItems } from "src/models/coins";
 import "./TopSevenTrending.scss";
 import { topSevenTrendsColumns, topSevenTrendsColumnsKey, topSevenTrendsColumnsKeys } from "src/models/topSevenTrends";
+import { FaArrowTrendUp } from "react-icons/fa6";
 
 const TopSevenTrending: React.FC<{ sevenTrends: IItems[] }> = ({ sevenTrends }) => {
 
@@ -11,7 +12,7 @@ const TopSevenTrending: React.FC<{ sevenTrends: IItems[] }> = ({ sevenTrends }) 
       <table>
         <thead>
           <tr>
-            <th colSpan={5} className="color-white">Top 7 des tendances</th>
+            <th colSpan={5} className="top-seven-trending__title"><span className="top-seven-trending__icon"><FaArrowTrendUp /></span><span>Top 7 des tendances</span></th>
           </tr>
           <tr>
             {topSevenTrendsColumnsKeys.map((col, index) => (
@@ -23,17 +24,17 @@ const TopSevenTrending: React.FC<{ sevenTrends: IItems[] }> = ({ sevenTrends }) 
         <tbody className="top-seven-trending__tbody">
           {sevenTrends.map((trend, index) => (
             <tr key={index}>
-              <td className="top-seven-trending__td">{index + 1}</td>
-              <td className="top-seven-trending__td">
+              <td >{index + 1}</td>
+              <td >
                 <img
                   src={trend.item.small}
                   alt={trend.item.name}
                   className="top-seven-trending__grid-item-image"
                 />
               </td>
-              <td className="top-seven-trending__td">{trend.item.name}</td>
-              <td className="top-seven-trending__td">{trend.item.symbol}</td>
-              <td className="top-seven-trending__td">{trend.item.market_cap_rank}</td>
+              <td >{trend.item.name}</td>
+              <td >{trend.item.symbol}</td>
+              <td >{trend.item.market_cap_rank}</td>
             </tr>
           ))}
         </tbody>

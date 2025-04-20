@@ -1,11 +1,17 @@
 @import "@/assets/styles/mixins";
 
 .favorites {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+
   &__title {
     color: var(--white);
     text-align: center;
     font-size: 20px;
     font-weight: 600;
+    flex: 1;
+    @include vertical-center
   }
 
   &__list {
@@ -15,6 +21,7 @@
     height: calc(100vh - 200px);
     overflow-y: auto;
     margin: auto;
+    background-color: var(--primary-opacity-60);
   }
 
   &__empty {
@@ -36,7 +43,7 @@
     flex-direction: column;
 
     &__title {
-      font-size: 34px;
+      font-size: 28px;
       flex: 1;
       @include vertical-center;
     }

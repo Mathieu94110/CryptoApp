@@ -3,35 +3,59 @@
   justify-content: space-evenly;
   margin-bottom: 40px;
 
+  &__title {
+    color: var(--white);
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  &__icon {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
   table {
-    line-height: 0.8 !important;
     border: 2px solid;
+    border-radius: 16px;
     width: 100%;
     height: 100%;
     border-collapse: separate;
-    border-spacing: 0 0.5em;
     background-color: var(--primary-opacity-60);
+    border-spacing: 0;
+    table-layout: fixed;
   }
 
   th {
     font-size: 1.2rem;
+    text-align: center;
   }
 
-  &__td {
+  td {
     text-align: center;
     vertical-align: middle;
     color: var(--white);
-    height: 32px;
+    height: 20px;
+    min-height: 20px;
+    box-sizing: border-box;
+  }
+
+  tbody {
+    tr {
+      height: 30px;
+      display: table-row;
+    }
   }
 
   &__grid-item-image {
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
   }
+}
 
-  // Media Queries
+// Media Queries
 
-  @media screen and (max-width: 469px) {
+@media screen and (max-width: 469px) {
+  .top-seven-trending {
     font-size: 0.6rem;
     width: 100%;
 
@@ -43,40 +67,70 @@
       font-size: 0.6rem;
     }
 
+    td {
+      padding: 8px;
+    }
+
     &__grid-item-image {
-      width: 20px;
-      height: 20px;
+      width: 16px;
+      height: 16px;
     }
   }
+}
 
-  @media screen and (min-width: 926px) {
+@media screen and (min-width: 926px) {
+  .top-seven-trending {
     margin-bottom: 0;
     font-size: 1rem;
     justify-content: space-evenly;
-    width: 45%;
-    padding: 0;
+    width: 35%;
+
+    &__title {
+      font-size: 1.4rem !important;
+    }
 
     table {
       border: 2px solid;
       width: 100%;
       height: 100%;
       border-collapse: separate;
-      border-spacing: 0 0.5em;
+      border-spacing: 0.5em;
+      table-layout: fixed;
+    }
+
+    &__grid-item-image {
+      width: 24px;
+      height: 24px;
     }
 
     th {
       font-size: 1.2rem;
     }
 
-    &__grid-item-image {
-      width: 30px;
-      height: 30px;
-    }
-
-    &__td {
+    td {
       text-align: center;
       vertical-align: middle;
       color: var(--white);
+      height: 30px;
+      min-height: 30px;
+      box-sizing: border-box;
     }
+
+    tbody {
+      tr {
+        height: 30px;
+        display: table-row;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 926px) and (max-width: 1300px) {
+  .top-seven-trending {
+    width: 45%;
+  }
+
+  th.color-secondary {
+    font-size: 16px;
   }
 }
