@@ -40,7 +40,8 @@
   th {
     color: var(--secondary);
     padding: 8px 0;
-    font-size: 1.2rem;
+    font-size: 14px;
+    font-weight: 600;
   }
 
   td {
@@ -78,6 +79,7 @@
 @media screen and (min-width: 926px) {
   .bitcoin-wrapper {
     width: 35%;
+    height: 460px;
   }
 
   .bitcoin__header {
@@ -107,5 +109,11 @@
     th {
       font-size: 16px;
     }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .bitcoin__chart {
+    padding: 10px 72px;
   }
 }

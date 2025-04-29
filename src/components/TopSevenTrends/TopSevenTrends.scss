@@ -1,0 +1,94 @@
+.top-seven-trends {
+  width: 100%;
+  background-color: var(--primary-opacity-60);
+  border-radius: 16px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__caption {
+    caption-side: top;
+    text-align: left;
+    color: var(--white);
+    padding: 16px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    width: 100%;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+
+    display: table-caption;
+    caption-side: top;
+
+    .top-seven-trends__icon {
+      margin-right: 10px;
+      vertical-align: middle;
+      color: var(--secondary);
+    }
+  }
+
+  &__head {
+    background-color: var(--primary-dark);
+  }
+
+  &__row {
+    &--head {
+      background-color: var(--primary-dark);
+    }
+  }
+
+  &__cell {
+    text-align: center;
+    vertical-align: middle;
+    color: var(--white);
+    padding: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+    &--head {
+      font-weight: bold;
+      color: var(--secondary);
+      font-size: 14px;
+    }
+  }
+
+  &__image {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  // Responsive
+  @media screen and (max-width: 600px) {
+    font-size: 0.75rem;
+
+    &__caption {
+      font-size: 1rem;
+      padding: 12px;
+    }
+
+    &__cell {
+      padding: 8px;
+      font-size: 0.75rem;
+    }
+
+    &__image {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  @media screen and (min-width: 926px) {
+
+    width: 35%;
+    margin: 0;
+    font-size: 16px;
+  }
+
+  @media screen and (min-width: 926px) and (max-width: 1300px) {
+    width: 45%;
+  }
+}

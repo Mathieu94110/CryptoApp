@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Await, Outlet, useLoaderData } from "react-router-dom";
-import TopSevenTrending from "@/components/TopSevenTrending/TopSevenTrending";
+import TopSevenTrends from "@/components/TopSevenTrends/TopSevenTrends";
 import Bitcoin from "@/components/Bitcoin/Bitcoin";
 import Carousel from "@/components/Carousel/Carousel";
 import { HomeLoader } from "src/models/coins";
@@ -15,7 +15,7 @@ function Home(): JSX.Element {
         <Await resolve={[bitcoinData, sevenTrendsData]}>
           <Carousel />
           <div className="home__tables">
-            <TopSevenTrending sevenTrends={sevenTrendsData} />
+            <TopSevenTrends sevenTrends={sevenTrendsData} />
             <Bitcoin bitcoin={bitcoinData} />
           </div>
         </Await>
